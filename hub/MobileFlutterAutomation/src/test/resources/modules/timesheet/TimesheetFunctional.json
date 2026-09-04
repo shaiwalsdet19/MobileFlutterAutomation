@@ -1,0 +1,49 @@
+{
+  "module": "timesheet",
+  "testcases": [
+    {
+      "TestMethod": "addTimesheetEntry",
+      "TestCaseName": "Add Timesheet Entry",
+      "TestCaseDescription": "Happy flow: add a valid timesheet entry and verify success",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Day": "18",
+      "Project": "Project Alpha",
+      "Task": "Development",
+      "Description": "Implemented login module - automation test",
+      "Start Time": "09:00",
+      "End Time": "17:00"
+    },
+    {
+      "TestMethod": "verifyEmptyTimesheetValidations",
+      "TestCaseName": "Verify Empty Timesheet Validations",
+      "TestCaseDescription": "Submit empty timesheet form and verify required field errors",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    },
+    {
+      "TestMethod": "verifyTimeOverlapError",
+      "TestCaseName": "Verify Time Overlap Error",
+      "TestCaseDescription": "Add timesheet entry overlapping an existing one and verify error",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Day": "18",
+      "Project": "Project Alpha",
+      "Task": "Development",
+      "Description": "Overlap test",
+      "Start Time": "10:00",
+      "End Time": "12:00"
+    },
+    {
+      "TestMethod": "verifyWeeklySwipeNavigation",
+      "TestCaseName": "Verify Weekly Swipe Navigation",
+      "TestCaseDescription": "Swipe left and right on weekly view and verify no crash",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    }
+  ]
+}

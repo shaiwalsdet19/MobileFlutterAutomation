@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-07-29T02:34:34 IST" name="Surefire suite" finished-at="2026-07-29T02:35:34 IST" duration-ms="60166">
+    <groups>
+      <group name="regression">
+        <method signature="TaskboxBulkActionFunctional.verifySelectedCountUpdatesInRealTime(java.util.Map)[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" name="verifySelectedCountUpdatesInRealTime" class="com.tests.modules.taskbox.TaskboxBulkActionFunctional"/>
+      </group> <!-- regression -->
+      <group name="taskbox-bulk-action">
+        <method signature="TaskboxBulkActionFunctional.verifySelectedCountUpdatesInRealTime(java.util.Map)[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" name="verifySelectedCountUpdatesInRealTime" class="com.tests.modules.taskbox.TaskboxBulkActionFunctional"/>
+      </group> <!-- taskbox-bulk-action -->
+    </groups>
+    <test started-at="2026-07-29T02:34:34 IST" name="Surefire test" finished-at="2026-07-29T02:35:34 IST" duration-ms="60166">
+      <class name="com.tests.modules.taskbox.TaskboxBulkActionFunctional">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:34:17 IST" name="globalSetup" finished-at="2026-07-29T02:34:34 IST" duration-ms="17456" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalSetup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:34:35 IST" name="setUp" finished-at="2026-07-29T02:34:59 IST" duration-ms="24088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:34:59 IST" name="initPageObjects" finished-at="2026-07-29T02:34:59 IST" depends-on-methods="com.api.framework.mobile.MobileTestBase.setUp" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method signature="verifySelectedCountUpdatesInRealTime(java.util.Map)[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:34:59 IST" name="verifySelectedCountUpdatesInRealTime" description="MOBILE-9181-TC-035 — Selected count label updates in real-time on each checkbox toggle" data-provider="TestRuns" finished-at="2026-07-29T02:35:32 IST" duration-ms="33312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Steps=1. [Both] Select card 1 ? verify '1 selected'\r 2. [Both] Select card 2 ? verify '2 selected'\r 3. [Both] Deselect card 1 ? verify '1 selected', CategoryId=leave_task, Category=edge_case, ExecutionType=Regression, Precondition=1. Manager in bulk-select mode with 5 visible cards, TestCaseId=MOBILE-9181-TC-035, TestCaseName=Selected count label updates in real-time on each checkbox toggle, TestMethod=verifySelectedCountUpdatesInRealTime, DefaultCategoryId=leave_task, Groups=["regression","taskbox-bulk-action"], ExpectedToastPattern=requests approved, CategorySlug=leave_requests, CategoryTileKey=taskbox_category_leave_requests, RequestTypeScreenKey=taskbox_request_type_leave_requests_screen, tenant=mobile14.qa.darwinbox.io, Password=Mobile@1234, BulkActionCount=2, detailWaitSeconds=20, listWaitSeconds=30, Priority=medium, BulkComment=Approved via automation, ExpectedOutcome=Selected count indicator updates in real-time per PRD., SelectedCount=1, CommentSetting=Optional, Employee=manager02, bulkModeWaitSeconds=15, RunMode=Yes, TestCaseType=edge_case, AutomationTargets=taskbox_bulk_selected_count_label; taskbox_bulk_card_checkbox_{taskId}, TestCaseDescription=Selected count indicator updates in real-time per PRD.}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySelectedCountUpdatesInRealTime -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:35:33 IST" name="tearDown" finished-at="2026-07-29T02:35:34 IST" duration-ms="1388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="globalTeardown()[pri:0, instance:com.tests.modules.taskbox.TaskboxBulkActionFunctional@1cbbffcd]" started-at="2026-07-29T02:35:35 IST" name="globalTeardown" finished-at="2026-07-29T02:35:35 IST" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalTeardown -->
+      </class> <!-- com.tests.modules.taskbox.TaskboxBulkActionFunctional -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

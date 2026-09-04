@@ -1,0 +1,2708 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 16, 2026 02:13:38 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="skip" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAirplaneModeBlocksDownloadThenSucceedsOnRetry</p>
+            <p class="text-sm">
+              <span>2:13:38 PM</span> / <span>00:00:00:011</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyAirplaneModeBlocksDownloadThenSucceedsOnRetry</h5>
+<span class='badge badge-success'>07.16.2026 2:13:38 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:13:38 PM</span>
+<span class='badge badge-default'>00:00:00:011</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:13:38 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBackFromForm16ViewerReturnsToTabs</p>
+            <p class="text-sm">
+              <span>2:14:01 PM</span> / <span>00:00:28:947</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyBackFromForm16ViewerReturnsToTabs</h5>
+<span class='badge badge-success'>07.16.2026 2:14:01 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:14:30 PM</span>
+<span class='badge badge-default'>00:00:28:947</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:14:28 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-039: Form 16A viewer should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:14:28 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-039: Form 16A viewer should open expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyBackFromForm16ViewerReturnsToTabs(CompensationForm16TaxSheets.java:757)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:14:28 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-039: Form 16A viewer should open expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:14:30 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackFromForm16ViewerReturnsToTabs_20260716141428.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackFromForm16ViewerReturnsToTabs_20260716141428.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBackgroundDuringForm16PdfLoadResumes</p>
+            <p class="text-sm">
+              <span>2:14:53 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyBackgroundDuringForm16PdfLoadResumes</h5>
+<span class='badge badge-success'>07.16.2026 2:14:53 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:14:53 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:14:53 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCompensationAppTileVisibleOnAlumniLandingPage</p>
+            <p class="text-sm">
+              <span>2:15:17 PM</span> / <span>00:00:04:581</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCompensationAppTileVisibleOnAlumniLandingPage</h5>
+<span class='badge badge-success'>07.16.2026 2:15:17 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:15:21 PM</span>
+<span class='badge badge-default'>00:00:04:581</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:15:19 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-001: Alumni landing page should load on debug build launch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:15:19 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-001: Compensation app tile is visible on Alumni Portal landing page when Payroll module is enabled
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:15:19 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:15:21 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCompensationAppTileVisibleOnAlumniLandingPage_20260716141519.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCompensationAppTileVisibleOnAlumniLandingPage_20260716141519.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCompensationPageIsReadOnly</p>
+            <p class="text-sm">
+              <span>2:15:58 PM</span> / <span>00:00:15:548</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCompensationPageIsReadOnly</h5>
+<span class='badge badge-success'>07.16.2026 2:15:58 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:16:13 PM</span>
+<span class='badge badge-default'>00:00:15:548</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:01 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-016: No TextField on Payslips
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:01 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-016: No Save/Declare on Payslips
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:02 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-016: No TextField on Tax Sheets
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:02 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-016: No Save/Declare on Tax Sheets
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:12 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:16:13 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCompensationPageIsReadOnly_20260716141612.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCompensationPageIsReadOnly_20260716141612.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCompensationTileHiddenWhenPayrollNotEnabled</p>
+            <p class="text-sm">
+              <span>2:16:36 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyCompensationTileHiddenWhenPayrollNotEnabled</h5>
+<span class='badge badge-success'>07.16.2026 2:16:36 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:16:36 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:16:36 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCompensationTileRemovedAfterPayrollDisabled</p>
+            <p class="text-sm">
+              <span>2:16:56 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyCompensationTileRemovedAfterPayrollDisabled</h5>
+<span class='badge badge-success'>07.16.2026 2:16:56 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:16:56 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:16:56 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDownloadForm16PdfForSelectedFy</p>
+            <p class="text-sm">
+              <span>2:17:15 PM</span> / <span>00:02:14:187</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyDownloadForm16PdfForSelectedFy</h5>
+<span class='badge badge-success'>07.16.2026 2:17:15 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:19:30 PM</span>
+<span class='badge badge-default'>00:02:14:187</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:19:28 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element not found: {"keyValueType":"String","keyValueString":"alumni_compensation_home_card_form16a","finderType":"ByValueKey"}
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.parameters.helpsers.FlutterHelpers.clickAction(FlutterHelpers.java:304)
+	at com.pages.alumni.CompensationForm16TaxSheetsPage.openDocumentCard(CompensationForm16TaxSheetsPage.java:231)
+	at com.pages.alumni.CompensationForm16TaxSheetsPage.downloadForm16(CompensationForm16TaxSheetsPage.java:462)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyDownloadForm16PdfForSelectedFy(CompensationForm16TaxSheets.java:211)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:19:28 PM</td>
+        <td>
+          Assertion Message: Element not found: {"keyValueType":"String","keyValueString":"alumni_compensation_home_card_form16a","finderType":"ByValueKey"}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:19:30 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadForm16PdfForSelectedFy_20260716141928.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadForm16PdfForSelectedFy_20260716141928.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDownloadPayslipFromPayslipsTab</p>
+            <p class="text-sm">
+              <span>2:19:56 PM</span> / <span>00:00:13:344</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDownloadPayslipFromPayslipsTab</h5>
+<span class='badge badge-success'>07.16.2026 2:19:56 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:20:09 PM</span>
+<span class='badge badge-default'>00:00:13:344</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:08 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-009: Alumni can download a released payslip PDF from the Payslips tab
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:08 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:09 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadPayslipFromPayslipsTab_20260716142008.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadPayslipFromPayslipsTab_20260716142008.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDownloadTaxSheetPdfForSelectedFy</p>
+            <p class="text-sm">
+              <span>2:20:33 PM</span> / <span>00:00:10:248</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDownloadTaxSheetPdfForSelectedFy</h5>
+<span class='badge badge-success'>07.16.2026 2:20:33 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:20:43 PM</span>
+<span class='badge badge-default'>00:00:10:248</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:42 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-011: Tax Sheet row should be visible before download
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:42 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-011: Alumni downloads Tax Sheet PDF for selected FY without HR dependency
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:42 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:20:43 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadTaxSheetPdfForSelectedFy_20260716142042.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDownloadTaxSheetPdfForSelectedFy_20260716142042.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyEmptyStateWhenNoPayslipsForFy</p>
+            <p class="text-sm">
+              <span>2:21:06 PM</span> / <span>00:00:29:492</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEmptyStateWhenNoPayslipsForFy</h5>
+<span class='badge badge-success'>07.16.2026 2:21:06 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:21:35 PM</span>
+<span class='badge badge-default'>00:00:29:492</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:21:34 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-018: Payslips tab shows empty state: No payslips are available for the selected Financial Year.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:21:34 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:21:35 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyEmptyStateWhenNoPayslipsForFy_20260716142134.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyEmptyStateWhenNoPayslipsForFy_20260716142134.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExpandOffCycleSectionRevealsRows</p>
+            <p class="text-sm">
+              <span>2:22:03 PM</span> / <span>00:00:40:232</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyExpandOffCycleSectionRevealsRows</h5>
+<span class='badge badge-success'>07.16.2026 2:22:03 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:22:43 PM</span>
+<span class='badge badge-default'>00:00:40:232</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:22:42 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-031: Expanding Off-Cycle section reveals off-cycle payslip entries for selected FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:22:42 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:22:43 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExpandOffCycleSectionRevealsRows_20260716142242.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExpandOffCycleSectionRevealsRows_20260716142242.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyFinancialYearDropdownDefaultsToMostRecentFy</p>
+            <p class="text-sm">
+              <span>2:23:07 PM</span> / <span>00:00:05:797</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyFinancialYearDropdownDefaultsToMostRecentFy</h5>
+<span class='badge badge-success'>07.16.2026 2:23:07 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:23:13 PM</span>
+<span class='badge badge-default'>00:00:05:797</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:23:12 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-003: FY dropdown should default to 2026-27
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:23:12 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:23:13 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFinancialYearDropdownDefaultsToMostRecentFy_20260716142312.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFinancialYearDropdownDefaultsToMostRecentFy_20260716142312.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForm16DownloadBlockedWhenOffline</p>
+            <p class="text-sm">
+              <span>2:23:36 PM</span> / <span>00:00:00:004</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyForm16DownloadBlockedWhenOffline</h5>
+<span class='badge badge-success'>07.16.2026 2:23:36 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:23:36 PM</span>
+<span class='badge badge-default'>00:00:00:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:23:36 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForm16PdfViewerRendersPartAAndB</p>
+            <p class="text-sm">
+              <span>2:24:01 PM</span> / <span>00:00:39:285</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyForm16PdfViewerRendersPartAAndB</h5>
+<span class='badge badge-success'>07.16.2026 2:24:01 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:24:40 PM</span>
+<span class='badge badge-default'>00:00:39:285</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:24:39 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-013: Form 16A PDF viewer should render Part A
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:24:39 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-013: Form 16A PDF viewer should render Part A expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyForm16PdfViewerRendersPartAAndB(CompensationForm16TaxSheets.java:283)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:24:39 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-013: Form 16A PDF viewer should render Part A expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:24:40 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16PdfViewerRendersPartAAndB_20260716142439.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16PdfViewerRendersPartAAndB_20260716142439.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForm16TabHiddenWhenNotReleased</p>
+            <p class="text-sm">
+              <span>2:25:03 PM</span> / <span>00:00:08:729</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyForm16TabHiddenWhenNotReleased</h5>
+<span class='badge badge-success'>07.16.2026 2:25:03 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:25:12 PM</span>
+<span class='badge badge-default'>00:00:08:729</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:25:11 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-020: Form 16 tab is not shown when Form 16 is not uploaded or released for the selected FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:25:11 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-020: Form 16 tab is not shown when Form 16 is not uploaded or released for the selected FY expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyForm16TabHiddenWhenNotReleased(CompensationForm16TaxSheets.java:455)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:25:11 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-020: Form 16 tab is not shown when Form 16 is not uploaded or released for the selected FY expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:25:12 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TabHiddenWhenNotReleased_20260716142511.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TabHiddenWhenNotReleased_20260716142511.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForm16TabVisibleWhenForm16Released</p>
+            <p class="text-sm">
+              <span>2:25:36 PM</span> / <span>00:00:07:040</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyForm16TabVisibleWhenForm16Released</h5>
+<span class='badge badge-success'>07.16.2026 2:25:36 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:25:43 PM</span>
+<span class='badge badge-default'>00:00:07:040</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:25:42 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-006: Form 16A and Form 16B cards are shown when Form 16 (Part A + Part B) is uploaded and released for the selected FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:25:42 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:25:43 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TabVisibleWhenForm16Released_20260716142542.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TabVisibleWhenForm16Released_20260716142542.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForm16TitleUpdatesOnFyChange</p>
+            <p class="text-sm">
+              <span>2:26:06 PM</span> / <span>00:00:29:114</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyForm16TitleUpdatesOnFyChange</h5>
+<span class='badge badge-success'>07.16.2026 2:26:06 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:26:35 PM</span>
+<span class='badge badge-default'>00:00:29:114</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:26:34 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-032: Form 16A viewer should load for initial FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:26:34 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-032: Form 16A viewer should load for initial FY expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyForm16TitleUpdatesOnFyChange(CompensationForm16TaxSheets.java:643)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:26:34 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-032: Form 16A viewer should load for initial FY expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:26:35 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TitleUpdatesOnFyChange_20260716142634.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyForm16TitleUpdatesOnFyChange_20260716142634.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyFyChangeUpdatesPayslipsList</p>
+            <p class="text-sm">
+              <span>2:27:01 PM</span> / <span>00:00:22:628</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyFyChangeUpdatesPayslipsList</h5>
+<span class='badge badge-success'>07.16.2026 2:27:01 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:27:24 PM</span>
+<span class='badge badge-default'>00:00:22:628</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:04 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-014: Payslips list should load for FY 2026-27
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:21 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-014: FY dropdown should show 2025-26
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:23 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-014: Payslips list refreshes to show payslips for the newly selected financial year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:23 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-014: Payslips list should reflect FY 2025-26 (off-cycle before=false, after=true)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:23 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:24 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyChangeUpdatesPayslipsList_20260716142723.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyChangeUpdatesPayslipsList_20260716142723.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyFyChangeUpdatesTaxSheetVisibility</p>
+            <p class="text-sm">
+              <span>2:27:46 PM</span> / <span>00:00:11:557</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyFyChangeUpdatesTaxSheetVisibility</h5>
+<span class='badge badge-success'>07.16.2026 2:27:46 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:27:58 PM</span>
+<span class='badge badge-default'>00:00:11:557</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:27:54 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-015: Tax Sheets card should be visible for baseline FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:27:57 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-015: Tax Sheet content or tab visibility updates correctly when financial year is changed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:27:57 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-015: Tax Sheet content or tab visibility updates correctly when financial year is changed expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyFyChangeUpdatesTaxSheetVisibility(CompensationForm16TaxSheets.java:356)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:27:57 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-015: Tax Sheet content or tab visibility updates correctly when financial year is changed expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:27:58 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyChangeUpdatesTaxSheetVisibility_20260716142757.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyChangeUpdatesTaxSheetVisibility_20260716142757.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyFyWithAllDocumentTypesShowsAllTabs</p>
+            <p class="text-sm">
+              <span>2:28:19 PM</span> / <span>00:00:08:910</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyFyWithAllDocumentTypesShowsAllTabs</h5>
+<span class='badge badge-success'>07.16.2026 2:28:19 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:28:28 PM</span>
+<span class='badge badge-default'>00:00:08:910</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:28:27 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-029: Payslips card visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:28:27 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-029: Tax Sheets card visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:28:27 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-029: Form 16A and Form 16B cards visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:28:27 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:28:28 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyWithAllDocumentTypesShowsAllTabs_20260716142827.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyWithAllDocumentTypesShowsAllTabs_20260716142827.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs</p>
+            <p class="text-sm">
+              <span>2:28:52 PM</span> / <span>00:00:08:702</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs</h5>
+<span class='badge badge-success'>07.16.2026 2:28:52 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:29:01 PM</span>
+<span class='badge badge-default'>00:00:08:702</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:00 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-028: Payslips card should be visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:29:00 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-028: Tax Sheets card should be hidden
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:29:00 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-COMP-028: Tax Sheets card should be hidden expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs(CompensationForm16TaxSheets.java:561)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:29:00 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-COMP-028: Tax Sheets card should be hidden expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:29:01 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs_20260716142900.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs_20260716142900.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyKillAndRelaunchRestoresCompensationTile</p>
+            <p class="text-sm">
+              <span>2:29:26 PM</span> / <span>00:00:04:997</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyKillAndRelaunchRestoresCompensationTile</h5>
+<span class='badge badge-success'>07.16.2026 2:29:26 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:29:31 PM</span>
+<span class='badge badge-default'>00:00:04:997</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:29 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-037: Landing page on first launch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:29 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-037: Landing page after relaunch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:30 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-037: After process death and relaunch Compensation tile and navigation remain functional when session persists
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:30 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:29:31 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyKillAndRelaunchRestoresCompensationTile_20260716142930.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyKillAndRelaunchRestoresCompensationTile_20260716142930.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyKillDuringPayslipScrollRecoversOnRelaunch</p>
+            <p class="text-sm">
+              <span>2:29:59 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyKillDuringPayslipScrollRecoversOnRelaunch</h5>
+<span class='badge badge-success'>07.16.2026 2:29:59 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:29:59 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:29:59 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNetworkSwitchDuringTaxSheetDownload</p>
+            <p class="text-sm">
+              <span>2:30:20 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyNetworkSwitchDuringTaxSheetDownload</h5>
+<span class='badge badge-success'>07.16.2026 2:30:20 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:30:20 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:30:20 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyOffCyclePayslipsSectionVisibleWhenDataExists</p>
+            <p class="text-sm">
+              <span>2:30:42 PM</span> / <span>00:00:09:635</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyOffCyclePayslipsSectionVisibleWhenDataExists</h5>
+<span class='badge badge-success'>07.16.2026 2:30:42 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:30:52 PM</span>
+<span class='badge badge-default'>00:00:09:635</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:30:51 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-008: Off-Cycle Payslips section is shown and expandable when off-cycle payslips exist for selected FY
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:30:51 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:30:52 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyOffCyclePayslipsSectionVisibleWhenDataExists_20260716143051.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyOffCyclePayslipsSectionVisibleWhenDataExists_20260716143051.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyOffCycleSectionCollapsedByDefault</p>
+            <p class="text-sm">
+              <span>2:31:14 PM</span> / <span>00:00:09:571</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyOffCycleSectionCollapsedByDefault</h5>
+<span class='badge badge-success'>07.16.2026 2:31:14 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:31:23 PM</span>
+<span class='badge badge-default'>00:00:09:571</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:22 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-030: Off-cycle header should be visible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:22 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-030: Off-Cycle Payslips section is collapsed by default on initial Payslips tab load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:22 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:23 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyOffCycleSectionCollapsedByDefault_20260716143122.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyOffCycleSectionCollapsedByDefault_20260716143122.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPayslipDownloadBlockedWhenOffline</p>
+            <p class="text-sm">
+              <span>2:31:47 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyPayslipDownloadBlockedWhenOffline</h5>
+<span class='badge badge-success'>07.16.2026 2:31:47 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:31:47 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:31:47 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPayslipsListDisplaysReleasedPayslipsForFy</p>
+            <p class="text-sm">
+              <span>2:32:10 PM</span> / <span>00:00:09:711</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPayslipsListDisplaysReleasedPayslipsForFy</h5>
+<span class='badge badge-success'>07.16.2026 2:32:10 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:32:19 PM</span>
+<span class='badge badge-default'>00:00:09:711</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:18 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-007: Monthly payslip list displays all released payslips for the selected financial year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:18 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:19 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyPayslipsListDisplaysReleasedPayslipsForFy_20260716143218.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyPayslipsListDisplaysReleasedPayslipsForFy_20260716143218.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPayslipsTabVisibleOnCompensationPage</p>
+            <p class="text-sm">
+              <span>2:32:42 PM</span> / <span>00:00:05:647</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPayslipsTabVisibleOnCompensationPage</h5>
+<span class='badge badge-success'>07.16.2026 2:32:42 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:32:48 PM</span>
+<span class='badge badge-default'>00:00:05:647</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:47 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-004: Payslips tab is displayed on Compensation app alongside other document tabs
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:47 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:32:48 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyPayslipsTabVisibleOnCompensationPage_20260716143247.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyPayslipsTabVisibleOnCompensationPage_20260716143247.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRapidFyChangeDoesNotCrash</p>
+            <p class="text-sm">
+              <span>2:33:11 PM</span> / <span>00:02:16:857</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyRapidFyChangeDoesNotCrash</h5>
+<span class='badge badge-success'>07.16.2026 2:33:11 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:35:28 PM</span>
+<span class='badge badge-default'>00:02:16:857</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:35:27 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element not found: {"keyValueType":"String","keyValueString":"alumni_compensation_home_card_payslips","finderType":"ByValueKey"}
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.parameters.helpsers.FlutterHelpers.clickAction(FlutterHelpers.java:304)
+	at com.pages.alumni.CompensationForm16TaxSheetsPage.openDocumentCard(CompensationForm16TaxSheetsPage.java:231)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyRapidFyChangeDoesNotCrash(CompensationForm16TaxSheets.java:671)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:35:27 PM</td>
+        <td>
+          Assertion Message: Element not found: {"keyValueType":"String","keyValueString":"alumni_compensation_home_card_payslips","finderType":"ByValueKey"}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:35:28 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyRapidFyChangeDoesNotCrash_20260716143527.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyRapidFyChangeDoesNotCrash_20260716143527.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRotationPreservesTabAndFyState</p>
+            <p class="text-sm">
+              <span>2:35:49 PM</span> / <span>00:00:00:003</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyRotationPreservesTabAndFyState</h5>
+<span class='badge badge-success'>07.16.2026 2:35:49 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:35:49 PM</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:35:49 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySelectNewestFyInDropdown</p>
+            <p class="text-sm">
+              <span>2:36:11 PM</span> / <span>00:00:05:945</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySelectNewestFyInDropdown</h5>
+<span class='badge badge-success'>07.16.2026 2:36:11 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:36:17 PM</span>
+<span class='badge badge-default'>00:00:05:945</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:16 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-027: Newest financial year selection loads correct document tabs and content
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:16 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:17 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectNewestFyInDropdown_20260716143616.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectNewestFyInDropdown_20260716143616.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySelectOldestAvailableFyInDropdown</p>
+            <p class="text-sm">
+              <span>2:36:39 PM</span> / <span>00:00:09:026</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySelectOldestAvailableFyInDropdown</h5>
+<span class='badge badge-success'>07.16.2026 2:36:39 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:36:48 PM</span>
+<span class='badge badge-default'>00:00:09:026</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:46 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-026: Oldest available FY can be selected and content loads per document availability rules for that year
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:46 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:36:48 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectOldestAvailableFyInDropdown_20260716143646.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectOldestAvailableFyInDropdown_20260716143646.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySessionExpiredRedirectsToLoginFromCompensation</p>
+            <p class="text-sm">
+              <span>2:37:15 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifySessionExpiredRedirectsToLoginFromCompensation</h5>
+<span class='badge badge-success'>07.16.2026 2:37:15 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:37:15 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:37:15 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyTappingCompensationTileOpensCompensationView</p>
+            <p class="text-sm">
+              <span>2:37:39 PM</span> / <span>00:00:05:397</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyTappingCompensationTileOpensCompensationView</h5>
+<span class='badge badge-success'>07.16.2026 2:37:39 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:37:44 PM</span>
+<span class='badge badge-default'>00:00:05:397</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:43 PM</td>
+        <td>
+          Assertion - MOB-ALUM-COMP-002: Tapping Compensation tile navigates to Compensation app view with FY dropdown at top-left
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:43 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:44 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyTappingCompensationTileOpensCompensationView_20260716143743.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyTappingCompensationTileOpensCompensationView_20260716143743.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="37"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyTaxSheetDownloadBlockedWhenOffline</p>
+            <p class="text-sm">
+              <span>2:38:41 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyTaxSheetDownloadBlockedWhenOffline</h5>
+<span class='badge badge-success'>07.16.2026 2:38:41 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:38:41 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:38:41 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="38"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyTaxSheetPdfViewerRendersDocument</p>
+            <p class="text-sm">
+              <span>2:39:35 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyTaxSheetPdfViewerRendersDocument</h5>
+<span class='badge badge-success'>07.16.2026 2:39:35 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:39:35 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:39:35 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="39"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyTaxSheetsTabHiddenWhenNoTaxSheetForFy</p>
+            <p class="text-sm">
+              <span>2:40:29 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyTaxSheetsTabHiddenWhenNoTaxSheetForFy</h5>
+<span class='badge badge-success'>07.16.2026 2:40:29 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:40:29 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:40:29 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyTaxSheetsTabVisibleWhenTaxSheetExists</p>
+            <p class="text-sm">
+              <span>2:41:26 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyTaxSheetsTabVisibleWhenTaxSheetExists</h5>
+<span class='badge badge-success'>07.16.2026 2:41:26 PM</span>
+<span class='badge badge-danger'>07.16.2026 2:41:26 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:41:26 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>6</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>6 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:14:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyBackFromForm16ViewerReturnsToTabs</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:24:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyForm16PdfViewerRendersPartAAndB</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:25:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>verifyForm16TabHiddenWhenNotReleased</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:26:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyForm16TitleUpdatesOnFyChange</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:27:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyFyChangeUpdatesTaxSheetVisibility</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:28:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:17:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyDownloadForm16PdfForSelectedFy</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:33:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>verifyRapidFyChangeDoesNotCrash</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 16, 2026 02:13:38 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 16, 2026 02:41:26 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>18</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>8</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='45%'>
+<b>18</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='20%'><b>8</b> tests failed,
+<b>14</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='61%'><b>69</b> events passed</small></div>
+<div>
+<small data-tooltip='26%'><b>30</b> events failed,
+<b data-tooltip='%'>14</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"verifyAirplaneModeBlocksDownloadThenSucceedsOnRetry":0.011,"verifyBackFromForm16ViewerReturnsToTabs":28.947,"verifyBackgroundDuringForm16PdfLoadResumes":0,"verifyCompensationAppTileVisibleOnAlumniLandingPage":4.581,"verifyCompensationPageIsReadOnly":15.548,"verifyCompensationTileHiddenWhenPayrollNotEnabled":0.002,"verifyCompensationTileRemovedAfterPayrollDisabled":0,"verifyDownloadForm16PdfForSelectedFy":134.187,"verifyDownloadPayslipFromPayslipsTab":13.344,"verifyDownloadTaxSheetPdfForSelectedFy":10.248,"verifyEmptyStateWhenNoPayslipsForFy":29.492,"verifyExpandOffCycleSectionRevealsRows":40.232,"verifyFinancialYearDropdownDefaultsToMostRecentFy":5.797,"verifyForm16DownloadBlockedWhenOffline":0.004,"verifyForm16PdfViewerRendersPartAAndB":39.285,"verifyForm16TabHiddenWhenNotReleased":8.729,"verifyForm16TabVisibleWhenForm16Released":7.04,"verifyForm16TitleUpdatesOnFyChange":29.114,"verifyFyChangeUpdatesPayslipsList":22.628,"verifyFyChangeUpdatesTaxSheetVisibility":11.557,"verifyFyWithAllDocumentTypesShowsAllTabs":8.91,"verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs":8.702,"verifyKillAndRelaunchRestoresCompensationTile":4.997,"verifyKillDuringPayslipScrollRecoversOnRelaunch":0.002,"verifyNetworkSwitchDuringTaxSheetDownload":0,"verifyOffCyclePayslipsSectionVisibleWhenDataExists":9.635,"verifyOffCycleSectionCollapsedByDefault":9.571,"verifyPayslipDownloadBlockedWhenOffline":0.002,"verifyPayslipsListDisplaysReleasedPayslipsForFy":9.711,"verifyPayslipsTabVisibleOnCompensationPage":5.647,"verifyRapidFyChangeDoesNotCrash":136.857,"verifyRotationPreservesTabAndFyState":0.003,"verifySelectNewestFyInDropdown":5.945,"verifySelectOldestAvailableFyInDropdown":9.026,"verifySessionExpiredRedirectsToLoginFromCompensation":0,"verifyTappingCompensationTileOpensCompensationView":5.397,"verifyTaxSheetDownloadBlockedWhenOffline":0,"verifyTaxSheetPdfViewerRendersDocument":0,"verifyTaxSheetsTabHiddenWhenNoTaxSheetForFy":0,"verifyTaxSheetsTabVisibleWhenTaxSheetExists":0
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 18,
+failParent: 8,
+warningParent: 0,
+skipParent: 14,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 69,
+failEvents: 30,
+warningEvents: 0,
+skipEvents: 14,
+infoEvents: 0
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

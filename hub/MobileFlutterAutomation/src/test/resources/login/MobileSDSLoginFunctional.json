@@ -1,0 +1,58 @@
+{
+  "module": "login",
+  "sourceJira": "MOBILE-SDS-Login",
+  "sourceFigma": "https://www.figma.com/design/0T4GO3HxfIaOF3teCCBLMb/Mobile-SDS-Implementation",
+  "generatedAt": "2026-05-31",
+  "environment": {
+    "tenantUrl": "https://mobile2.qa.darwinbox.io",
+    "adminUsername": "008",
+    "adminPassword": "Az@1",
+    "userUsername": "901",
+    "userPassword": "Az@1",
+    "officeMobile": "+91 6387724714",
+    "email": "test.mobile@darwinbox.io"
+  },
+  "testcases": [
+    {
+      "TestMethod": "verifyFreshInstallRoutesToOnboardingS11",
+      "TestCaseId": "TC-001",
+      "TestCaseName": "Splash Screen routes brand-new user to Onboarding Screen S1.1 on cold launch",
+      "TestCaseDescription": "Fresh install with no session and no saved preferences: cold launch shows Splash, then routes to Onboarding S1.1 (not Recurring Login, not Dashboard).",
+      "TestCaseType": "happy_path",
+      "Priority": "high",
+      "ChangeId": "CH-001",
+      "Groups": ["smoke", "regression", "sds-login"],
+      "AppState": "Fresh install — no session, no saved preferences",
+      "LaunchType": "Cold launch (app not in memory)",
+      "requireClearAppData": "true",
+      "tenantUrl": "mobile2.qa.darwinbox.io",
+      "splashWaitSeconds": "15",
+      "onboardingWaitSeconds": "30",
+      "negativeCheckSeconds": "5",
+      "ExpectedDestination": "Onboarding Screen S1.1",
+      "ExpectedOutcome": "Splash appears on cold launch; routing completes; user lands on Onboarding S1.1 — not Recurring Login, not Dashboard",
+      "AssertionsSummary": "Splash Screen appears on cold launch; routing evaluation completes without error; destination is Onboarding S1.1; no crash or blank screen"
+    },
+    {
+      "TestMethod": "verifyReturningUserRoutesToRecurringLoginScreen7",
+      "TestCaseId": "TC-002",
+      "TestCaseName": "Splash Screen routes a returning user (no active session but saved preferences exist) to Recurring Login Screen 7 on cold launch",
+      "TestCaseDescription": "No active session but saved preferences exist: cold launch shows Splash, then routes to Recurring Login / Last Login Screen 7 (not Onboarding, not Dashboard).",
+      "TestCaseType": "happy_path",
+      "Priority": "high",
+      "ChangeId": "CH-001",
+      "Groups": ["smoke", "regression", "sds-login"],
+      "AppState": "No active session; saved preferences present from prior login with Remember Me checked",
+      "LaunchType": "Cold launch (app not in memory)",
+      "requireClearAppData": "false",
+      "tenantUrl": "mobile2.qa.darwinbox.io",
+      "splashWaitSeconds": "10",
+      "recurringLoginWaitSeconds": "30",
+      "uiCheckSeconds": "10",
+      "negativeCheckSeconds": "5",
+      "ExpectedDestination": "Recurring Login Screen 7",
+      "ExpectedOutcome": "Splash appears; destination is Recurring Login Screen 7 — not Onboarding, not Dashboard; Screen 7 shows tenant logo, title, saved account card, biometric CTA (platform-specific), and 'Other Sign In Options' CTA",
+      "AssertionsSummary": "Destination is Recurring Login Screen 7; onboarding not shown; dashboard not shown; core Screen 7 UI elements displayed"
+    }
+  ]
+}

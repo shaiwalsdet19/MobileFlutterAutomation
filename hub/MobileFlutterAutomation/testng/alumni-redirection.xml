@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Alumni External Menu Redirection - Full Suite">
+    <test name="MOB-ALUM-RED-001 to RED-034">
+        <groups>
+            <run>
+                <include name="alumni-redirection"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.tests.modules.alumni.ExternalMenuRedirection"/>
+        </classes>
+    </test>
+</suite>

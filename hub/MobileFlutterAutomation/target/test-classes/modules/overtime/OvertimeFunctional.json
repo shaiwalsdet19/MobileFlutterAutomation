@@ -1,0 +1,49 @@
+{
+  "module": "overtime",
+  "testcases": [
+    {
+      "TestMethod": "applyOvertimeRequest",
+      "TestCaseName": "Apply Overtime Request",
+      "TestCaseDescription": "Happy flow: submit overtime request and verify confirmation",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Day": "20",
+      "OT Type": "Weekend Overtime",
+      "Start Time": "18:00",
+      "End Time": "21:00",
+      "Reason": "Critical deployment support - automation test",
+      "Compensatory": "true"
+    },
+    {
+      "TestMethod": "verifyEmptyOvertimeValidations",
+      "TestCaseName": "Verify Empty Overtime Validations",
+      "TestCaseDescription": "Submit empty overtime form and verify required field errors",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    },
+    {
+      "TestMethod": "verifyOvertimeDuplicateError",
+      "TestCaseName": "Verify Overtime Duplicate Error",
+      "TestCaseDescription": "Apply overtime on already-applied date and verify overlap error",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Day": "20",
+      "OT Type": "Weekend Overtime",
+      "Start Time": "18:00",
+      "End Time": "21:00",
+      "Reason": "Duplicate test",
+      "Compensatory": "false"
+    },
+    {
+      "TestMethod": "verifyCompensatoryCheckbox",
+      "TestCaseName": "Verify Compensatory Checkbox",
+      "TestCaseDescription": "Verify compensatory leave checkbox can be checked",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    }
+  ]
+}

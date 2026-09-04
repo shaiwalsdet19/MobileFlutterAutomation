@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="HR App - Full Regression Suite">
+    <test name="Leave Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.framework.mobile.modules.leave.LeaveFunctional"/>
+        </classes>
+    </test>
+    <test name="Timesheet Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.framework.mobile.modules.timesheet.TimesheetFunctional"/>
+        </classes>
+    </test>
+    <test name="Overtime Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.framework.mobile.modules.overtime.OvertimeFunctional"/>
+        </classes>
+    </test>
+    <test name="HR Documents Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.framework.mobile.modules.hrdocuments.HRDocumentsFunctional"/>
+        </classes>
+    </test>
+    <test name="HR Letters Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.api.framework.mobile.modules.hrletters.HRLettersFunctional"/>
+        </classes>
+    </test>
+    <test name="Taskbox Bulk Action Regression">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.tests.modules.taskbox.TaskboxBulkActionFunctional"/>
+        </classes>
+    </test>
+</suite>

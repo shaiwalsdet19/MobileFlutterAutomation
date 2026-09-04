@@ -1,0 +1,55 @@
+{
+  "module": "hrdocuments",
+  "testcases": [
+    {
+      "TestMethod": "verifyDocumentsListLoads",
+      "TestCaseName": "Verify Documents List Loads",
+      "TestCaseDescription": "Verify HR Documents list loads with at least one document",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    },
+    {
+      "TestMethod": "searchDocumentByKeyword",
+      "TestCaseName": "Search Document By Keyword",
+      "TestCaseDescription": "Search for a document by keyword and verify results appear",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Search Keyword": "Policy"
+    },
+    {
+      "TestMethod": "verifyNoResultsForInvalidSearch",
+      "TestCaseName": "Verify No Results For Invalid Search",
+      "TestCaseDescription": "Search non-existent keyword and verify no results message",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Search Keyword": "XYZNOTEXIST999"
+    },
+    {
+      "TestMethod": "verifyDocumentDetailExpandCollapse",
+      "TestCaseName": "Verify Document Detail Expand Collapse",
+      "TestCaseDescription": "Verify document detail section expands and collapses via chevron",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    },
+    {
+      "TestMethod": "downloadDocument",
+      "TestCaseName": "Download Document",
+      "TestCaseDescription": "Download first document and verify success toast",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    },
+    {
+      "TestMethod": "scrollDocumentList",
+      "TestCaseName": "Scroll Document List",
+      "TestCaseDescription": "Scroll through document list and verify no crash",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io"
+    }
+  ]
+}

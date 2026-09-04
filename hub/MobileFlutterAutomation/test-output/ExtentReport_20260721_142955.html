@@ -1,0 +1,2120 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 21, 2026 02:29:55 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAdminAllowedInShowsOnlyAlumniPortalOption</p>
+            <p class="text-sm">
+              <span>2:29:56 PM</span> / <span>00:00:30:660</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyAdminAllowedInShowsOnlyAlumniPortalOption</h5>
+<span class='badge badge-success'>07.21.2026 2:29:56 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:30:26 PM</span>
+<span class='badge badge-default'>00:00:30:660</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:30:25 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:30:26 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAdminAllowedInShowsOnlyAlumniPortalOption_20260721143025.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAdminAllowedInShowsOnlyAlumniPortalOption_20260721143025.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAirplaneModeBlocksRedirectThenSucceedsOnRetry</p>
+            <p class="text-sm">
+              <span>2:30:48 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyAirplaneModeBlocksRedirectThenSucceedsOnRetry</h5>
+<span class='badge badge-success'>07.21.2026 2:30:48 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:30:48 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:30:48 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAlumniLandingPageDisplaysExternalMenuTile</p>
+            <p class="text-sm">
+              <span>2:31:06 PM</span> / <span>00:00:35:941</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyAlumniLandingPageDisplaysExternalMenuTile</h5>
+<span class='badge badge-success'>07.21.2026 2:31:06 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:31:42 PM</span>
+<span class='badge badge-default'>00:00:35:941</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:10 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-001: Debug build should open Alumni landing page on app launch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:41 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-001: External menu tile should appear on Alumni landing page with label 'Darwinbox' and visible icon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:41 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:31:42 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAlumniLandingPageDisplaysExternalMenuTile_20260721143141.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAlumniLandingPageDisplaysExternalMenuTile_20260721143141.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAlumniOnlyExternalMenuTileNotShownOnEmployeeLandingPage</p>
+            <p class="text-sm">
+              <span>2:31:59 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyAlumniOnlyExternalMenuTileNotShownOnEmployeeLandingPage</h5>
+<span class='badge badge-success'>07.21.2026 2:31:59 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:31:59 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:31:59 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBackFromBrowserReturnsToAlumniLanding</p>
+            <p class="text-sm">
+              <span>2:32:16 PM</span> / <span>00:01:14:268</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBackFromBrowserReturnsToAlumniLanding</h5>
+<span class='badge badge-success'>07.21.2026 2:32:16 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:33:30 PM</span>
+<span class='badge badge-default'>00:01:14:268</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:33:29 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-032: Back navigation should return to Alumni landing page
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:33:29 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:33:30 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackFromBrowserReturnsToAlumniLanding_20260721143329.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackFromBrowserReturnsToAlumniLanding_20260721143329.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBackgroundDuringRedirectionResumes</p>
+            <p class="text-sm">
+              <span>2:33:48 PM</span> / <span>00:00:40:370</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBackgroundDuringRedirectionResumes</h5>
+<span class='badge badge-success'>07.21.2026 2:33:48 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:34:28 PM</span>
+<span class='badge badge-default'>00:00:40:370</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:34:27 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-026: App should survive background during redirection
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:34:27 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:34:28 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackgroundDuringRedirectionResumes_20260721143427.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackgroundDuringRedirectionResumes_20260721143427.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBrokenIconShowsPlaceholder</p>
+            <p class="text-sm">
+              <span>2:34:46 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyBrokenIconShowsPlaceholder</h5>
+<span class='badge badge-success'>07.21.2026 2:34:46 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:34:46 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:34:46 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyConfigUpdateOnBackgroundResumeShowsNewTile</p>
+            <p class="text-sm">
+              <span>2:35:04 PM</span> / <span>00:02:00:945</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyConfigUpdateOnBackgroundResumeShowsNewTile</h5>
+<span class='badge badge-success'>07.21.2026 2:35:04 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:37:05 PM</span>
+<span class='badge badge-default'>00:02:00:945</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:04 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-023: New tile should appear after background + web create
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:04 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:05 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyConfigUpdateOnBackgroundResumeShowsNewTile_20260721143704.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyConfigUpdateOnBackgroundResumeShowsNewTile_20260721143704.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDeeplinkFallbackWhenTargetAppNotInstalled</p>
+            <p class="text-sm">
+              <span>2:37:23 PM</span> / <span>00:00:34:668</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeeplinkFallbackWhenTargetAppNotInstalled</h5>
+<span class='badge badge-success'>07.21.2026 2:37:23 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:37:57 PM</span>
+<span class='badge badge-default'>00:00:34:668</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:56 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:37:57 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDeeplinkFallbackWhenTargetAppNotInstalled_20260721143756.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDeeplinkFallbackWhenTargetAppNotInstalled_20260721143756.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDefaultAlumniAppsVisibleAlongsideExternalMenuTile</p>
+            <p class="text-sm">
+              <span>2:38:14 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyDefaultAlumniAppsVisibleAlongsideExternalMenuTile</h5>
+<span class='badge badge-success'>07.21.2026 2:38:14 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:38:14 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:38:14 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDoubleTapDoesNotOpenDuplicateSessions</p>
+            <p class="text-sm">
+              <span>2:38:31 PM</span> / <span>00:01:17:724</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDoubleTapDoesNotOpenDuplicateSessions</h5>
+<span class='badge badge-success'>07.21.2026 2:38:31 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:39:49 PM</span>
+<span class='badge badge-default'>00:01:17:724</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:39:48 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-015: Double tap should not open duplicate redirection sessions
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:39:48 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:39:49 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDoubleTapDoesNotOpenDuplicateSessions_20260721143948.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyDoubleTapDoesNotOpenDuplicateSessions_20260721143948.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyEmployeeOnlyTileNotOnAlumniPortal</p>
+            <p class="text-sm">
+              <span>2:40:09 PM</span> / <span>00:01:52:110</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEmployeeOnlyTileNotOnAlumniPortal</h5>
+<span class='badge badge-success'>07.21.2026 2:40:09 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:42:01 PM</span>
+<span class='badge badge-default'>00:01:52:110</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:42:00 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:42:01 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyEmployeeOnlyTileNotOnAlumniPortal_20260721144200.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyEmployeeOnlyTileNotOnAlumniPortal_20260721144200.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyEmptyAppsListWhenNoAppsAndNoRedirections</p>
+            <p class="text-sm">
+              <span>2:42:17 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyEmptyAppsListWhenNoAppsAndNoRedirections</h5>
+<span class='badge badge-success'>07.21.2026 2:42:17 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:42:17 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:42:17 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExpiredSessionRedirectsToLoginOnTileTap</p>
+            <p class="text-sm">
+              <span>2:42:34 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyExpiredSessionRedirectsToLoginOnTileTap</h5>
+<span class='badge badge-success'>07.21.2026 2:42:34 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:42:34 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:42:34 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExternalMenuTileOpensConfiguredUrl</p>
+            <p class="text-sm">
+              <span>2:42:52 PM</span> / <span>00:00:40:381</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyExternalMenuTileOpensConfiguredUrl</h5>
+<span class='badge badge-success'>07.21.2026 2:42:52 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:43:33 PM</span>
+<span class='badge badge-default'>00:00:40:381</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:42:54 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-002: Debug build should open Alumni landing page on app launch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:43:25 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-002: External menu tile should be visible before tap
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:43:32 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-002: Tapping external menu tile should open configured URL: https://www.darwinbox.com (actual: https://darwinbox.com/)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:43:32 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:43:33 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalMenuTileOpensConfiguredUrl_20260721144332.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalMenuTileOpensConfiguredUrl_20260721144332.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExternalMenuTileTriggersAndroidDeeplink</p>
+            <p class="text-sm">
+              <span>2:43:53 PM</span> / <span>00:03:22:284</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyExternalMenuTileTriggersAndroidDeeplink</h5>
+<span class='badge badge-success'>07.21.2026 2:43:53 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:47:16 PM</span>
+<span class='badge badge-default'>00:03:22:284</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:47:15 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-003: Tile tap should open Android package 'com.google.android.youtube' via deeplink, or open fallback URL when app is unavailable
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:47:15 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOB-ALUM-RED-003: Tile tap should open Android package 'com.google.android.youtube' via deeplink, or open fallback URL when app is unavailable expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.alumni.ExternalMenuRedirection.verifyExternalMenuTileTriggersAndroidDeeplink(ExternalMenuRedirection.java:210)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:47:15 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOB-ALUM-RED-003: Tile tap should open Android package 'com.google.android.youtube' via deeplink, or open fallback URL when app is unavailable expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:47:16 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalMenuTileTriggersAndroidDeeplink_20260721144715.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalMenuTileTriggersAndroidDeeplink_20260721144715.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExternalTileHiddenAfterAdminDeletesEntry</p>
+            <p class="text-sm">
+              <span>2:47:33 PM</span> / <span>00:04:21:115</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyExternalTileHiddenAfterAdminDeletesEntry</h5>
+<span class='badge badge-success'>07.21.2026 2:47:33 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:51:54 PM</span>
+<span class='badge badge-default'>00:04:21:115</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:49:26 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-016: Tile should be visible after web create and pull-to-refresh
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:53 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:54 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalTileHiddenAfterAdminDeletesEntry_20260721145153.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalTileHiddenAfterAdminDeletesEntry_20260721145153.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyExternalTilesPersistAfterColdLaunch</p>
+            <p class="text-sm">
+              <span>2:52:11 PM</span> / <span>00:00:35:375</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyExternalTilesPersistAfterColdLaunch</h5>
+<span class='badge badge-success'>07.21.2026 2:52:11 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:52:46 PM</span>
+<span class='badge badge-default'>00:00:35:375</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:52:45 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-007: External tile should persist after cold launch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:52:45 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:52:46 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalTilesPersistAfterColdLaunch_20260721145245.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyExternalTilesPersistAfterColdLaunch_20260721145245.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyInvalidUrlShowsErrorOnTileTap</p>
+            <p class="text-sm">
+              <span>2:53:03 PM</span> / <span>00:00:35:218</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyInvalidUrlShowsErrorOnTileTap</h5>
+<span class='badge badge-success'>07.21.2026 2:53:03 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:53:38 PM</span>
+<span class='badge badge-default'>00:00:35:218</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:53:37 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.IllegalStateException: Extra menu update failed for resourceId=a6a566d0d59521650254959 HTTP 500
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.web.ExtraMenuSettingsApi.updateExtraMenu(ExtraMenuSettingsApi.java:148)
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.web.ExtraMenuSettingsWeb.updateExtraMenu(ExtraMenuSettingsWeb.java:60)
+	at com.tests.modules.alumni.ExternalMenuRedirection.verifyInvalidUrlShowsErrorOnTileTap(ExternalMenuRedirection.java:551)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:53:37 PM</td>
+        <td>
+          Assertion Message: Extra menu update failed for resourceId=a6a566d0d59521650254959 HTTP 500
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:53:38 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyInvalidUrlShowsErrorOnTileTap_20260721145337.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyInvalidUrlShowsErrorOnTileTap_20260721145337.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLockScreenDuringRedirection</p>
+            <p class="text-sm">
+              <span>2:53:58 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyLockScreenDuringRedirection</h5>
+<span class='badge badge-success'>07.21.2026 2:53:58 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:53:58 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:53:58 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLongMenuLabelRendersCorrectly</p>
+            <p class="text-sm">
+              <span>2:54:16 PM</span> / <span>00:01:24:443</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLongMenuLabelRendersCorrectly</h5>
+<span class='badge badge-success'>07.21.2026 2:54:16 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:55:40 PM</span>
+<span class='badge badge-default'>00:01:24:443</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:55:39 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-018: Long menu label should render on apps list
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:55:39 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:55:40 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLongMenuLabelRendersCorrectly_20260721145539.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLongMenuLabelRendersCorrectly_20260721145539.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLowMemoryKillRestoresLandingPageTiles</p>
+            <p class="text-sm">
+              <span>2:55:57 PM</span> / <span>00:00:35:482</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLowMemoryKillRestoresLandingPageTiles</h5>
+<span class='badge badge-success'>07.21.2026 2:55:57 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:56:33 PM</span>
+<span class='badge badge-default'>00:00:35:482</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:32 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-030: External tiles should restore after force-stop relaunch
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:32 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:33 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLowMemoryKillRestoresLandingPageTiles_20260721145632.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLowMemoryKillRestoresLandingPageTiles_20260721145632.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyMalformedDeeplinkDoesNotCrashApp</p>
+            <p class="text-sm">
+              <span>2:56:50 PM</span> / <span>00:00:00:000</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyMalformedDeeplinkDoesNotCrashApp</h5>
+<span class='badge badge-success'>07.21.2026 2:56:50 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:56:50 PM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:56:50 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyMaximumExternalTilesOnLandingPage</p>
+            <p class="text-sm">
+              <span>2:57:07 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyMaximumExternalTilesOnLandingPage</h5>
+<span class='badge badge-success'>07.21.2026 2:57:07 PM</span>
+<span class='badge badge-danger'>07.21.2026 2:57:07 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:57:07 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage</p>
+            <p class="text-sm">
+              <span>2:57:24 PM</span> / <span>00:02:51:158</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage</h5>
+<span class='badge badge-success'>07.21.2026 2:57:24 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:00:15 PM</span>
+<span class='badge badge-default'>00:02:51:158</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:14 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-006: External redirection tiles [Darwinbox, google] should be visible on Alumni landing page after web settings
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:14 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:00:15 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage_20260721150014.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage_20260721150014.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNetworkSwitchDuringRedirection</p>
+            <p class="text-sm">
+              <span>3:00:33 PM</span> / <span>00:00:00:006</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyNetworkSwitchDuringRedirection</h5>
+<span class='badge badge-success'>07.21.2026 3:00:33 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:00:33 PM</span>
+<span class='badge badge-default'>00:00:00:006</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:00:33 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNetworkUnavailableShowsErrorOnTileTap</p>
+            <p class="text-sm">
+              <span>3:00:51 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyNetworkUnavailableShowsErrorOnTileTap</h5>
+<span class='badge badge-success'>07.21.2026 3:00:51 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:00:51 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:00:51 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured</p>
+            <p class="text-sm">
+              <span>3:01:09 PM</span> / <span>00:00:35:089</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured</h5>
+<span class='badge badge-success'>07.21.2026 3:01:09 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:01:44 PM</span>
+<span class='badge badge-default'>00:00:35:089</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:01:43 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.IllegalStateException: Extra menu update failed for resourceId=a6a566d0d59521650254959 HTTP 500
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.web.ExtraMenuSettingsApi.updateExtraMenu(ExtraMenuSettingsApi.java:148)
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.web.ExtraMenuSettingsWeb.updateExtraMenu(ExtraMenuSettingsWeb.java:60)
+	at com.tests.modules.alumni.ExternalMenuRedirection.verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured(ExternalMenuRedirection.java:456)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:01:43 PM</td>
+        <td>
+          Assertion Message: Extra menu update failed for resourceId=a6a566d0d59521650254959 HTTP 500
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:01:44 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured_20260721150143.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured_20260721150143.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNotificationOverlayDuringTileTap</p>
+            <p class="text-sm">
+              <span>3:02:01 PM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyNotificationOverlayDuringTileTap</h5>
+<span class='badge badge-success'>07.21.2026 3:02:01 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:02:01 PM</span>
+<span class='badge badge-default'>00:00:00:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:02:01 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyOnlyAlumniPortalHiddenWhenSkuDisabled</p>
+            <p class="text-sm">
+              <span>3:02:18 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyOnlyAlumniPortalHiddenWhenSkuDisabled</h5>
+<span class='badge badge-success'>07.21.2026 3:02:18 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:02:18 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:02:18 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRotationPreservesExternalTiles</p>
+            <p class="text-sm">
+              <span>3:02:37 PM</span> / <span>00:01:05:433</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRotationPreservesExternalTiles</h5>
+<span class='badge badge-success'>07.21.2026 3:02:37 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:03:42 PM</span>
+<span class='badge badge-default'>00:01:05:433</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:41 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-028: Tile should remain visible in portrait and landscape
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:41 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:03:42 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyRotationPreservesExternalTiles_20260721150341.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyRotationPreservesExternalTiles_20260721150341.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySpecialCharactersInMenuLabel</p>
+            <p class="text-sm">
+              <span>3:03:59 PM</span> / <span>00:01:37:539</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySpecialCharactersInMenuLabel</h5>
+<span class='badge badge-success'>07.21.2026 3:03:59 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:05:37 PM</span>
+<span class='badge badge-default'>00:01:37:539</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:05:36 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-020: Special characters in label should display correctly
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:05:36 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:05:37 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySpecialCharactersInMenuLabel_20260721150536.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySpecialCharactersInMenuLabel_20260721150536.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySplitScreenPreservesTileVisibility</p>
+            <p class="text-sm">
+              <span>3:05:53 PM</span> / <span>00:00:00:003</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifySplitScreenPreservesTileVisibility</h5>
+<span class='badge badge-success'>07.21.2026 3:05:53 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:05:53 PM</span>
+<span class='badge badge-default'>00:00:00:003</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>3:05:53 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUrlWithQueryParamsRedirectsCorrectly</p>
+            <p class="text-sm">
+              <span>3:06:08 PM</span> / <span>00:03:41:066</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyUrlWithQueryParamsRedirectsCorrectly</h5>
+<span class='badge badge-success'>07.21.2026 3:06:08 PM</span>
+<span class='badge badge-danger'>07.21.2026 3:09:49 PM</span>
+<span class='badge badge-default'>00:03:41:066</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:09:48 PM</td>
+        <td>
+          Assertion - MOB-ALUM-RED-021: Query string should be preserved in redirect URL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:09:48 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:09:49 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyUrlWithQueryParamsRedirectsCorrectly_20260721150948.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyUrlWithQueryParamsRedirectsCorrectly_20260721150948.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">java.lang.IllegalStateException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.IllegalStateException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:53:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyInvalidUrlShowsErrorOnTileTap</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:01:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:43:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>verifyExternalMenuTileTriggersAndroidDeeplink</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 21, 2026 02:29:55 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 21, 2026 03:09:50 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>17</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='50%'>
+<b>17</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='8%'><b>3</b> tests failed,
+<b>14</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='68%'><b>51</b> events passed</small></div>
+<div>
+<small data-tooltip='13%'><b>10</b> events failed,
+<b data-tooltip='%'>14</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"verifyAdminAllowedInShowsOnlyAlumniPortalOption":30.66,"verifyAirplaneModeBlocksRedirectThenSucceedsOnRetry":0.002,"verifyAlumniLandingPageDisplaysExternalMenuTile":35.941,"verifyAlumniOnlyExternalMenuTileNotShownOnEmployeeLandingPage":0.002,"verifyBackFromBrowserReturnsToAlumniLanding":74.268,"verifyBackgroundDuringRedirectionResumes":40.37,"verifyBrokenIconShowsPlaceholder":0,"verifyConfigUpdateOnBackgroundResumeShowsNewTile":120.945,"verifyDeeplinkFallbackWhenTargetAppNotInstalled":34.668,"verifyDefaultAlumniAppsVisibleAlongsideExternalMenuTile":0.001,"verifyDoubleTapDoesNotOpenDuplicateSessions":77.724,"verifyEmployeeOnlyTileNotOnAlumniPortal":112.11,"verifyEmptyAppsListWhenNoAppsAndNoRedirections":0.001,"verifyExpiredSessionRedirectsToLoginOnTileTap":0.002,"verifyExternalMenuTileOpensConfiguredUrl":40.381,"verifyExternalMenuTileTriggersAndroidDeeplink":202.284,"verifyExternalTileHiddenAfterAdminDeletesEntry":261.115,"verifyExternalTilesPersistAfterColdLaunch":35.375,"verifyInvalidUrlShowsErrorOnTileTap":35.218,"verifyLockScreenDuringRedirection":0.001,"verifyLongMenuLabelRendersCorrectly":84.443,"verifyLowMemoryKillRestoresLandingPageTiles":35.482,"verifyMalformedDeeplinkDoesNotCrashApp":0,"verifyMaximumExternalTilesOnLandingPage":0.001,"verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage":171.158,"verifyNetworkSwitchDuringRedirection":0.006,"verifyNetworkUnavailableShowsErrorOnTileTap":0.002,"verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured":35.089,"verifyNotificationOverlayDuringTileTap":0.002,"verifyOnlyAlumniPortalHiddenWhenSkuDisabled":0.001,"verifyRotationPreservesExternalTiles":65.433,"verifySpecialCharactersInMenuLabel":97.539,"verifySplitScreenPreservesTileVisibility":0.003,"verifyUrlWithQueryParamsRedirectsCorrectly":221.066
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 17,
+failParent: 3,
+warningParent: 0,
+skipParent: 14,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 51,
+failEvents: 10,
+warningEvents: 0,
+skipEvents: 14,
+infoEvents: 0
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff3f4bad-c9e3-404e-82f5-38a0df579c02" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="708" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shaiwalsdet19&quot;
+  }
+}</component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;shaiwal.s&quot;,
+      &quot;fullname&quot;: &quot;Shaiwal Singh&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.mgmt.darwinbox.io/shaiwal.s/mobileflutterautomation.git&quot;,
+    &quot;second&quot;: &quot;96be94bc-c7da-457a-ac9e-375d15c59586&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shaiwalsdet19/FlutterAppiumTest.git&quot;,
+    &quot;accountId&quot;: &quot;c6ae5329-c21c-413a-a25e-28f6a539cc28&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.9228222688633059" />
+      <entry key="MS500" value="3.0986189813803198" />
+      <entry key="S2" value="5.899905915738021" />
+      <entry key="S5" value="8.51151052779191" />
+      <entry key="S10" value="9.994285970797693" />
+      <entry key="S30" value="11.26139479852303" />
+      <entry key="S60" value="11.621062291401987" />
+      <entry key="M2" value="11.808050434496995" />
+      <entry key="M5" value="11.922615330582339" />
+      <entry key="M10" value="11.961206057393468" />
+      <entry key="M15" value="11.974114732343452" />
+      <entry key="M30" value="11.987046031576257" />
+      <entry key="H1" value="11.993520677489927" />
+      <entry key="H2" value="12.003565365621979" />
+      <entry key="H4" value="12.793948938904858" />
+      <entry key="D1" value="54.26984220505996" />
+      <entry key="W1" value="104.12085540194487" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="3.3407721477636625E-248" />
+      <entry key="M5" value="1.3666917819437238E-99" />
+      <entry key="M10" value="5.0903307936768E-50" />
+      <entry key="M15" value="1.719800403600585E-33" />
+      <entry key="M30" value="5.846407205749538E-17" />
+      <entry key="H1" value="1.0804791761307897E-8" />
+      <entry key="H2" value="1.469729116260344E-4" />
+      <entry key="H4" value="0.017144000267690283" />
+      <entry key="D1" value="0.9904131603559813" />
+      <entry key="W1" value="5.517225284320643" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.8571172188639908" />
+      <entry key="MS500" value="3.0665440074503607" />
+      <entry key="S2" value="5.847520939949176" />
+      <entry key="S5" value="8.475686030009909" />
+      <entry key="S10" value="9.972631699729043" />
+      <entry key="S30" value="11.253175778389238" />
+      <entry key="S60" value="11.616815276838174" />
+      <entry key="M2" value="11.805891543817427" />
+      <entry key="M5" value="11.921743149834768" />
+      <entry key="M10" value="11.960768518417906" />
+      <entry key="M15" value="11.973822716947305" />
+      <entry key="M30" value="11.9868998622962" />
+      <entry key="H1" value="11.993447563207013" />
+      <entry key="H2" value="12.00367567700258" />
+      <entry key="H4" value="12.81106943749598" />
+      <entry key="D1" value="55.260200166806065" />
+      <entry key="W1" value="109.63802907333476" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3CabAegSIynIa56oludpxZH8heu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.FlutterAppiumTests [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FlutterAppiumTests [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyBackFromForm16ViewerReturnsToTabs.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyDownloadForm16PdfForSelectedFy.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyExpandOffCycleSectionRevealsRows.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyForm16PdfViewerRendersPartAAndB.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyForm16TabHiddenWhenNotReleased.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyForm16TitleUpdatesOnFyChange.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyFyChangeUpdatesTaxSheetVisibility.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyFyWithPayslipsOnlyHidesTaxAndForm16Tabs.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.CompensationForm16TaxSheets.verifyRapidFyChangeDoesNotCrash.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyAlumniLandingPageDisplaysExternalMenuTile.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyAlumniOnlyExternalMenuTileNotShownOnEmployeeLandingPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyDefaultAlumniAppsVisibleAlongsideExternalMenuTile.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyExternalMenuTileOpensConfiguredUrl.executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyInvalidUrlShowsErrorOnTileTap.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyMaximumExternalTilesOnLandingPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyMultipleOnlyAlumniPortalRedirectionsOnLandingPage.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExternalMenuRedirection.verifyNoExternalMenuTileWhenNoAlumniRedirectionConfigured.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LeaveFunctional.applyAnnualLeave.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.LeaveFunctional.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MobileLoginSDS.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.MobileLoginSDS.verifyFreshInstallRoutesToOnboardingS11.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ReferFunctional.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyAppBackgroundPreservesBulkSelections.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyAppBarCtaEntersBulkSelectModeWithCheckboxes.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyApproveAndRejectCtasEnabledWhenSelected.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyBulkApproveSuccessToastExactCopy.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyBulkRejectWithOptionalComment.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyBulkSelectCtaHiddenWhenSinglePendingTask.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyBulkSelectCtaVisibleOnLeaveRequests.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyCardTapTogglesCheckboxInBulkSelectMode.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyCommentModalCancelPreservesSelection.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyDockedCtasDisabledWhenZeroSelected.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyDockedCtasRespectAndroidSafeArea.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyForceQuitReturnsToNormalTaskList.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyIndividualApprovePermissionAllowsBulkApprove.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyLongPressEntersBulkSelectWithCardPreSelected.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksApproveCta.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksRejectCta.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifyMixedApproveRejectNotSupportedInSingleFlow.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TaskboxBulkActionFunctional.verifySelectedCountUpdatesInRealTime.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mobile__tc/MOBILE14895&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ShaiwalSingh/MOBILE-Flutter/MobileFlutterAutomation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager" selected="TestNG.TaskboxBulkActionFunctional">
+    <configuration name="TaskboxBulkActionFunctional" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlutterAppiumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.modules.taskbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.modules.taskbox" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.modules.taskbox.TaskboxBulkActionFunctional" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksApproveCta" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlutterAppiumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.modules.taskbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.modules.taskbox" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.modules.taskbox.TaskboxBulkActionFunctional" />
+      <option name="METHOD_NAME" value="verifyMandatoryCommentBlocksApproveCta" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksRejectCta" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlutterAppiumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.modules.taskbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.modules.taskbox" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.modules.taskbox.TaskboxBulkActionFunctional" />
+      <option name="METHOD_NAME" value="verifyMandatoryCommentBlocksRejectCta" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskboxBulkActionFunctional.verifyMixedApproveRejectNotSupportedInSingleFlow" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlutterAppiumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.modules.taskbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.modules.taskbox" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.modules.taskbox.TaskboxBulkActionFunctional" />
+      <option name="METHOD_NAME" value="verifyMixedApproveRejectNotSupportedInSingleFlow" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskboxBulkActionFunctional.verifySelectedCountUpdatesInRealTime" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FlutterAppiumTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.modules.taskbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests.modules.taskbox" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.modules.taskbox.TaskboxBulkActionFunctional" />
+      <option name="METHOD_NAME" value="verifySelectedCountUpdatesInRealTime" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TaskboxBulkActionFunctional" />
+        <item itemvalue="TestNG.TaskboxBulkActionFunctional.verifySelectedCountUpdatesInRealTime" />
+        <item itemvalue="TestNG.TaskboxBulkActionFunctional.verifyMixedApproveRejectNotSupportedInSingleFlow" />
+        <item itemvalue="TestNG.TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksRejectCta" />
+        <item itemvalue="TestNG.TaskboxBulkActionFunctional.verifyMandatoryCommentBlocksApproveCta" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff3f4bad-c9e3-404e-82f5-38a0df579c02" name="Changes" comment="" />
+      <created>1776626485894</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776626485894</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/api/framework/admin/WebAdminRecruitmentSettings.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/api/framework/admin/WebAdminRecruitmentSettings.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/api/framework/admin/WebAdminRecruitmentSettings.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

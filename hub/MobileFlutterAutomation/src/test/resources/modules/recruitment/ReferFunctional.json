@@ -1,0 +1,43 @@
+{
+  "module": "recruitment",
+  "testcases": [
+    {
+      "TestMethod": "refer",
+      "TestCaseName": "Refer Setting - Block Refer ON",
+      "TestCaseDescription": "Set block_refer=1 via web settings then verify Refer Module is hidden",
+      "ExecutionType": "Regression",
+      "RunMode": "Yes",
+      "TestType": "settings",
+      "Key": "referSettingOff",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "500",
+      "Password": "Mobile@1",
+      "block_refer": "1"
+    },
+    {
+      "TestMethod": "refer",
+      "TestCaseName": "Refer Setting - Block Refer OFF",
+      "TestCaseDescription": "Set block_refer=0 via web settings then verify Refer Module is visible",
+      "ExecutionType": "Sanity",
+      "RunMode": "Yes",
+      "TestType": "settings",
+      "Key": "referSetting",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "500",
+      "Password": "Mobile@1",
+      "block_refer": "0"
+    },
+    {
+      "TestMethod": "refer",
+      "TestCaseName": "Refer Candidate",
+      "TestCaseDescription": "Verify user is able to refer a candidate successfully",
+      "ExecutionType": "Sanity",
+      "RunMode": "Yes",
+      "TestType": "functional",
+      "Key": "referCandidate",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "500",
+      "Password": "Mobile@1"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "module": "recruitment",
+  "testcases": [
+    {
+      "TestMethod": "ijp",
+      "TestCaseName": "IJP Setting - Block IJP ON",
+      "TestCaseDescription": "Set block_ijp=1 via web settings then verify IJP Module is hidden",
+      "ExecutionType": "Regression",
+      "RunMode": "Yes",
+      "TestType": "settings",
+      "Key": "ijpSettingOff",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "503",
+      "Password": "Mobile@1",
+      "block_ijp": "1"
+    },
+    {
+      "TestMethod": "ijp",
+      "TestCaseName": "IJP Setting - Block IJP OFF",
+      "TestCaseDescription": "Set block_ijp=0 via web settings then verify IJP Module is visible",
+      "ExecutionType": "Sanity",
+      "RunMode": "Yes",
+      "TestType": "settings",
+      "Key": "ijpSetting",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "503",
+      "Password": "Mobile@1",
+      "block_ijp": "0"
+    },
+    {
+      "TestMethod": "ijp",
+      "TestCaseName": "Apply IJP Job",
+      "TestCaseDescription": "Verify user is able to apply for IJP job successfully",
+      "ExecutionType": "Sanity",
+      "RunMode": "Yes",
+      "TestType": "functional",
+      "Key": "applyIJP",
+      "tenant": "mobile9.qa.darwinbox.io",
+      "Employee": "503",
+      "Password": "Mobile@1"
+    }
+  ]
+}

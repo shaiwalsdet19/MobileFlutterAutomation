@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="methods" name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="1" parallel="methods" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="com.tests.modules.taskbox.TaskboxBulkActionFunctional">
+        <methods>
+          <include name="verifyNetworkSwitchDuringBulkSubmitShowsError" invocation-numbers="0"/>
+          <include name="initPageObjects"/>
+          <include name="verifySelectAllScopeLimitedToLoadedCards" invocation-numbers="0"/>
+          <include name="verifyMixedApproveRejectNotSupportedInSingleFlow" invocation-numbers="0"/>
+          <include name="verifyOptionalCommentSettingOnOvertimeRequestsBulkApprove" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="verifySelectedCountUpdatesInRealTime" invocation-numbers="0"/>
+          <include name="verifySelectionPersistsAcrossPaginatedList" invocation-numbers="0"/>
+          <include name="verifyNetworkFailureDuringBulkApprove" invocation-numbers="0"/>
+          <include name="verifyPendoFreShownOnFirstBulkSelectEntry" invocation-numbers="0"/>
+          <include name="verifyNotificationOverlayDoesNotClearSelections" invocation-numbers="0"/>
+          <include name="globalSetup"/>
+          <include name="verifySelectAllShowsLazyLoadBanner" invocation-numbers="0"/>
+          <include name="verifyRotationMaintainsSelectionCountInBulkMode" invocation-numbers="0"/>
+          <include name="globalTeardown"/>
+          <include name="setUp"/>
+          <include name="verifyServerErrorDuringBulkAction" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.tests.modules.taskbox.TaskboxBulkActionFunctional -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

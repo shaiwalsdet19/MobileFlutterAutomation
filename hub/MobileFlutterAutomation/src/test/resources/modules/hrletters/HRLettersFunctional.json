@@ -1,0 +1,47 @@
+{
+  "module": "hrletters",
+  "testcases": [
+    {
+      "TestMethod": "requestEmploymentLetter",
+      "TestCaseName": "Request Employment Letter",
+      "TestCaseDescription": "Happy flow: request employment letter and verify success toast",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Letter Type": "Employment Letter",
+      "Purpose": "Bank loan application - automation test",
+      "Addressed To": "Bank Manager",
+      "Required Day": "15",
+      "Urgent": "false",
+      "Notes": ""
+    },
+    {
+      "TestMethod": "requestUrgentSalaryCertificate",
+      "TestCaseName": "Request Urgent Salary Certificate",
+      "TestCaseDescription": "Request urgent salary certificate and verify success",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Letter Type": "Salary Certificate",
+      "Purpose": "Visa application - automation test",
+      "Addressed To": "Embassy Officer",
+      "Required Day": "20",
+      "Urgent": "true",
+      "Notes": "Please include all components"
+    },
+    {
+      "TestMethod": "verifyLetterPendingStatus",
+      "TestCaseName": "Verify Letter Pending Status",
+      "TestCaseDescription": "Submit letter and verify it shows Pending status in the list",
+      "Employee": "YOUR_EMPLOYEE_ID",
+      "Password": "YOUR_PASSWORD",
+      "tenant": "yourcompany.hrapp.io",
+      "Letter Type": "Experience Letter",
+      "Purpose": "New employer",
+      "Addressed To": "HR Manager",
+      "Required Day": "25",
+      "Urgent": "false",
+      "Notes": ""
+    }
+  ]
+}

@@ -1,0 +1,1995 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 24, 2026 05:26:30 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAppBarCtaEntersBulkSelectModeWithCheckboxes</p>
+            <p class="text-sm">
+              <span>5:26:31 PM</span> / <span>00:00:32:158</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyAppBarCtaEntersBulkSelectModeWithCheckboxes</h5>
+<span class='badge badge-success'>07.24.2026 5:26:31 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:27:03 PM</span>
+<span class='badge badge-default'>00:00:32:158</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:26:53 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-003: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:26:58 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-003: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:27:02 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-003: Page transitions to bulk-select mode; checkboxes appear on all visible task cards.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:27:02 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:27:03 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAppBarCtaEntersBulkSelectModeWithCheckboxes_20260724172702.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyAppBarCtaEntersBulkSelectModeWithCheckboxes_20260724172702.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyApproveAndRejectCtasEnabledWhenSelected</p>
+            <p class="text-sm">
+              <span>5:27:33 PM</span> / <span>00:00:32:468</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyApproveAndRejectCtasEnabledWhenSelected</h5>
+<span class='badge badge-success'>07.24.2026 5:27:33 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:28:06 PM</span>
+<span class='badge badge-default'>00:00:32:468</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:27:51 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-009: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:27:55 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-009: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:04 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-009: Approve CTA should be enabled
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:04 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-009: Docked Approve and Reject CTAs become enabled when selected count >= 1.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:04 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:06 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyApproveAndRejectCtasEnabledWhenSelected_20260724172804.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyApproveAndRejectCtasEnabledWhenSelected_20260724172804.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBackIconExitsBulkSelectMode</p>
+            <p class="text-sm">
+              <span>5:28:36 PM</span> / <span>00:00:37:117</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBackIconExitsBulkSelectMode</h5>
+<span class='badge badge-success'>07.24.2026 5:28:36 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:29:13 PM</span>
+<span class='badge badge-default'>00:00:37:117</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:53 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-013: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:28:57 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-013: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:29:12 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-013: Back icon exits bulk-select mode; normal task list behavior restored.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:29:12 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:29:13 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackIconExitsBulkSelectMode_20260724172912.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBackIconExitsBulkSelectMode_20260724172912.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkApproveWithOptionalComment</p>
+            <p class="text-sm">
+              <span>5:29:43 PM</span> / <span>00:00:34:923</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkApproveWithOptionalComment</h5>
+<span class='badge badge-success'>07.24.2026 5:29:43 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:30:18 PM</span>
+<span class='badge badge-default'>00:00:34:923</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:29:59 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-010: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:30:03 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-010: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:30:17 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-010: Bulk approve succeeds; optional comment accepted; toast displays '✓ {n} requests approved'; cards removed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:30:17 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:30:18 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkApproveWithOptionalComment_20260724173017.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkApproveWithOptionalComment_20260724173017.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkRejectWithOptionalComment</p>
+            <p class="text-sm">
+              <span>5:30:50 PM</span> / <span>00:00:50:385</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyBulkRejectWithOptionalComment</h5>
+<span class='badge badge-success'>07.24.2026 5:30:50 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:31:40 PM</span>
+<span class='badge badge-default'>00:00:50:385</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:31:06 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-011: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:31:10 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-011: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:31:39 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-011: Bulk reject succeeds with optional comment skipped; success toast shows correct count.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:31:39 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: Fail ------> MOBILE-9181-TC-011: Bulk reject succeeds with optional comment skipped; success toast shows correct count. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.api.framework.mobile.MobileTestBase.assertTrueCheck(MobileTestBase.java:150)
+	at com.tests.modules.taskbox.TaskboxBulkActionFunctional.verifyBulkRejectWithOptionalComment(TaskboxBulkActionFunctional.java:217)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:31:39 PM</td>
+        <td>
+          Assertion Message: Fail ------> MOBILE-9181-TC-011: Bulk reject succeeds with optional comment skipped; success toast shows correct count. expected [true] but found [false]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:31:40 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkRejectWithOptionalComment_20260724173139.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkRejectWithOptionalComment_20260724173139.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaHiddenWhenSinglePendingTask</p>
+            <p class="text-sm">
+              <span>5:32:12 PM</span> / <span>00:00:24:351</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaHiddenWhenSinglePendingTask</h5>
+<span class='badge badge-success'>07.24.2026 5:32:12 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:32:36 PM</span>
+<span class='badge badge-default'>00:00:24:351</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:28 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-002: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:28 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-002: Tasks tab (home_taskbox_entry) must be visible on dashboard before click
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:32 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-002: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:35 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-002: Bulk-select app bar CTA is not rendered when fewer than 2 pending tasks.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:35 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:32:36 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaHiddenWhenSinglePendingTask_20260724173235.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaHiddenWhenSinglePendingTask_20260724173235.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnLeaveRequests</p>
+            <p class="text-sm">
+              <span>5:33:43 PM</span> / <span>00:00:20:460</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnLeaveRequests</h5>
+<span class='badge badge-success'>07.24.2026 5:33:43 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:34:04 PM</span>
+<span class='badge badge-default'>00:00:20:460</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:33:59 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-001: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:03 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-001: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:03 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-001: Bulk-select CTA is visible on app bar when >=2 pending tasks exist on applicable page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:03 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:04 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnLeaveRequests_20260724173403.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnLeaveRequests_20260724173403.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:34:34 PM</span> / <span>00:00:22:307</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:34:34 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:34:56 PM</span>
+<span class='badge badge-default'>00:00:22:307</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:51 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-014: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:55 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-014: request list should load for category attendance_checkin
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:55 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-014: Bulk-select CTA shown on applicable request type: Check-In Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:55 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:34:56 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724173455.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724173455.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:35:26 PM</span> / <span>00:02:19:371</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:35:26 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:37:45 PM</span>
+<span class='badge badge-default'>00:02:19:371</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:35:42 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-015: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:37:44 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element not found: {"keyValueType":"String","keyValueString":"taskbox_category_clock_in_requests","finderType":"ByValueKey"}
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.parameters.helpsers.FlutterHelpers.clickAction(FlutterHelpers.java:304)
+	at com.pages.taskbox.TaskboxBulkActionPage.openRequestCategory(TaskboxBulkActionPage.java:478)
+	at com.pages.taskbox.TaskboxBulkActionPage.navigateToRequestCategory(TaskboxBulkActionPage.java:496)
+	at com.tests.modules.taskbox.TaskboxBulkActionFunctional.loginAndNavigateToCategory(TaskboxBulkActionFunctional.java:841)
+	at com.tests.modules.taskbox.TaskboxBulkActionFunctional.verifyBulkSelectCtaVisibleOnRequestType(TaskboxBulkActionFunctional.java:290)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:37:44 PM</td>
+        <td>
+          Assertion Message: Element not found: {"keyValueType":"String","keyValueString":"taskbox_category_clock_in_requests","finderType":"ByValueKey"}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:37:45 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724173744.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724173744.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:38:14 PM</span> / <span>00:02:21:755</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:38:14 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:40:35 PM</span>
+<span class='badge badge-default'>00:02:21:755</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:38:32 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-016: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:40:34 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.RuntimeException: Element not found: {"keyValueType":"String","keyValueString":"taskbox_category_leave_encashment_requests","finderType":"ByValueKey"}
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.parameters.helpsers.FlutterHelpers.clickAction(FlutterHelpers.java:304)
+	at com.pages.taskbox.TaskboxBulkActionPage.openRequestCategory(TaskboxBulkActionPage.java:478)
+	at com.pages.taskbox.TaskboxBulkActionPage.navigateToRequestCategory(TaskboxBulkActionPage.java:496)
+	at com.tests.modules.taskbox.TaskboxBulkActionFunctional.loginAndNavigateToCategory(TaskboxBulkActionFunctional.java:841)
+	at com.tests.modules.taskbox.TaskboxBulkActionFunctional.verifyBulkSelectCtaVisibleOnRequestType(TaskboxBulkActionFunctional.java:290)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:40:34 PM</td>
+        <td>
+          Assertion Message: Element not found: {"keyValueType":"String","keyValueString":"taskbox_category_leave_encashment_requests","finderType":"ByValueKey"}
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:40:35 PM</td>
+        <td>
+          Screenshot on Failure
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174034.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174034.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:41:11 PM</span> / <span>00:00:24:490</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:41:11 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:41:36 PM</span>
+<span class='badge badge-default'>00:00:24:490</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:41:28 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-017: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:41:33 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-017: request list should load for category leave_task
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:41:33 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-017: Bulk-select CTA shown on applicable request type: Leave Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:41:33 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:41:36 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174133.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174133.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:42:48 PM</span> / <span>00:00:22:204</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:42:48 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:43:11 PM</span>
+<span class='badge badge-default'>00:00:22:204</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:05 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-018: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:10 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-018: request list should load for category leave_task_oh
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:10 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-018: Bulk-select CTA shown on applicable request type: Optional Holiday Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:10 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:11 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174310.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174310.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:43:42 PM</span> / <span>00:00:23:351</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:43:42 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:44:05 PM</span>
+<span class='badge badge-default'>00:00:23:351</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:43:59 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-019: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:44:04 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-019: request list should load for category attendance_od
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:44:04 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-019: Bulk-select CTA shown on applicable request type: Outduty Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:44:04 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:44:05 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174404.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174404.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:44:38 PM</span> / <span>00:00:23:365</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:44:38 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:45:02 PM</span>
+<span class='badge badge-default'>00:00:23:365</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:44:56 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-020: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:00 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-020: request list should load for category compensation_request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:00 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-020: Bulk-select CTA shown on applicable request type: Overtime Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:00 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:02 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174500.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174500.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:45:35 PM</span> / <span>00:00:24:902</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:45:35 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:46:00 PM</span>
+<span class='badge badge-default'>00:00:24:902</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:53 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-021: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:58 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-021: request list should load for category compensation_request_planned
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:58 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-021: Bulk-select CTA shown on applicable request type: Planned Overtime Requests.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:45:58 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:46:00 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174558.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyBulkSelectCtaVisibleOnRequestType_20260724174558.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:46:29 PM</span> / <span>00:00:00:040</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:46:29 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:46:29 PM</span>
+<span class='badge badge-default'>00:00:00:040</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>5:46:29 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="skip" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkSelectCtaVisibleOnRequestType</p>
+            <p class="text-sm">
+              <span>5:47:29 PM</span> / <span>00:00:00:001</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">verifyBulkSelectCtaVisibleOnRequestType</h5>
+<span class='badge badge-success'>07.24.2026 5:47:29 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:47:29 PM</span>
+<span class='badge badge-default'>00:00:00:001</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>5:47:29 PM</td>
+        <td>
+          Test Skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCardTapTogglesCheckboxInBulkSelectMode</p>
+            <p class="text-sm">
+              <span>5:48:15 PM</span> / <span>00:00:36:687</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCardTapTogglesCheckboxInBulkSelectMode</h5>
+<span class='badge badge-success'>07.24.2026 5:48:15 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:48:51 PM</span>
+<span class='badge badge-default'>00:00:36:687</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:34 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-005: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:39 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-005: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:50 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-005: card tap should select in bulk mode
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:50 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-005: In bulk-select mode, card tap toggles selection; request detail page does not open.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:50 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:51 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCardTapTogglesCheckboxInBulkSelectMode_20260724174850.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCardTapTogglesCheckboxInBulkSelectMode_20260724174850.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCommentModalCancelPreservesSelection</p>
+            <p class="text-sm">
+              <span>5:49:21 PM</span> / <span>00:00:37:647</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCommentModalCancelPreservesSelection</h5>
+<span class='badge badge-success'>07.24.2026 5:49:21 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:49:58 PM</span>
+<span class='badge badge-default'>00:00:37:647</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:39 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-012: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:43 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-012: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:53 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-012: comment modal should open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:53 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-012: bulk mode preserved after cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:57 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-012: Cancel on comment modal returns to bulk-select; selections unchanged; no requests processed.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:57 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:58 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCommentModalCancelPreservesSelection_20260724174957.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyCommentModalCancelPreservesSelection_20260724174957.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLongPressEntersBulkSelectWithCardPreSelected</p>
+            <p class="text-sm">
+              <span>5:50:27 PM</span> / <span>00:00:38:130</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLongPressEntersBulkSelectWithCardPreSelected</h5>
+<span class='badge badge-success'>07.24.2026 5:50:27 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:51:05 PM</span>
+<span class='badge badge-default'>00:00:38:130</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:50:47 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-004: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:50:52 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-004: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:02 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-004: bulk mode should activate
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:04 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-004: Long-press enters bulk-select mode; pressed card is pre-selected; count shows 1 selected; Approve/Reject enabled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:04 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:05 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLongPressEntersBulkSelectWithCardPreSelected_20260724175104.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyLongPressEntersBulkSelectWithCardPreSelected_20260724175104.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyNormalModeCardTapOpensRequestDetail</p>
+            <p class="text-sm">
+              <span>5:51:32 PM</span> / <span>00:00:37:169</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyNormalModeCardTapOpensRequestDetail</h5>
+<span class='badge badge-success'>07.24.2026 5:51:32 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:52:09 PM</span>
+<span class='badge badge-default'>00:00:37:169</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:51 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-006: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:51:56 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-006: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:08 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-006: In normal mode, tapping a card opens the request detail page (no regression).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:08 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:09 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyNormalModeCardTapOpensRequestDetail_20260724175208.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifyNormalModeCardTapOpensRequestDetail_20260724175208.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySelectAllChecksAllVisibleCards</p>
+            <p class="text-sm">
+              <span>5:52:38 PM</span> / <span>00:00:59:247</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySelectAllChecksAllVisibleCards</h5>
+<span class='badge badge-success'>07.24.2026 5:52:38 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:53:37 PM</span>
+<span class='badge badge-default'>00:00:59:247</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:56 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-007: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:00 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-007: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:03 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-007: bulk mode active after select all
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:36 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-007: Select All selects all currently visible/loaded cards; count updates correctly.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:36 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:37 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectAllChecksAllVisibleCards_20260724175336.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectAllChecksAllVisibleCards_20260724175336.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySelectAllDeselectsAllVisibleCards</p>
+            <p class="text-sm">
+              <span>5:54:03 PM</span> / <span>00:00:28:226</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySelectAllDeselectsAllVisibleCards</h5>
+<span class='badge badge-success'>07.24.2026 5:54:03 PM</span>
+<span class='badge badge-danger'>07.24.2026 5:54:31 PM</span>
+<span class='badge badge-default'>00:00:28:226</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:54:21 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-008: home screen should load after dummy login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:54:25 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-008: Leave Requests list should load
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:54:30 PM</td>
+        <td>
+          Assertion - MOBILE-9181-TC-008: Second tap on Select All deselects all; count returns to 0; docked CTAs disabled.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:54:30 PM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:54:31 PM</td>
+        <td>
+          Screenshot on Pass
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectAllDeselectsAllVisibleCards_20260724175430.png' src="C:\Users\ShaiwalSingh\MOBILE-Flutter\MobileFlutterAutomation\screenshots\verifySelectAllDeselectsAllVisibleCards_20260724175430.png">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:30:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyBulkRejectWithOptionalComment</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">java.lang.RuntimeException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.RuntimeException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:35:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyBulkSelectCtaVisibleOnRequestType</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:38:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyBulkSelectCtaVisibleOnRequestType</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 24, 2026 05:26:30 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 24, 2026 05:54:34 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>18</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='78%'>
+<b>18</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='13%'><b>3</b> tests failed,
+<b>2</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='89%'><b>101</b> events passed</small></div>
+<div>
+<small data-tooltip='8%'><b>10</b> events failed,
+<b data-tooltip='%'>2</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"verifyAppBarCtaEntersBulkSelectModeWithCheckboxes":32.158,"verifyApproveAndRejectCtasEnabledWhenSelected":32.468,"verifyBackIconExitsBulkSelectMode":37.117,"verifyBulkApproveWithOptionalComment":34.923,"verifyBulkRejectWithOptionalComment":50.385,"verifyBulkSelectCtaHiddenWhenSinglePendingTask":24.351,"verifyBulkSelectCtaVisibleOnLeaveRequests":20.46,"verifyBulkSelectCtaVisibleOnRequestType":22.307,"verifyBulkSelectCtaVisibleOnRequestType":139.371,"verifyBulkSelectCtaVisibleOnRequestType":141.755,"verifyBulkSelectCtaVisibleOnRequestType":24.49,"verifyBulkSelectCtaVisibleOnRequestType":22.204,"verifyBulkSelectCtaVisibleOnRequestType":23.351,"verifyBulkSelectCtaVisibleOnRequestType":23.365,"verifyBulkSelectCtaVisibleOnRequestType":24.902,"verifyBulkSelectCtaVisibleOnRequestType":0.04,"verifyBulkSelectCtaVisibleOnRequestType":0.001,"verifyCardTapTogglesCheckboxInBulkSelectMode":36.687,"verifyCommentModalCancelPreservesSelection":37.647,"verifyLongPressEntersBulkSelectWithCardPreSelected":38.13,"verifyNormalModeCardTapOpensRequestDetail":37.169,"verifySelectAllChecksAllVisibleCards":59.247,"verifySelectAllDeselectsAllVisibleCards":28.226
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 18,
+failParent: 3,
+warningParent: 0,
+skipParent: 2,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 101,
+failEvents: 10,
+warningEvents: 0,
+skipEvents: 2,
+infoEvents: 0
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

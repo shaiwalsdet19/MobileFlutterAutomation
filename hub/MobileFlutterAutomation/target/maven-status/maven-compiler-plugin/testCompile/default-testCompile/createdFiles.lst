@@ -1,0 +1,5 @@
+com\api\framework\mobile\modules\hrdocuments\HRDocumentsFunctional.class
+com\api\framework\mobile\modules\hrletters\HRLettersFunctional.class
+com\api\framework\mobile\modules\leave\LeaveFunctional.class
+com\api\framework\mobile\modules\timesheet\TimesheetFunctional.class
+com\api\framework\mobile\modules\overtime\OvertimeFunctional.class

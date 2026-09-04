@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.tests.modules.taskbox.TaskboxBulkActionFunctional
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 78.90 s -- in com.tests.modules.taskbox.TaskboxBulkActionFunctional

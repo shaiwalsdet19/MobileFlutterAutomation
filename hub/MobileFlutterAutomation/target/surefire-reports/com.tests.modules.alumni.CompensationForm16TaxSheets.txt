@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.tests.modules.alumni.CompensationForm16TaxSheets
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 66389 s <<< FAILURE! -- in com.tests.modules.alumni.CompensationForm16TaxSheets
+com.tests.modules.alumni.CompensationForm16TaxSheets.verifyDownloadForm16PdfForSelectedFy[{Financial Year=2025-26, Category=positive, Expected Tab=Form 16, Priority=high, ExecutionType=Sanity, Precondition=Alumni on Compensation page; FY 2025-26 selected, downloadWaitSeconds=30, TestCaseId=MOB-ALUM-COMP-010, AdminSetup=Form 16 Part A and Part B uploaded and released for FY 2025-26, TestCaseName=Download Form 16 PDF for selected FY, TestMethod=verifyDownloadForm16PdfForSelectedFy, ExpectedOutcome=Alumni downloads Form 16 PDF (Part A + Part B) for selected FY in under 30 seconds (self-service), Groups=["smoke","regression","alumni-compensation"], RunMode=Yes, TestCaseType=happy_path, AutomationTargets=alumni_compensation_home_card_form16a, alumni_compensation_home_card_form16b, alumni_compensation_form16_pdf_viewer, alumni_compensation_form16_download_button, TestCaseDescription=Core tax-filing use case: download Form 16 Part A+B for selected FY.}](1) -- Time elapsed: 66314 s <<< FAILURE!
+java.lang.RuntimeException: Element not found: {"keyValueType":"String","keyValueString":"alumni_compensation_home_card_form16b","finderType":"ByValueKey"}
+	at com.darwinbox.mobile.MobileTestBase.genericHelpers.parameters.helpsers.FlutterHelpers.clickAction(FlutterHelpers.java:304)
+	at com.pages.alumni.CompensationForm16TaxSheetsPage.openDocumentCard(CompensationForm16TaxSheetsPage.java:313)
+	at com.tests.modules.alumni.CompensationForm16TaxSheets.verifyDownloadForm16PdfForSelectedFy(CompensationForm16TaxSheets.java:219)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
