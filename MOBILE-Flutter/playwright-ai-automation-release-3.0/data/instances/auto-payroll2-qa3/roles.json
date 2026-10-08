@@ -1,0 +1,8 @@
+{
+  "instanceId": "auto-payroll2-qa3",
+  "baseUrl": "https://auto-payroll2-qa3.qa.darwinbox.io",
+  "roleAliases": { "Admin": "Admin", "admin": "Admin" },
+  "roles": {
+    "Admin": { "username": "admin01", "password": "Dbox@123", "tenant_id": "20" }
+  }
+}

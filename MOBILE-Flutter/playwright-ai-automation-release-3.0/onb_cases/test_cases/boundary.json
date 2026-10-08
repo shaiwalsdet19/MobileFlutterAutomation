@@ -1,0 +1,336 @@
+[
+  {
+    "id": "TC-032",
+    "title": "BGV Candidate Data Fetch API enforces 403 in real-time on each request — a request made one day before lapse succeeds and a request made one day after lapse is blocked",
+    "change_ids": [
+      "CH-005"
+    ],
+    "test_type": "boundary",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner API credentials are available and valid",
+      "A candidate exists with BGV status = Completed, with a BGV completion date that can be controlled or simulated to be exactly at the boundary (completion date + configured days = today or tomorrow)",
+      "The BGV Candidate Data Fetch API endpoint and authentication mechanism are documented and accessible for testing",
+      "Test environment supports date manipulation or a candidate with a precisely known completion date is available"
+    ],
+    "test_data": [
+      {
+        "field": "Configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date (boundary)",
+        "value": "Exactly 30 days before today (today = completion date + 30, so window expires today)"
+      },
+      {
+        "field": "Candidate BGV completion date (lapsed)",
+        "value": "Exactly 31 days before today (current date > completion date + 30)"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The adjacent numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and enter '30'.",
+        "expected": "The numeric input displays '30' with no inline validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. A success notification appears."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Using an API client, send a request to the BGV Candidate Data Fetch API for the candidate whose BGV completion date is exactly 30 days ago (current date = completion date + 30, i.e., the window boundary — NOT yet lapsed if the condition is strictly 'current date > completion date + configured days').",
+        "expected": "The API responds with HTTP 200 OK and normal candidate data. The 403 is NOT triggered because the condition 'current date > completion date + 30' is not yet true (current date equals, not exceeds, the boundary)."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Using an API client, send a request to the BGV Candidate Data Fetch API for the candidate whose BGV completion date is exactly 31 days ago (current date > completion date + 30 — window has lapsed).",
+        "expected": "The API responds with HTTP 403 Forbidden and response body: {\"error\": \"Verification has been completed; data access has been revoked.\"}. The 403 is enforced because the condition 'current date > completion date + 30' is true."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Send a second request immediately to the same lapsed candidate's API endpoint without any configuration change.",
+        "expected": "The API again responds with HTTP 403 Forbidden with the same error body — confirming real-time enforcement on each individual API request, not a cached or one-time evaluation."
+      }
+    ],
+    "expected_result": "The API enforces the 403 in real-time on each request: a candidate at exactly the boundary (current date = completion date + configured days) is still accessible, while a candidate one day past the boundary (current date > completion date + configured days) is blocked with 403 on every request.",
+    "assertions_summary": [
+      "Candidate at exactly the boundary day (current date = completion date + days) returns HTTP 200",
+      "Candidate one day past the boundary (current date > completion date + days) returns HTTP 403",
+      "403 is returned on every subsequent request to the lapsed candidate — real-time enforcement confirmed",
+      "Response body for 403 matches exactly: {\"error\": \"Verification has been completed; data access has been revoked.\"}"
+    ],
+    "requires_human_review": true,
+    "review_reason": "The boundary condition depends on whether 'current date > completion date + configured days' is evaluated as strictly greater than (exclusive) or greater than or equal to (inclusive). The exact boundary behavior (same day = allowed or blocked) must be confirmed against the implementation. Test data for the boundary day candidate may require date manipulation in the test environment."
+  },
+  {
+    "id": "TC-033",
+    "title": "Verify that Data Access Expiry Days boundary values 1 and 365 are accepted and value 366 is rejected",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "boundary",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days - lower boundary",
+        "value": "1"
+      },
+      {
+        "field": "Data Access Expiry Days - upper boundary",
+        "value": "365"
+      },
+      {
+        "field": "Data Access Expiry Days - above upper boundary",
+        "value": "366"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '1'. Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '1'.",
+        "expected": "Import completes successfully with no errors. The row is accepted. Settings are applied immediately showing Data Access Expiry Days = 1."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '365'. Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '365'.",
+        "expected": "Import completes successfully with no errors. The row is accepted. Settings are applied immediately showing Data Access Expiry Days = 365."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '366'. Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '366'.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days must be a whole number between 1 and 365.' No settings changes are applied."
+      }
+    ],
+    "expected_result": "Data Access Expiry Days = 1 and 365 are both accepted as valid boundary values; Data Access Expiry Days = 366 is rejected with the error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+    "assertions_summary": [
+      "Value '1' is accepted as the lower boundary",
+      "Value '365' is accepted as the upper boundary",
+      "Value '366' is rejected with error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "Settings are applied immediately for accepted boundary values"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL needs live verification."
+  },
+  {
+    "id": "TC-034",
+    "title": "Verify that a row with a valid Enable Data Access Expiry value and a mid-range Data Access Expiry Days integer (e.g., 180) is accepted and applied immediately",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "boundary",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": "180"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the import row, set 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '180'. Save the file.",
+        "expected": "File is saved with the entered values."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the prepared file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Wait for the import to complete and observe the import result.",
+        "expected": "Import completes successfully with no errors. No additional save step is prompted."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the checkbox and days value.",
+        "expected": "The 'Remove candidate data access after verification completion' checkbox is checked and the days value field shows '180'. The change is reflected immediately without any additional save action."
+      }
+    ],
+    "expected_result": "A mid-range valid integer value of 180 for Data Access Expiry Days is accepted and applied immediately, confirming the full valid range is functional beyond boundary values.",
+    "assertions_summary": [
+      "Value '180' is accepted without error",
+      "Settings are applied immediately with no additional save step",
+      "BGV Settings page shows checkbox checked and days = 180"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and UI field mapping need live verification."
+  },
+  {
+    "id": "TC-035",
+    "title": "Boundary values 1 and 365 are accepted without validation errors",
+    "change_ids": [
+      "CH-002"
+    ],
+    "test_type": "boundary",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [
+      {
+        "field": "Days value (lower boundary)",
+        "value": "1"
+      },
+      {
+        "field": "Days value (upper boundary)",
+        "value": "365"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox is checked and numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input and type 1.",
+        "expected": "The value 1 is accepted in the field with no inline error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. No validation error is shown. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate away and return to Settings > Flows > Onboarding > Advanced Settings. Verify the saved value.",
+        "expected": "Numeric input shows 1 and checkbox is checked, confirming persistence of the lower boundary value."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input and type 365.",
+        "expected": "The value 365 is accepted in the field with no inline error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. No validation error is shown. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate away and return to Settings > Flows > Onboarding > Advanced Settings. Verify the saved value.",
+        "expected": "Numeric input shows 365 and checkbox is checked, confirming persistence of the upper boundary value."
+      }
+    ],
+    "expected_result": "Both boundary values 1 and 365 are accepted by the numeric input, pass validation, and are persisted correctly after save.",
+    "assertions_summary": [
+      "Value 1 accepted with no inline error",
+      "Value 1 persists after save",
+      "Value 365 accepted with no inline error",
+      "Value 365 persists after save"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-036",
+    "title": "Access evaluation uses calendar date comparison only and is not affected by time-of-day",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "boundary",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "At least one candidate exists with BGV status = Completed and BGV completion date exactly N days ago where N equals the configured threshold (e.g., completed exactly 30 days ago when threshold is 30)"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "Exactly 30 calendar days before today's date"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 30. Click Save.",
+        "expected": "Settings saved successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Identify the test candidate whose BGV completion date is exactly 30 calendar days before today. Verify the BGV partner access state for this candidate.",
+        "expected": "The candidate's access state is evaluated using date-only comparison (not timestamp). Since current date equals BGV completion date + 30 days (not strictly greater than), the candidate should still have active access (access active: current date ≤ BGV completion date + configured days). Access is NOT revoked on the exact boundary day."
+      }
+    ],
+    "expected_result": "A candidate whose BGV was completed exactly 30 days ago (matching the threshold exactly) retains access because the evaluation condition is 'current date > completion date + days' (strictly greater than), and the date comparison is calendar-date only with no timestamp dependency.",
+    "assertions_summary": [
+      "Access is active when current date equals BGV completion date + configured days (boundary: not strictly greater than)",
+      "Evaluation uses calendar date only, not timestamp"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Exact boundary behavior (strictly greater than vs. greater than or equal) and date-only comparison logic requires backend/API-level verification or a precisely timed test execution."
+  }
+]

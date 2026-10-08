@@ -1,0 +1,11 @@
+{
+  "instanceId": "payroll2",
+  "baseUrl": "https://payroll2.qa.darwinbox.io",
+  "roleAliases": { "Admin": "Admin", "admin": "Admin" },
+  "roles": {
+    "Admin": [
+      { "username": "IIT_0154", "password": "Dbox@123" },
+      { "username": "IIT_0014", "password": "Dbox@1234" }
+    ]
+  }
+}

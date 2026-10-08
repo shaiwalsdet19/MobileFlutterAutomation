@@ -1,0 +1,17 @@
+{
+  "instanceId": "auto-vr-qa3",
+  "baseUrl": "https://auto-vr-qa3.qa.darwinbox.io",
+  "matchHostnames": [
+    "auto-vr-qa3.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Employee": "Employee",
+    "employee": "Employee"
+  },
+  "roles": {
+    "Employee": {
+      "username": "EMPLOYEE1",
+      "password": "Dbox@1234"
+    }
+  }
+}

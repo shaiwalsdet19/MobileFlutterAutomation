@@ -1,0 +1,27 @@
+{
+    "instanceId": "ta6",
+    "baseUrl": "https://ta6.qa.darwinbox.io",
+    "matchHostnames": ["ta6.qa.darwinbox.io"],
+    "roleAliases": {
+      "Admin": "Admin",
+      "admin": "Admin"
+    },
+    "roles": {
+      "Admin": {
+        "username": "KAU_999",
+        "password": "Dbox@123"
+      },
+      "BGV Verification Partner": {
+        
+      },
+      "OnboardingAdmin": {
+        "username": "KAU_999",
+        "password": "Dbox@123"
+      },
+      "BGV": {
+        "username": "omprakash.p@yopmail.com",
+        "password": "Dbox@123"
+      }
+    }
+  }
+  

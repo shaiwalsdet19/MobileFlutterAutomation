@@ -1,0 +1,17 @@
+{
+  "instanceId": "payroll",
+  "baseUrl": "https://payroll.qa.darwinbox.io",
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "payrollAdmin": "payrollAdmin"
+  },
+  "roles": {
+    "Admin": [
+      { "username": "86", "password": "123456789" },
+      { "username": "Main237", "password": "123456789" }
+    ],
+    "payrollAdmin": { "username": "1254", "password": "123456789" },
+    "main424": { "username": "Main424", "password": "123456789" }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "instanceId": "travel4",
+  "baseUrl": "https://travel4.qa.darwinbox.io",
+  "matchHostnames": [
+    "travel4.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Employee": "Employee",
+    "employee": "Employee",
+    "EMP": "Employee",
+    "emp": "Employee",
+    "L1 Approver": "L1 Approver",
+    "l1 approver": "L1 Approver",
+    "L1": "L1 Approver",
+    "l1": "L1 Approver",
+    "L2 Approver": "L2 Approver",
+    "l2 approver": "L2 Approver",
+    "L2": "L2 Approver",
+    "l2": "L2 Approver",
+    "Admin": "Admin",
+    "admin": "Admin",
+    "ADMIN": "Admin",
+    "Travel Agent": "Travel Agent",
+    "travel agent": "Travel Agent",
+    "travelagent": "Travel Agent"
+  },
+  "roles": {
+    "Employee": {
+      "username": "TA488",
+      "password": "Dbox@123"
+    },
+    "L1 Approver": {
+      "username": "TA491",
+      "password": "Dbox@123"
+    },
+    "L2 Approver": {
+      "username": "TA460",
+      "password": "Dbox@123"
+    },
+    "Admin": {
+      "username": "TA461",
+      "password": "Dbox@123"
+    },
+    "Travel Agent": {
+      "username": "222",
+      "password": "Dbox@123",
+      "loginUrl": "https://travel4.qa.darwinbox.io/travel/travelagent/login"
+    }
+  }
+}

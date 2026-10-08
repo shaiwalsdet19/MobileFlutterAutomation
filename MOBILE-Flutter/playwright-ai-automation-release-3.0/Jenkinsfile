@@ -1,0 +1,158 @@
+pipeline {
+    agent { label 'dbox1-jenkins-slaves-automation-v2' }
+
+    environment {
+        PLAYWRIGHT_REPORT_SERVER_URL = "https://playwright-report-server-common.mgmt.darwinbox.io"
+        PLAYWRIGHT_REPORT_TOKEN = "1H5apiUo7v935IAVY3APo4OCyKaX4TTH"
+        RP_API_KEY = "LocalReportPortalAPIKey_6yWTW7KeS7moOvACvJy9tfWXhM9lcfEydyT3HwiP71fPUHikUBMRWhMUHwmSjhiE"
+        TEST_ENV = "qa"
+
+    }
+
+    stages {
+        stage('Run Playwright Tests in Docker') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                        docker.image('mcr.microsoft.com/playwright:v1.59.1-jammy').inside('-u root') {
+                            sh '''
+                                echo "▶ Installing dependencies..."
+                                apt-get update && apt-get install -y zip curl
+                                npm install
+
+                                echo "▶ Running tests and generating report..."
+                                ENV=${ENVIRONMENT} npx playwright test ${TEST_CASE_FILE_NAME}
+                            '''
+                        }
+                    }
+                }
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
+                }
+            }
+        }
+        stage('Check Playwright Tests Report Zipped') {
+            steps {
+                script {
+                    // Proceed even if report is missing
+                    // sh 'mkdir -p playwright-report || true'
+                    docker.image('mcr.microsoft.com/playwright:v1.59.1-jammy').inside('-u root') {
+                        sh '''
+                            echo "▶ Zipping report..."
+                            zip -r report-playwright.zip playwright-report || echo "No report to zip."
+                            ls -a
+                        '''
+                    }
+                }
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'report-playwright.zip', allowEmptyArchive: true
+                }
+            }
+        }
+        stage('Publishing Playwright Tests Report ') {
+            steps {
+                sh '''echo "▶ Publishing Playwright report..."'''
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: 'index.html',
+                    reportName: 'playwright Report',
+                    reportTitles: ''
+                ])
+            }
+        }
+
+        stage('Publish Ortoni HTML Report') {
+            steps {
+                sh '''echo "▶ Publishing Ortoni report..."'''
+                publishHTML([
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'ortoni-report',
+                    reportFiles: 'ortoni-report.html',
+                    reportName: 'ortoni Report',
+                    reportTitles: ''
+                ])
+            }
+        }
+
+        stage('Publish Smart Report') {
+            steps {
+                sh '''echo "▶ Publishing Smart report..."'''
+                publishHTML([
+                    allowMissing: true,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'smartReport',
+                    reportFiles: 'smart-report.html',
+                    reportName: 'Smart Report',
+                    reportTitles: 'Playwright Smart Report'
+                ])
+            }
+        }
+
+        // stage('Upload Playwright Tests Report to Report Server') {
+        //     steps {
+        //         script {
+        //             if (!fileExists('report-playwright.zip')) {
+        //                 error("❌ report-playwright.zip not found. Skipping upload.")
+        //             }
+        //             docker.image('mcr.microsoft.com/playwright:v1.59.1-jammy').inside('-u root') {
+        //                 sh '''
+        //                     echo "▶ Uploading report..."
+        //                     curl --location --request PUT "${PLAYWRIGHT_REPORT_SERVER_URL}/api/result/upload" \
+        //                          --header "'Authorization: ${PLAYWRIGHT_REPORT_TOKEN}'" \
+        //                          --form "file=@report-playwright.zip"
+        //                 '''
+        //             }
+        //         }
+        //     }
+        // }
+        stage("Email send") {
+            steps {
+                emailext(
+                    attachmentsPattern: "playwright-report/index.html",
+                    mimeType: 'text/html',
+                    body: '''
+                    <p>For Summary report you can visit the build console. For detailed report</p>
+                    <p> Please see the full test execution log here ${BUILD_URL}</p>
+
+                ''',
+                    to: "${EMAIL_FOR_REPORTS_DELIVERY}",
+                    subject: "${currentBuild.currentResult}: ${env.JOB_NAME} - build ${currentBuild.number}",
+                    attachLog: false,
+                    replyTo: "prabhudatta.c@darwinbox.io",
+                )
+            }
+        }
+
+    }
+
+    post {
+        failure {
+            script {
+                wrap([$class: 'BuildUser']) {
+                    def buildUserName = env.BUILD_USER
+                    emailext(
+                        mimeType: 'text/html',
+                        body: '''
+                                    <p>For Summary report you can visit the build console.</p>
+                                    <p>${FILE, path="playwright-report/index.html"} </p>
+                                  ''',
+                        attachmentsPattern: "ortoni-report/ortoni-report.html",
+                        to: "${params.EMAIL_FOR_REPORTS_DELIVERY}",
+                        subject: "❌ Playwright Test Failed - Build #${currentBuild.number}",
+                        attachLog: false
+                    )
+                }
+            }
+        }
+    }
+}

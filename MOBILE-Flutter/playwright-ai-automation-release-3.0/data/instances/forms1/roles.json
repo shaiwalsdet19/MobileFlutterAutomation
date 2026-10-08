@@ -1,0 +1,58 @@
+{
+  "instanceId": "forms1",
+  "tenantId": "112",
+  "baseUrl": "https://forms1.qa.darwinbox.io",
+  "matchHostnames": [
+    "forms1.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager",
+    "L2Manager": "L2Manager",
+    "l2manager": "L2Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "FB001",
+      "password": "Test.123"
+    },
+    "Engagement Admin": {
+      "username": "E_32",
+      "password": "Dbox@1234"
+    },
+    "Employee": {
+      "username": "Emp_033",
+      "password": "Dbox.123"
+    },
+    "Manager": {
+      "username": "Main2",
+      "password": "Dbox.123"
+    },
+    "L2Manager": {
+      "username": "Main1",
+      "password": "Dbox.123"
+    },
+    "Employees": [
+      {
+        "username": "FB001",
+        "password": "Test.123"
+      },
+      {
+        "username": "Main2",
+        "password": "Dbox.123"
+      },
+      {
+        "username": "Main1",
+        "password": "Dbox.123"
+      },
+      {
+        "username": "Emp_033",
+        "password": "Dbox.123"
+      }
+    ]
+  }
+}

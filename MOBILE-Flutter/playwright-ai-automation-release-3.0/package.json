@@ -1,0 +1,18 @@
+{
+  "name": "ai-playwright-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:components": "playwright test tests/components/ui-components/ --headed --ui ",
+    "test": "playwright test --headed --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "dotenv": "^17.4.2"
+  }
+}

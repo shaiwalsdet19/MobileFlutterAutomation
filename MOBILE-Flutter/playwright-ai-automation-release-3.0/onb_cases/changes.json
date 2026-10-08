@@ -1,0 +1,180 @@
+[
+  {
+    "id": "CH-001",
+    "type": "new_field",
+    "description": "New conditional field group added to BGV Settings in Advanced Settings: a checkbox labelled 'Remove candidate data access after verification completion' (default: unchecked/disabled) with an adjacent numeric input for day value (default: 90, editable only when checkbox is checked, visually disabled/greyed out when unchecked). Includes an inline info icon with help text adjacent to the field group label. The numeric input is non-editable when the checkbox is unchecked.",
+    "audit_requirement": true,
+    "mentioned_surfaces": [
+      {
+        "term": "Advanced Settings",
+        "role": "Admin / Onboarding Admin",
+        "verbatim": true,
+        "nav_path": "Settings > Flows > Onboarding > Advanced Settings > BGV Settings"
+      },
+      {
+        "term": "BGV Settings",
+        "role": "Admin / Onboarding Admin",
+        "verbatim": true,
+        "nav_path": "Settings > Flows > Onboarding > Advanced Settings > BGV Settings"
+      }
+    ],
+    "inferred_surfaces": [],
+    "out_of_scope_surface": null,
+    "values_or_states": [
+      "Checkbox: Checked (enabled) | Unchecked (disabled, default)",
+      "Numeric input: Integer, minimum 1, maximum 365, default 90",
+      "Numeric input: Editable only when checkbox is checked; visually disabled (greyed out) and non-interactive when checkbox is unchecked",
+      "Field group: Visible only when 'Enable BGV' = Enabled; hidden entirely when 'Enable BGV' is disabled",
+      "Help text (inline info icon): 'When enabled, the BGV partner's access to candidate data is restricted automatically once the number of days since verification completion exceeds the configured value. Access is evaluated in real-time — changes to this setting take effect immediately and apply to all candidates in completed verification status. Note: Candidates already in completed status at the time of configuration change will also be evaluated against the updated setting.'"
+    ],
+    "default": "Checkbox: Unchecked (disabled); Numeric input: pre-filled with 90 but non-interactive",
+    "conditions": "Visible and applicable only when 'Enable BGV' toggle is ON in Advanced Settings. Hidden entirely when 'Enable BGV' is disabled. Accessible to roles with existing Onboarding Admin / Admin permission for Advanced Settings (Onboarding > Administration > Onboarding Settings). No new permission cluster required.",
+    "actors": [
+      "Admin",
+      "Onboarding Admin"
+    ],
+    "brd_reference": "Section 6b, 6c, 6d, 7a, 10ae — 'Remove candidate data access after verification completion (Checkbox + Numeric input)'; field-level specifications table; help text specification in Section 10ae"
+  },
+  {
+    "id": "CH-002",
+    "type": "new_validation",
+    "description": "Inline validation rules for the 'Days value' numeric input field in BGV Settings: blocks save and highlights field with inline error for value = 0, value > 365, non-integer/decimal/text input, and blank input when checkbox is checked.",
+    "audit_requirement": false,
+    "mentioned_surfaces": [
+      {
+        "term": "Advanced Settings",
+        "role": "Admin / Onboarding Admin",
+        "verbatim": true,
+        "nav_path": "Settings > Flows > Onboarding > Advanced Settings > BGV Settings"
+      },
+      {
+        "term": "BGV Settings",
+        "role": "Admin / Onboarding Admin",
+        "verbatim": true,
+        "nav_path": "Settings > Flows > Onboarding > Advanced Settings > BGV Settings"
+      }
+    ],
+    "inferred_surfaces": [],
+    "out_of_scope_surface": null,
+    "values_or_states": [
+      "Value = 0: Block save; error: 'Please enter a value between 1 and 365.'",
+      "Non-integer value (e.g., 1.5, text): Block save; error: 'Please enter a whole number between 1 and 365.'",
+      "Value > 365: Block save; error: 'Please enter a value between 1 and 365.'",
+      "Checkbox checked but numeric input cleared/blank: Block save; error: 'Please enter the number of days before saving.'",
+      "Valid integer 1–365: Save proceeds"
+    ],
+    "default": null,
+    "conditions": "Applies only when the 'Remove candidate data access after verification completion' checkbox is checked. Numeric input is mandatory when checkbox is checked. Validation is triggered on save attempt.",
+    "actors": [
+      "Admin",
+      "Onboarding Admin"
+    ],
+    "brd_reference": "Section 6c field-level specifications table; Section 8 edge cases table — rows for value 0, non-integer, value > 365, blank input"
+  },
+  {
+    "id": "CH-003",
+    "type": "new_calculation",
+    "description": "Real-time access window evaluation engine: for every candidate with a completed BGV status under a tenant, the system evaluates whether current date > (BGV completion date + configured days). If true, the candidate record is restricted from BGV verification partner access. Evaluation is triggered on each API request and on portal page load, and re-evaluated immediately whenever the Admin saves a change to the checkbox state or day value. No background job or scheduled processing.",
+    "audit_requirement": false,
+    "mentioned_surfaces": [],
+    "inferred_surfaces": [],
+    "out_of_scope_surface": "Real-time access evaluation engine — backend date comparison logic triggered on API request and portal query; no direct UI surface for the calculation itself",
+    "values_or_states": [
+      "Access active: current date ≤ (BGV completion date + configured days)",
+      "Access revoked: current date > (BGV completion date + configured days)",
+      "Re-evaluation on day value increase (e.g., 30 → 90): candidates previously outside window but now within regain access instantly",
+      "Re-evaluation on day value decrease (e.g., 90 → 30): candidates now outside window lose access instantly",
+      "Re-evaluation on checkbox uncheck + save: access restriction lifted for all candidates, BGV vendor access reverts to unrestricted",
+      "Evaluation uses calendar date only (date-only comparison, not timestamp-based); no timezone dependency"
+    ],
+    "default": "No access restriction (checkbox unchecked by default)",
+    "conditions": "Applies only when 'Remove candidate data access after verification completion' checkbox is checked and a valid day value is saved. Applies to all candidates in completed BGV verification status under the tenant. For tenants enabling the setting for the first time, all existing completed candidates are evaluated immediately against the configured threshold on save. Does not apply when 'Enable BGV' is disabled.",
+    "actors": [
+      "Admin",
+      "Onboarding Admin"
+    ],
+    "brd_reference": "Section 4, 5 (Use Cases 1 and 2), 6b, 7a, 7b, 8, 10w — 'Access is evaluated dynamically'; 'current date > BGV completion date + configured days'; 'real-time — there is no background job or scheduled processing'"
+  },
+  {
+    "id": "CH-004",
+    "type": "new_behavior",
+    "description": "BGV portal behavior change for verification partners: when a candidate's access window has lapsed, the candidate is removed from the 'Completed Reviews' tab listing in the BGV vendor portal. If the partner attempts to access the candidate's record via a saved URL or deep link, they are directed to a page-not-found state.",
+    "audit_requirement": false,
+    "mentioned_surfaces": [
+      {
+        "term": "BGV Vendor Portal",
+        "role": "BGV Verification Partner",
+        "verbatim": true,
+        "nav_path": null
+      },
+      {
+        "term": "Completed Reviews tab",
+        "role": "BGV Verification Partner",
+        "verbatim": true,
+        "nav_path": "BGV Vendor Portal > Completed Reviews tab"
+      }
+    ],
+    "inferred_surfaces": [],
+    "out_of_scope_surface": null,
+    "values_or_states": [
+      "Candidate within access window: visible in 'Completed Reviews' tab listing",
+      "Candidate beyond access window: removed from 'Completed Reviews' tab listing",
+      "Direct URL / deep link access after window lapses: directed to page-not-found state",
+      "Default (setting disabled): all candidates with completed verification remain accessible; no change to existing portal behavior"
+    ],
+    "default": "No change to existing portal behavior until Admin enables the setting",
+    "conditions": "Applies only when 'Remove candidate data access after verification completion' is enabled and a valid day value is configured. Triggered when current date > (BGV completion date + configured days) for a given candidate.",
+    "actors": [
+      "BGV Verification Partner"
+    ],
+    "brd_reference": "Section 7b — 'In the BGV portal, the candidate is removed from the Completed Reviews tab listing. If the partner attempts to access the candidate's record via a saved URL or deep link, they are directed to a page-not-found state.'; Section 8 edge case row 'BGV vendor attempts portal access via direct URL after access window lapses'"
+  },
+  {
+    "id": "CH-005",
+    "type": "new_integration",
+    "description": "BGV Candidate Data Fetch API behavior change: when a verification partner attempts to fetch candidate data via the BGV API for a candidate whose access window has lapsed (current date > BGV completion date + configured days), the API must return HTTP 403 Forbidden with response body: {\"error\": \"Verification has been completed; data access has been revoked.\"}. Enforcement is real-time — evaluated on each API request.",
+    "audit_requirement": false,
+    "mentioned_surfaces": [],
+    "inferred_surfaces": [],
+    "out_of_scope_surface": "BGV Candidate Data Fetch API (existing API endpoint) — backend integration layer; no UI surface",
+    "values_or_states": [
+      "Access window active: API returns normal candidate data response",
+      "Access window lapsed: API returns HTTP 403 Forbidden; response body: {\"error\": \"Verification has been completed; data access has been revoked.\"}",
+      "Setting disabled: existing API behavior preserved, no 403 enforcement"
+    ],
+    "default": "Existing API behavior (no 403 enforcement) until setting is enabled",
+    "conditions": "Applies only when 'Remove candidate data access after verification completion' is enabled and a valid day value is configured. Triggered on each API request when current date > (BGV completion date + configured days). Applies to the existing BGV Candidate Data Fetch API endpoint. BGV integration documentation (New version of BGV APIs for fetching candidate data at Onboarding Stage; BGV Integration — After Activation of Candidate Profile) must be updated to reflect this behavior.",
+    "actors": [
+      "BGV Verification Partner"
+    ],
+    "brd_reference": "Section 7b, 8, 9 (Section 10w), 10b, 10w — 'API returns HTTP 403 response'; 'Verification has been completed; data access has been revoked.'; BGV API access window enforcement table"
+  },
+  {
+    "id": "CH-006",
+    "type": "import_export",
+    "description": "Two new fields added to the existing Onboarding Advanced Settings import template: 'Enable Data Access Expiry' (Yes/No, case-insensitive) and 'Data Access Expiry Days' (numeric integer, 1–365, mandatory when Enable Data Access Expiry = Yes). Import rows with invalid values are rejected with defined inline import errors. Successful import takes effect immediately on processing with no additional save step.",
+    "audit_requirement": false,
+    "mentioned_surfaces": [],
+    "inferred_surfaces": [
+      {
+        "term": "Advanced Settings import template",
+        "why": "Section 10c explicitly states two new fields are added to the 'Advanced Settings import template' for the Onboarding module, implying a distinct import file/template surface used for bulk configuration."
+      }
+    ],
+    "out_of_scope_surface": "Onboarding Advanced Settings import template — bulk import file/mechanism; no dedicated UI screen named beyond the template itself",
+    "values_or_states": [
+      "Enable Data Access Expiry: 'Yes' | 'No' (case-insensitive); any other value rejected with error: 'Enable Data Access Expiry must be Yes or No.'",
+      "Data Access Expiry Days: Integer 1–365; mandatory when Enable Data Access Expiry = Yes; decimal, zero, non-numeric rejected with error: 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "Enable Data Access Expiry = Yes AND Data Access Expiry Days blank or invalid: row fails with error: 'Data Access Expiry Days is required and must be a whole number between 1 and 365.'",
+      "Enable Data Access Expiry = No: Data Access Expiry Days column may be blank without error; field ignored even if populated",
+      "Successful import: takes effect immediately on processing, no additional save step required"
+    ],
+    "default": null,
+    "conditions": "Applies to the existing Onboarding Advanced Settings import template. New fields are added to an existing template — not a new template. Import behavior mirrors UI validation rules for the same fields.",
+    "actors": [
+      "Admin",
+      "Onboarding Admin"
+    ],
+    "brd_reference": "Section 9 (Changes to Imports: Yes), Section 10c — import category table and import behavior notes"
+  }
+]

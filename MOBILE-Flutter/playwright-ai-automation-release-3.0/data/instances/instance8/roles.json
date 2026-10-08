@@ -1,0 +1,17 @@
+{
+  "instanceId": "instance8",
+  "baseUrl": "https://instance8.darwinbox.in/",
+  "matchHostnames": [
+    "instance8.darwinbox.in"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin"
+  },
+  "roles": {
+    "Admin": {
+      "username": "EMP154",
+      "password": "Dbox@12345"
+    }
+  }
+}

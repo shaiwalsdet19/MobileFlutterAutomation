@@ -1,0 +1,12 @@
+{
+  "instanceId": "payroll4",
+  "baseUrl": "https://payroll4.qa.darwinbox.io",
+  "roleAliases": { "Admin": "Admin", "admin": "Admin" },
+  "roles": {
+    "Admin": [
+      { "username": "QA", "password": "Dbox@4321" },
+      { "username": "cb1@darwinbox.in", "password": "Dbox@321" },
+      { "username": "Zydus6041", "password": "Darwin@1234" }
+    ]
+  }
+}

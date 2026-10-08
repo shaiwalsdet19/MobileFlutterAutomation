@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "TC-001",
+    "title": "Candidate whose access window has lapsed is removed from the Completed Reviews tab in the BGV Vendor Portal",
+    "change_ids": [
+      "CH-004"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner account exists with valid portal credentials",
+      "At least one candidate exists with BGV status = Completed, whose BGV completion date is known",
+      "BGV Vendor Portal is accessible at <instance>/onboarding/onboarding/bgv"
+    ],
+    "test_data": [
+      {
+        "field": "Configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date 31 or more days before today (e.g. if today is 2026-06-15, use 2026-05-14)"
+      },
+      {
+        "field": "Candidate within window (control)",
+        "value": "A second candidate whose BGV completion date is within the last 30 days"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible, including the 'Remove candidate data access after verification completion' checkbox (default: unchecked) and the adjacent numeric input (default: 90, greyed out)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The adjacent numeric input becomes editable (no longer greyed out)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and enter '30'.",
+        "expected": "The numeric input displays '30' with no inline validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. A success notification appears. The checkbox remains checked and the numeric input retains the value '30'."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal at <instance>/onboarding/onboarding/bgv using the verification partner credentials (completing 2FA as required).",
+        "expected": "Login is successful. The BGV Vendor Portal dashboard is displayed."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Navigate to the 'Completed Reviews' tab in the BGV Vendor Portal.",
+        "expected": "The Completed Reviews tab loads and displays a list of candidates with completed verifications."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Search or scroll through the Completed Reviews tab listing for the candidate whose BGV completion date is 31+ days ago (i.e., current date > BGV completion date + 30 days).",
+        "expected": "The lapsed candidate does NOT appear anywhere in the Completed Reviews tab listing."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Search or scroll through the Completed Reviews tab listing for the control candidate whose BGV completion date is within the last 30 days.",
+        "expected": "The control candidate (within access window) IS visible in the Completed Reviews tab listing."
+      }
+    ],
+    "expected_result": "The candidate whose access window has lapsed is removed from the Completed Reviews tab listing, while candidates still within the access window remain visible.",
+    "assertions_summary": [
+      "Lapsed candidate is absent from the Completed Reviews tab listing",
+      "Within-window candidate remains visible in the Completed Reviews tab listing",
+      "Setting is saved and persists with checkbox checked and value 30"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-002",
+    "title": "BGV Candidate Data Fetch API returns HTTP 403 with the correct error body when the access window has lapsed",
+    "change_ids": [
+      "CH-005"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner API credentials are available and valid",
+      "At least one candidate exists with BGV status = Completed, whose BGV completion date is known",
+      "The BGV Candidate Data Fetch API endpoint and authentication mechanism are documented and accessible for testing"
+    ],
+    "test_data": [
+      {
+        "field": "Configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date 31 or more days before today"
+      },
+      {
+        "field": "Expected HTTP status",
+        "value": "403"
+      },
+      {
+        "field": "Expected response body",
+        "value": "{\"error\": \"Verification has been completed; data access has been revoked.\"}"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible with the 'Remove candidate data access after verification completion' checkbox and adjacent numeric input."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The adjacent numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and enter '30'.",
+        "expected": "The numeric input displays '30' with no inline validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. A success notification appears."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Using an API client (e.g. Postman or curl), send a GET/POST request to the BGV Candidate Data Fetch API endpoint for the candidate whose BGV completion date is 31+ days ago, using valid BGV Verification Partner API credentials.",
+        "expected": "The API responds with HTTP status code 403 Forbidden."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Inspect the response body of the 403 response.",
+        "expected": "The response body is exactly: {\"error\": \"Verification has been completed; data access has been revoked.\"} — no additional fields, no candidate data, no partial payload."
+      }
+    ],
+    "expected_result": "The BGV Candidate Data Fetch API returns HTTP 403 Forbidden with the exact error body {\"error\": \"Verification has been completed; data access has been revoked.\"} when the access window has lapsed and the setting is enabled.",
+    "assertions_summary": [
+      "HTTP status code is 403 Forbidden",
+      "Response body matches exactly: {\"error\": \"Verification has been completed; data access has been revoked.\"}",
+      "No candidate data is included in the response body",
+      "Setting is saved and active before the API call"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-003",
+    "title": "Verify that the Onboarding Advanced Settings import template contains the two new fields 'Enable Data Access Expiry' and 'Data Access Expiry Days' as downloadable columns",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant"
+    ],
+    "test_data": [],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings (breadcrumb: Flows / Onboarding / Advanced Settings).",
+        "expected": "The Advanced Settings page loads successfully, showing sections: Other Settings, BGV Settings, and Onboarding Form Download Configuration."
+      },
+      {
+        "persona": "Admin",
+        "action": "Locate the import/export mechanism for the Advanced Settings import template (e.g., an Import or Download Template button/link on the Advanced Settings page or via the Import Center).",
+        "expected": "The option to download the Advanced Settings import template is accessible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Download the Onboarding Advanced Settings import template file.",
+        "expected": "The template file downloads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded template file and inspect the column headers.",
+        "expected": "The template contains the column 'Enable Data Access Expiry' and the column 'Data Access Expiry Days' in addition to all previously existing columns. No existing columns have been removed or renamed."
+      }
+    ],
+    "expected_result": "The downloaded Onboarding Advanced Settings import template includes both new columns 'Enable Data Access Expiry' and 'Data Access Expiry Days' alongside all pre-existing columns.",
+    "assertions_summary": [
+      "Column 'Enable Data Access Expiry' is present in the template",
+      "Column 'Data Access Expiry Days' is present in the template",
+      "All previously existing columns remain intact"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Navigation path and exact surface for downloading the Advanced Settings import template is not explicitly documented in the Reference Context; the import mechanism URL or button label needs verification against the live system."
+  },
+  {
+    "id": "TC-004",
+    "title": "Verify that importing a row with Enable Data Access Expiry = 'Yes' and a valid Data Access Expiry Days integer applies the settings immediately with no additional save step",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": "30"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible including 'Enable Data Access Expiry' and 'Data Access Expiry Days'."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the import row, set 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '30'. Save the file.",
+        "expected": "File is saved with the entered values."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the prepared file.",
+        "expected": "File upload is accepted and the import begins processing."
+      },
+      {
+        "persona": "Admin",
+        "action": "Wait for the import to complete and observe the import result/status.",
+        "expected": "Import completes successfully with no errors reported for the row. No additional save or confirmation step is prompted."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the 'Remove candidate data access after verification completion' checkbox and the adjacent days value field.",
+        "expected": "The checkbox is checked (enabled) and the days value field shows '30', reflecting the imported values immediately without requiring a manual save."
+      }
+    ],
+    "expected_result": "The import row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '30' is processed successfully, and the settings take effect immediately on the Advanced Settings page with no additional save step required.",
+    "assertions_summary": [
+      "Import completes with no inline errors",
+      "No additional save step is required after import",
+      "BGV Settings page reflects Enable Data Access Expiry = Yes (checkbox checked)",
+      "BGV Settings page reflects Data Access Expiry Days = 30"
+    ],
+    "requires_human_review": true,
+    "review_reason": "The exact import upload surface URL and the precise UI labels on the Advanced Settings page for the imported fields need verification against the live system. The mapping between import field names and UI field names (CH-001 background) should be confirmed."
+  },
+  {
+    "id": "TC-005",
+    "title": "Verify that importing a row with Enable Data Access Expiry = 'No' and a blank Data Access Expiry Days succeeds without error",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "No"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": ""
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible including 'Enable Data Access Expiry' and 'Data Access Expiry Days'."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the import row, set 'Enable Data Access Expiry' = 'No' and leave 'Data Access Expiry Days' blank. Save the file.",
+        "expected": "File is saved with 'No' in Enable Data Access Expiry and an empty cell for Data Access Expiry Days."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the prepared file.",
+        "expected": "File upload is accepted and the import begins processing."
+      },
+      {
+        "persona": "Admin",
+        "action": "Wait for the import to complete and observe the import result/status.",
+        "expected": "Import completes successfully with no errors reported. The blank Data Access Expiry Days value does not trigger any validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the 'Remove candidate data access after verification completion' checkbox state.",
+        "expected": "The checkbox is unchecked (disabled), reflecting Enable Data Access Expiry = No. No error state is shown."
+      }
+    ],
+    "expected_result": "A row with Enable Data Access Expiry = 'No' and blank Data Access Expiry Days imports successfully without any validation error, and the setting is applied immediately.",
+    "assertions_summary": [
+      "Import completes with no inline errors when Enable Data Access Expiry = No and Data Access Expiry Days is blank",
+      "Data Access Expiry Days blank value is ignored when Enable Data Access Expiry = No",
+      "BGV Settings page reflects the disabled state"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and exact UI mapping need live verification."
+  },
+  {
+    "id": "TC-006",
+    "title": "Verify that Enable Data Access Expiry values 'yes', 'YES', 'no', 'NO' (case variants) are all accepted without error",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry row 1",
+        "value": "yes"
+      },
+      {
+        "field": "Data Access Expiry Days row 1",
+        "value": "10"
+      },
+      {
+        "field": "Enable Data Access Expiry row 2",
+        "value": "YES"
+      },
+      {
+        "field": "Data Access Expiry Days row 2",
+        "value": "10"
+      },
+      {
+        "field": "Enable Data Access Expiry row 3",
+        "value": "no"
+      },
+      {
+        "field": "Data Access Expiry Days row 3",
+        "value": ""
+      },
+      {
+        "field": "Enable Data Access Expiry row 4",
+        "value": "NO"
+      },
+      {
+        "field": "Data Access Expiry Days row 4",
+        "value": ""
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare four separate import files (or rows if multi-row import is supported): Row 1 with Enable Data Access Expiry = 'yes' and Data Access Expiry Days = '10'; Row 2 with Enable Data Access Expiry = 'YES' and Data Access Expiry Days = '10'; Row 3 with Enable Data Access Expiry = 'no' and Data Access Expiry Days blank; Row 4 with Enable Data Access Expiry = 'NO' and Data Access Expiry Days blank. Save each file.",
+        "expected": "Files are saved with the respective case-variant values."
+      },
+      {
+        "persona": "Admin",
+        "action": "Upload the file containing 'yes' (lowercase) for Enable Data Access Expiry and observe the import result.",
+        "expected": "Import completes successfully with no error. Row is accepted."
+      },
+      {
+        "persona": "Admin",
+        "action": "Upload the file containing 'YES' (uppercase) for Enable Data Access Expiry and observe the import result.",
+        "expected": "Import completes successfully with no error. Row is accepted."
+      },
+      {
+        "persona": "Admin",
+        "action": "Upload the file containing 'no' (lowercase) for Enable Data Access Expiry and observe the import result.",
+        "expected": "Import completes successfully with no error. Row is accepted."
+      },
+      {
+        "persona": "Admin",
+        "action": "Upload the file containing 'NO' (uppercase) for Enable Data Access Expiry and observe the import result.",
+        "expected": "Import completes successfully with no error. Row is accepted."
+      }
+    ],
+    "expected_result": "All four case variants ('yes', 'YES', 'no', 'NO') for Enable Data Access Expiry are accepted by the import without any validation errors, confirming case-insensitive matching.",
+    "assertions_summary": [
+      "'yes' is accepted as a valid value for Enable Data Access Expiry",
+      "'YES' is accepted as a valid value for Enable Data Access Expiry",
+      "'no' is accepted as a valid value for Enable Data Access Expiry",
+      "'NO' is accepted as a valid value for Enable Data Access Expiry"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL needs live verification. Multi-row import support in a single file vs. separate files needs confirmation."
+  },
+  {
+    "id": "TC-007",
+    "title": "Verify that importing a row with Enable Data Access Expiry = 'No' and a populated Data Access Expiry Days value succeeds and the days value is ignored",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "No"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": "45"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the import row, set 'Enable Data Access Expiry' = 'No' and 'Data Access Expiry Days' = '45'. Save the file.",
+        "expected": "File is saved with the entered values."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the prepared file.",
+        "expected": "File upload is accepted and the import begins processing."
+      },
+      {
+        "persona": "Admin",
+        "action": "Wait for the import to complete and observe the import result/status.",
+        "expected": "Import completes successfully with no errors. The populated Data Access Expiry Days value does not cause a validation error when Enable Data Access Expiry = No."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the checkbox state and days value.",
+        "expected": "The 'Remove candidate data access after verification completion' checkbox is unchecked. The days value field is not updated to 45 — the imported days value is ignored because Enable Data Access Expiry = No."
+      }
+    ],
+    "expected_result": "When Enable Data Access Expiry = 'No', the Data Access Expiry Days column value is ignored even if populated, and the import succeeds without error.",
+    "assertions_summary": [
+      "Import succeeds with no error when Enable Data Access Expiry = No and Data Access Expiry Days is populated",
+      "Data Access Expiry Days value is ignored when Enable Data Access Expiry = No",
+      "Checkbox remains unchecked after import"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and exact behavior of 'ignored' field (whether it silently discards or overwrites with blank) needs live verification."
+  },
+  {
+    "id": "TC-008",
+    "title": "Verify that the Onboarding Admin role can successfully import the Advanced Settings template with the new fields",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "happy_path",
+    "priority": "medium",
+    "preconditions": [
+      "A user account with Onboarding Admin role (not full Admin) exists and is accessible",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded and prepared with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '60'"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": "60"
+      },
+      {
+        "field": "Onboarding Admin user",
+        "value": "{PLACEHOLDER_ONBOARDING_ADMIN_USER}"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Onboarding Admin",
+        "action": "Log in as the Onboarding Admin user.",
+        "expected": "Login is successful and the Onboarding Admin dashboard is accessible."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "The Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Locate the import mechanism for the Advanced Settings import template and upload the prepared file with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '60'.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Wait for the import to complete and observe the import result.",
+        "expected": "Import completes successfully with no errors. No additional save step is required."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the checkbox and days value.",
+        "expected": "The 'Remove candidate data access after verification completion' checkbox is checked and the days value shows '60', confirming the Onboarding Admin role has sufficient permissions to perform the import."
+      }
+    ],
+    "expected_result": "An Onboarding Admin can successfully import the Advanced Settings template with the new fields, and the settings take effect immediately.",
+    "assertions_summary": [
+      "Onboarding Admin role has access to the Advanced Settings import surface",
+      "Import completes successfully under Onboarding Admin role",
+      "Settings are applied immediately after import by Onboarding Admin"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and Onboarding Admin permission scope for the import action need live verification."
+  },
+  {
+    "id": "TC-009",
+    "title": "BGV Settings field group is visible with correct defaults when Enable BGV is ON",
+    "change_ids": [
+      "CH-001"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings (Onboarding > Administration > Onboarding Settings permission)",
+      "Tenant has at least one Onboarding Process Configuration",
+      "If the 'Remove candidate data access after verification completion' checkbox is already checked, uncheck it and save before starting validation so the field group can be verified from the unchecked baseline state"
+    ],
+    "test_data": [],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully showing three sections: Other Settings, BGV Settings, and Onboarding Form Download Configuration."
+      },
+      {
+        "persona": "Admin",
+        "action": "Locate the BGV Settings section. Find the 'Enable BGV' toggle and verify its current state. If it is OFF, turn it ON and save before proceeding.",
+        "expected": "The 'Enable BGV' toggle is ON. BGV Settings section is fully visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "If the 'Remove candidate data access after verification completion' checkbox is checked, uncheck it and click Save. Reload the page after the save completes.",
+        "expected": "The page reloads with the checkbox unchecked so the field group can be validated from its baseline disabled state."
+      },
+      {
+        "persona": "Admin",
+        "action": "Within the BGV Settings section, locate the field group labelled 'Remove candidate data access after verification completion'. Verify the checkbox is present and observe its checked/unchecked state.",
+        "expected": "The checkbox labelled 'Remove candidate data access after verification completion' is present and is unchecked (disabled) by default."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the numeric input field adjacent to the checkbox.",
+        "expected": "The numeric input field is pre-filled with the value 90 and is visually greyed out / non-interactive (not editable) because the checkbox is unchecked."
+      },
+      {
+        "persona": "Admin",
+        "action": "Locate the inline info icon adjacent to the field group label 'Remove candidate data access after verification completion'. Hover over or click the info icon to reveal the help text.",
+        "expected": "Help text reads exactly: 'When enabled, the BGV partner's access to candidate data is restricted automatically once the number of days since verification completion exceeds the configured value. Access is evaluated in real-time — changes to this setting take effect immediately and apply to all candidates in completed verification status. Note: Candidates already in completed status at the time of configuration change will also be evaluated against the updated setting.'"
+      }
+    ],
+    "expected_result": "The 'Remove candidate data access after verification completion' field group is visible in BGV Settings when Enable BGV is ON, the checkbox defaults to unchecked, the numeric input defaults to 90 and is non-interactive, and the info icon displays the exact specified help text.",
+    "assertions_summary": [
+      "Field group is visible when Enable BGV is ON",
+      "Checkbox defaults to unchecked",
+      "Numeric input defaults to 90",
+      "Numeric input is greyed out and non-interactive when checkbox is unchecked",
+      "Info icon is present adjacent to the field group label",
+      "Help text matches the exact specified string verbatim"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-010",
+    "title": "Enabling the checkbox makes the numeric input editable and saving persists the configuration",
+    "change_ids": [
+      "CH-001",
+      "CH-002"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "60"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, locate the 'Remove candidate data access after verification completion' checkbox. Verify it is currently unchecked and the numeric input is greyed out showing 90.",
+        "expected": "Checkbox is unchecked; numeric input shows 90 and is non-interactive."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The numeric input field becomes active, editable, and is no longer greyed out. The pre-filled value 90 is still shown and is now editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and type 60.",
+        "expected": "The numeric input field accepts the value 60 with no inline error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save (or the equivalent save action for Advanced Settings).",
+        "expected": "Settings are saved successfully. A success notification or confirmation is shown. No error messages appear."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate away from Advanced Settings and then return to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "The page reloads. The 'Remove candidate data access after verification completion' checkbox is checked and the numeric input shows 60, confirming persistence."
+      }
+    ],
+    "expected_result": "Checking the checkbox enables the numeric input for editing, a valid integer value (60) is accepted, and the configuration is persisted correctly after save.",
+    "assertions_summary": [
+      "Checkbox check makes numeric input editable",
+      "Numeric input accepts valid integer 60",
+      "No inline error on valid input",
+      "Save succeeds with success notification",
+      "Checkbox remains checked and value 60 persists after page reload"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-011",
+    "title": "Candidates within the access window retain BGV partner access after the setting is enabled",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "At least one candidate exists with BGV status = Completed, with BGV completion date such that (today's date - BGV completion date) < the configured days value (e.g., completed 10 days ago)"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "10 days before today's date"
+      },
+      {
+        "field": "Expected access state",
+        "value": "Access active (10 < 30)"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 30.",
+        "expected": "Checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Identify the test candidate whose BGV was completed 10 days ago. Navigate to Admin Access > Onboarding (URL: /ms/onboarding/yet-to-onboard) and locate the candidate in the Completed tab. Verify the candidate's BGV completion date is 10 days before today.",
+        "expected": "Candidate is found in the Completed tab with BGV completion date confirmed as 10 days ago. Current date (10) is less than configured days (30), so access window is still active."
+      },
+      {
+        "persona": "Admin",
+        "action": "Verify via the BGV vendor portal or system access indicator that the BGV partner can still access this candidate's record (current date ≤ BGV completion date + 30 days).",
+        "expected": "The candidate record is accessible to the BGV partner. The candidate appears in the BGV vendor's Completed Reviews tab. No access restriction is applied."
+      }
+    ],
+    "expected_result": "A candidate whose BGV was completed 10 days ago retains BGV partner access when the configured threshold is 30 days, because the access window has not yet lapsed.",
+    "assertions_summary": [
+      "Candidate within access window (10 days < 30 days threshold) is accessible to BGV partner",
+      "Candidate appears in BGV vendor Completed Reviews tab",
+      "No access restriction applied"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of BGV vendor portal access state may require BGV vendor portal login or API-level confirmation; exact UI indicator for access state on the admin side is not specified in the reference context."
+  },
+  {
+    "id": "TC-012",
+    "title": "Candidate whose access window has lapsed loses BGV partner access immediately after the setting is saved",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "At least one candidate exists with BGV status = Completed, with BGV completion date such that (today's date - BGV completion date) > the days value to be configured (e.g., completed 40 days ago)"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "40 days before today's date"
+      },
+      {
+        "field": "Expected access state",
+        "value": "Access revoked (40 > 30)"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 30.",
+        "expected": "Checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Identify the test candidate whose BGV was completed 40 days ago. Navigate to Admin Access > Onboarding (/ms/onboarding/yet-to-onboard) and locate the candidate in the Completed tab. Confirm the BGV completion date is 40 days before today.",
+        "expected": "Candidate is found. BGV completion date is 40 days ago. Current date (40) exceeds configured days (30), so the access window has lapsed."
+      },
+      {
+        "persona": "Admin",
+        "action": "Attempt to access the candidate's BGV record via the BGV vendor portal or verify via the system that the BGV partner's access to this candidate is restricted.",
+        "expected": "The candidate record is NOT accessible to the BGV partner. The candidate does not appear in the BGV vendor's Completed Reviews tab. Access is revoked."
+      }
+    ],
+    "expected_result": "A candidate whose BGV was completed 40 days ago has BGV partner access revoked immediately after saving the 30-day threshold, because the access window has lapsed (40 > 30).",
+    "assertions_summary": [
+      "Candidate outside access window (40 days > 30 days threshold) has access revoked",
+      "Access restriction takes effect immediately on save without any background job",
+      "Candidate not accessible to BGV partner after save"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of BGV vendor portal access revocation may require BGV vendor portal login or API-level confirmation; exact UI indicator for revoked access on the admin side is not specified in the reference context."
+  },
+  {
+    "id": "TC-013",
+    "title": "Increasing the day value restores access for candidates that were previously outside the window",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "'Remove candidate data access after verification completion' is currently enabled with days = 30",
+      "At least one candidate exists with BGV status = Completed and BGV completion date 40 days ago (currently outside the 30-day window, access revoked)"
+    ],
+    "test_data": [
+      {
+        "field": "Initial days value",
+        "value": "30"
+      },
+      {
+        "field": "Updated days value",
+        "value": "90"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "40 days before today's date"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads. The 'Remove candidate data access after verification completion' checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Confirm that the test candidate (BGV completed 40 days ago) currently has access revoked by verifying via the BGV vendor portal or system access indicator.",
+        "expected": "Candidate's BGV partner access is currently revoked (40 days > 30-day threshold)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Change the numeric input value from 30 to 90.",
+        "expected": "Numeric input now shows 90."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Immediately verify the test candidate's BGV partner access state (40 days < 90-day new threshold).",
+        "expected": "The candidate's BGV partner access is restored immediately. The candidate appears in the BGV vendor's Completed Reviews tab. No background job or delay is required."
+      }
+    ],
+    "expected_result": "Increasing the day value from 30 to 90 immediately restores BGV partner access for a candidate whose completion was 40 days ago, as they are now within the new access window.",
+    "assertions_summary": [
+      "Access is restored immediately on save when day value is increased",
+      "Candidate previously outside window (40 days > 30) is now within window (40 days < 90)",
+      "No background job or delay — access restored in real-time"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of real-time access restoration requires BGV vendor portal login or API-level confirmation."
+  },
+  {
+    "id": "TC-014",
+    "title": "Unchecking the checkbox and saving lifts all access restrictions for all completed candidates",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "'Remove candidate data access after verification completion' is currently enabled with days = 30",
+      "At least one candidate exists with BGV status = Completed and BGV completion date more than 30 days ago (access currently revoked)"
+    ],
+    "test_data": [
+      {
+        "field": "Current days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "40 days before today's date"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads. The 'Remove candidate data access after verification completion' checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Confirm that the test candidate (BGV completed 40 days ago) currently has access revoked.",
+        "expected": "Candidate's BGV partner access is currently revoked."
+      },
+      {
+        "persona": "Admin",
+        "action": "Uncheck the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox is unchecked. Numeric input becomes greyed out and non-interactive."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Immediately verify the test candidate's BGV partner access state.",
+        "expected": "The candidate's BGV partner access is restored immediately. The candidate appears in the BGV vendor's Completed Reviews tab. BGV vendor access reverts to unrestricted for all completed candidates."
+      }
+    ],
+    "expected_result": "Unchecking the checkbox and saving immediately lifts all access restrictions, restoring BGV partner access for all candidates in completed verification status.",
+    "assertions_summary": [
+      "Unchecking checkbox and saving lifts access restriction immediately",
+      "Previously restricted candidate regains access without delay",
+      "BGV vendor access reverts to unrestricted state"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of access restoration for all completed candidates requires BGV vendor portal login or API-level confirmation."
+  },
+  {
+    "id": "TC-015",
+    "title": "Existing completed candidates are evaluated immediately against the threshold when the setting is first enabled",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "happy_path",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "'Remove candidate data access after verification completion' is currently disabled (checkbox unchecked)",
+      "Multiple candidates exist with BGV status = Completed: Candidate A completed 10 days ago, Candidate B completed 40 days ago"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate A BGV completion date",
+        "value": "10 days before today"
+      },
+      {
+        "field": "Candidate B BGV completion date",
+        "value": "40 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads. The 'Remove candidate data access after verification completion' checkbox is unchecked."
+      },
+      {
+        "persona": "Admin",
+        "action": "Confirm that both Candidate A (10 days ago) and Candidate B (40 days ago) currently have unrestricted BGV partner access since the setting is disabled.",
+        "expected": "Both candidates are accessible to the BGV partner."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 30.",
+        "expected": "Checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears."
+      },
+      {
+        "persona": "Admin",
+        "action": "Immediately verify Candidate A's BGV partner access state (completed 10 days ago, threshold 30 days; 10 < 30).",
+        "expected": "Candidate A retains BGV partner access. The candidate is within the access window."
+      },
+      {
+        "persona": "Admin",
+        "action": "Immediately verify Candidate B's BGV partner access state (completed 40 days ago, threshold 30 days; 40 > 30).",
+        "expected": "Candidate B's BGV partner access is revoked immediately. The candidate is outside the access window and is evaluated against the new setting on save."
+      }
+    ],
+    "expected_result": "When the setting is first enabled with a 30-day threshold, all existing completed candidates are immediately evaluated: Candidate A (10 days) retains access and Candidate B (40 days) has access revoked, with no background job required.",
+    "assertions_summary": [
+      "Existing completed candidates are evaluated immediately on first enable",
+      "Candidate within window (10 days < 30) retains access",
+      "Candidate outside window (40 days > 30) has access revoked immediately",
+      "Evaluation is real-time with no background job"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of real-time evaluation for existing completed candidates requires BGV vendor portal login or API-level confirmation."
+  },
+  {
+    "id": "TC-016",
+    "title": "Onboarding Admin role can access and modify the BGV Settings field group",
+    "change_ids": [
+      "CH-001"
+    ],
+    "test_type": "happy_path",
+    "priority": "medium",
+    "preconditions": [
+      "A user account exists with Onboarding Admin role (with Onboarding > Administration > Onboarding Settings permission) but NOT the full Admin role",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "45"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Onboarding Admin",
+        "action": "Log in as the Onboarding Admin user. Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully for the Onboarding Admin user."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Locate the BGV Settings section and find the 'Remove candidate data access after verification completion' field group.",
+        "expected": "The field group is visible: checkbox (unchecked by default or in its current saved state) and numeric input are present."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 45.",
+        "expected": "Checkbox is checked and numeric input shows 45."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully. Success notification appears. No permission error is shown."
+      },
+      {
+        "persona": "Onboarding Admin",
+        "action": "Navigate away and return to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "The checkbox is checked and numeric input shows 45, confirming the Onboarding Admin was able to persist the change."
+      }
+    ],
+    "expected_result": "An Onboarding Admin user with the appropriate Onboarding Settings permission can view, edit, and save the 'Remove candidate data access after verification completion' field group without requiring a full Admin role.",
+    "assertions_summary": [
+      "Onboarding Admin can view the field group",
+      "Onboarding Admin can check the checkbox and set a value",
+      "Onboarding Admin can save successfully",
+      "No new permission cluster is required"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "instanceId": "pms4",
+  "baseUrl": "https://pms4.qa.darwinbox.io",
+  "matchHostnames": [
+    "pms4.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "A11": "A11",
+    "A14": "A14",
+    "calibrationAdmin": "A11",
+    "feedbackProvider": "A14",
+    "employee": "Employee",
+    "manager": "Manager",
+    "peer": "A05",
+    "talm86237Employee": "A03",
+    "talm86237Manager": "A04"
+  },
+  "roles": {
+    "Admin": {
+      "username": "A10",
+      "password": "1234567890"
+    },
+    "Employee": {
+      "username": "A01",
+      "password": "12345678"
+    },
+    "Manager": {
+      "username": "A03",
+      "password": "Dbox@123456"
+    },
+    "A11": {
+      "username": "A11",
+      "password": "123456789"
+    },
+    "A14": {
+      "username": "A14",
+      "password": "1234567890"
+    },
+    "A05": {
+      "username": "A05",
+      "password": "1234567890"
+    },
+    "A03": {
+      "username": "A03",
+      "password": "Dbox@123456"
+    },
+    "A04": {
+      "username": "A04",
+      "password": "1234567890"
+    }
+  }
+}

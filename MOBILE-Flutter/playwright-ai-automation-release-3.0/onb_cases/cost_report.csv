@@ -1,0 +1,8 @@
+timestamp,stage,provider,model,input_tokens,output_tokens,cost_usd,duration_seconds,scenario_id,feature,module
+2026-05-26T14:22:11.217625+00:00,v5_s1_change_extraction,anthropic,claude-sonnet-4-6,9460,3364,0.07884,57.02,,,
+2026-05-26T14:22:14.255903+00:00,v5_s1_5_grouping,anthropic,claude-sonnet-4-6,1990,35,0.006495000000000001,3.03,,,
+2026-05-26T14:22:16.916203+00:00,v5_s2_ref_selection,anthropic,claude-sonnet-4-6,14435,48,0.044025,2.66,,,
+2026-05-26T14:24:00.778165+00:00,v5_s3_tc_gen_ch-004+ch-005,anthropic,claude-sonnet-4-6,35910,7860,0.22563,102.99,,,
+2026-05-26T14:24:13.266808+00:00,v5_s3_tc_gen_combination,anthropic,claude-sonnet-4-6,35171,7458,0.217383,115.48,,,
+2026-05-26T14:24:13.679005+00:00,v5_s3_tc_gen_ch-006,anthropic,claude-sonnet-4-6,35757,9836,0.254811,115.89,,,
+2026-05-26T14:25:03.853603+00:00,v5_s3_tc_gen_ch-001+ch-002+ch-003,anthropic,claude-sonnet-4-6,36410,13152,0.30650999999999995,166.07,,,

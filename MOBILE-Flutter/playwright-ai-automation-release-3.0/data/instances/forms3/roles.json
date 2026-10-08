@@ -1,0 +1,35 @@
+{
+  "instanceId": "forms3",
+  "baseUrl": "https://forms3.qa.darwinbox.io",
+  "matchHostnames": [
+    "forms3.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager",
+    "L2Manager": "L2Manager",
+    "l2manager": "L2Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "forms3.admin@darwindummy.com",
+      "password": "Dbox.123"
+    },
+    "Employee": {
+      "username": "emply3",
+      "password": "Dbox.1234"
+    },
+    "Manager": {
+      "username": "emply2",
+      "password": "Dbox.1234"
+    },
+    "L2Manager": {
+      "username": "emply6",
+      "password": "Dbox.1234"
+    }
+  }
+}

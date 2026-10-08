@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  ortoni-report:
+    container_name: ortoni-report-ai
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "2004:2004"
+    volumes:
+      - .:/app
+    command: ["show-report", "ortoni-report/ortoni-report.html"]

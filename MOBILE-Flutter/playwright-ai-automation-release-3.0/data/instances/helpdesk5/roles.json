@@ -1,0 +1,77 @@
+{
+  "instanceId": "helpdesk5",
+  "baseUrl": "https://helpdesk5.qa.darwinbox.io",
+  "matchHostnames": [
+    "helpdesk5.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "admin": "Admin",
+    "Admin": "Admin",
+    "creator": "Creator",
+    "ticket creator": "Creator",
+    "requester": "Requester",
+    "Requester": "Requester",
+    "assignee": "Assignee",
+    "Assignee": "Assignee",
+    "vendor": "Vendor",
+    "Vendor": "Vendor",
+    "cc user": "CCUser",
+    "CC user": "CCUser",
+    "tagged employee": "TaggedEmployee",
+    "Tagged Employee": "TaggedEmployee",
+    "l1 manager": "L1Manager",
+    "L1 manager": "L1Manager",
+    "hod": "HOD",
+    "HOD": "HOD",
+    "helpdesk admin": "HelpdeskAdmin",
+    "Helpdesk admin": "HelpdeskAdmin",
+    "category admin": "CategoryAdmin",
+    "Category Admin": "CategoryAdmin"
+  },
+  "roles": {
+    "Admin": {
+      "username": "AM_67",
+      "password": "Dbox@123"
+    },
+    "Creator": {
+      "username": "AM_65",
+      "password": "Darwin@12345"
+    },
+    "Requester": {
+      "username": "AM_65",
+      "password": "Darwin@12345"
+    },
+    "Assignee": {
+      "username": "AM_64",
+      "password": "Darwin@12345"
+    },
+    "Vendor": {
+      "username": "Omshanti@gmail.com",
+      "password": "Dbox@123"
+    },
+    "CCUser": {
+      "username": "HD_45",
+      "password": "Dbox@123"
+    },
+    "TaggedEmployee": {
+      "username": "HD_37",
+      "password": "Dbox@123"
+    },
+    "L1Manager": {
+      "username": "HD_35",
+      "password": "Dbox@123"
+    },
+    "HOD": {
+      "username": "AM_22",
+      "password": "Dbox@123"
+    },
+    "HelpdeskAdmin": {
+      "username": "AM_22",
+      "password": "Dbox@123"
+    },
+    "CategoryAdmin": {
+      "username": "AM_66",
+      "password": "India@1234"
+    }
+  }
+}

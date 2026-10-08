@@ -1,0 +1,15 @@
+{
+  "instanceId": "ta7",
+  "baseUrl": "https://ta7.qa.darwinbox.io",
+  "matchHostnames": ["ta7.qa.darwinbox.io"],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin"
+  },
+  "roles": {
+    "Admin": {
+      "username": "ta7.admin@darwindummy.com",
+      "password": "Dbox@123"
+    }
+  }
+}

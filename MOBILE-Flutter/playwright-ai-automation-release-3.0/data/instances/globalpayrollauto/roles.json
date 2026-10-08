@@ -1,0 +1,8 @@
+{
+  "instanceId": "globalpayrollauto",
+  "baseUrl": "https://globalpayrollauto.qa.darwinbox.io",
+  "roleAliases": { "Admin": "Admin", "admin": "Admin" },
+  "roles": {
+    "Admin": { "username": "Global02", "password": "Darwin@123" }
+  }
+}

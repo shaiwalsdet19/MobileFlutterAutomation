@@ -1,0 +1,361 @@
+[
+  {
+    "id": "TC-026",
+    "title": "Completed Reviews tab retains all completed candidates and direct URL access works normally when the 'Remove candidate data access after verification completion' setting is disabled",
+    "change_ids": [
+      "CH-004"
+    ],
+    "test_type": "regression",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner account exists with valid portal credentials",
+      "At least one candidate exists with BGV status = Completed, with a BGV completion date more than 90 days ago",
+      "A direct URL to that candidate's BGV record in the BGV Vendor Portal is available",
+      "BGV Vendor Portal is accessible at <instance>/onboarding/onboarding/bgv"
+    ],
+    "test_data": [
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date more than 90 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible. The 'Remove candidate data access after verification completion' checkbox is unchecked (default state). The adjacent numeric input is greyed out and non-editable, pre-filled with 90."
+      },
+      {
+        "persona": "Admin",
+        "action": "Confirm the 'Remove candidate data access after verification completion' checkbox is unchecked. Do NOT check it. Click Save (or leave settings unchanged if no change was made).",
+        "expected": "Settings remain in the default state (checkbox unchecked). No access restriction is active."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal at <instance>/onboarding/onboarding/bgv using the verification partner credentials (completing 2FA as required).",
+        "expected": "Login is successful. The BGV Vendor Portal dashboard is displayed."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Navigate to the 'Completed Reviews' tab in the BGV Vendor Portal.",
+        "expected": "The Completed Reviews tab loads. The candidate with a BGV completion date more than 90 days ago IS visible in the listing — no removal has occurred."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Navigate directly to the saved URL pointing to the candidate's BGV record (the candidate whose completion date is more than 90 days ago).",
+        "expected": "The candidate's BGV record loads successfully. No page-not-found state is shown. Full candidate data is accessible as per existing portal behavior."
+      }
+    ],
+    "expected_result": "When the setting is disabled, all candidates with completed verifications remain accessible in the Completed Reviews tab and via direct URL, preserving existing portal behavior.",
+    "assertions_summary": [
+      "Completed Reviews tab shows all completed candidates regardless of completion date when setting is disabled",
+      "Direct URL access to any completed candidate's record succeeds when setting is disabled",
+      "No page-not-found state is triggered when setting is disabled"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-027",
+    "title": "Candidate record reappears in the Completed Reviews tab immediately after the Admin reduces the configured days value such that the candidate falls back within the access window",
+    "change_ids": [
+      "CH-004"
+    ],
+    "test_type": "regression",
+    "priority": "medium",
+    "preconditions": [
+      "BGV Verification Partner account exists with valid portal credentials",
+      "At least one candidate exists with BGV status = Completed, with a BGV completion date exactly 20 days ago",
+      "BGV Vendor Portal is accessible at <instance>/onboarding/onboarding/bgv"
+    ],
+    "test_data": [
+      {
+        "field": "Initial configured days value",
+        "value": "15"
+      },
+      {
+        "field": "Updated configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "20 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The adjacent numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and enter '15'.",
+        "expected": "The numeric input displays '15' with no inline validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. A success notification appears."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal at <instance>/onboarding/onboarding/bgv (completing 2FA as required) and navigate to the 'Completed Reviews' tab.",
+        "expected": "The candidate whose BGV completion date is 20 days ago does NOT appear in the Completed Reviews tab (20 > 15, so access window has lapsed)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings. Clear the numeric input and enter '30'. Click Save.",
+        "expected": "Settings are saved successfully with the new value of 30."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Refresh or reload the 'Completed Reviews' tab in the BGV Vendor Portal.",
+        "expected": "The candidate whose BGV completion date is 20 days ago NOW appears in the Completed Reviews tab (20 < 30, so the candidate is back within the access window). The change takes effect immediately on portal page load without any background job delay."
+      }
+    ],
+    "expected_result": "Re-evaluation is immediate on portal page load — when the Admin increases the configured days value such that a previously lapsed candidate falls back within the window, that candidate reappears in the Completed Reviews tab on the next page load.",
+    "assertions_summary": [
+      "Candidate is absent from Completed Reviews tab when completion date > configured days",
+      "Candidate reappears in Completed Reviews tab immediately after Admin saves a larger days value that brings the candidate back within the window",
+      "No background job or scheduled processing delay is observed"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-028",
+    "title": "BGV Candidate Data Fetch API preserves existing behavior (no 403 enforcement) when the setting is disabled",
+    "change_ids": [
+      "CH-005"
+    ],
+    "test_type": "regression",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner API credentials are available and valid",
+      "At least one candidate exists with BGV status = Completed, with a BGV completion date more than 90 days ago",
+      "The BGV Candidate Data Fetch API endpoint and authentication mechanism are documented and accessible for testing"
+    ],
+    "test_data": [
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date more than 90 days before today"
+      },
+      {
+        "field": "Expected HTTP status",
+        "value": "200"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible. The 'Remove candidate data access after verification completion' checkbox is unchecked (default state). The adjacent numeric input is greyed out and non-editable, pre-filled with 90."
+      },
+      {
+        "persona": "Admin",
+        "action": "Confirm the 'Remove candidate data access after verification completion' checkbox is unchecked. Do NOT check it. If any prior test modified this setting, uncheck it now and click Save.",
+        "expected": "The checkbox is unchecked and settings are in the default (disabled) state. No access restriction is active."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Using an API client, send a request to the BGV Candidate Data Fetch API endpoint for the candidate whose BGV completion date is more than 90 days ago, using valid BGV Verification Partner API credentials.",
+        "expected": "The API responds with HTTP status code 200 OK and the normal candidate data payload. No 403 Forbidden response is returned."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Inspect the response body.",
+        "expected": "The response body contains the expected candidate data fields as per the existing BGV Candidate Data Fetch API contract. No error field is present. Existing API behavior is fully preserved."
+      }
+    ],
+    "expected_result": "When the 'Remove candidate data access after verification completion' setting is disabled, the BGV Candidate Data Fetch API returns normal candidate data for all completed candidates regardless of completion date, preserving existing API behavior.",
+    "assertions_summary": [
+      "HTTP status code is 200 OK when setting is disabled, even for candidates with completion date > 90 days ago",
+      "No 403 enforcement occurs when setting is disabled",
+      "Existing API response contract is unchanged"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-029",
+    "title": "BGV Candidate Data Fetch API re-evaluates access on each request — toggling the setting mid-session immediately changes API response behavior",
+    "change_ids": [
+      "CH-005"
+    ],
+    "test_type": "regression",
+    "priority": "medium",
+    "preconditions": [
+      "BGV Verification Partner API credentials are available and valid",
+      "At least one candidate exists with BGV status = Completed, with a BGV completion date more than 30 days ago",
+      "The BGV Candidate Data Fetch API endpoint and authentication mechanism are documented and accessible for testing"
+    ],
+    "test_data": [
+      {
+        "field": "Configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date 31 or more days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox, enter '30' in the numeric input, and click Save.",
+        "expected": "Settings are saved successfully. The setting is now enabled with 30 days."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Using an API client, send a request to the BGV Candidate Data Fetch API for the candidate whose BGV completion date is 31+ days ago.",
+        "expected": "The API responds with HTTP 403 Forbidden and body: {\"error\": \"Verification has been completed; data access has been revoked.\"}."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings. Uncheck the 'Remove candidate data access after verification completion' checkbox. Click Save.",
+        "expected": "Settings are saved successfully. The checkbox is now unchecked. The numeric input is greyed out again."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Immediately send another request to the BGV Candidate Data Fetch API for the same candidate (31+ days lapsed), without any session reset.",
+        "expected": "The API now responds with HTTP 200 OK and normal candidate data — the 403 enforcement is lifted immediately because the setting was disabled. No caching or delay is observed."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings. Re-check the 'Remove candidate data access after verification completion' checkbox, confirm the numeric input shows '90' (default), and click Save.",
+        "expected": "Settings are saved successfully with the setting re-enabled at 90 days."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Send another request to the BGV Candidate Data Fetch API for the same candidate (31+ days lapsed, which is less than 90 days).",
+        "expected": "The API responds with HTTP 200 OK and normal candidate data — because 31 days < 90 days configured, the candidate is within the new access window and is not blocked."
+      }
+    ],
+    "expected_result": "The BGV Candidate Data Fetch API re-evaluates access on every request using the current setting values — changes to the setting take effect immediately with no caching or background job delay.",
+    "assertions_summary": [
+      "403 is returned when setting is enabled and candidate is lapsed",
+      "200 is returned immediately after setting is disabled, for the same candidate",
+      "200 is returned when setting is re-enabled with a larger days value that brings the candidate back within the window",
+      "No caching or delay between setting change and API enforcement"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-030",
+    "title": "Verify that existing columns in the Onboarding Advanced Settings import template are unaffected after the addition of the two new fields",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "regression",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A record of the column headers from the previous version of the Advanced Settings import template is available for comparison"
+    ],
+    "test_data": [],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "The Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Download the current Onboarding Advanced Settings import template.",
+        "expected": "Template file downloads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded template and inspect all column headers. Compare against the known pre-change column list.",
+        "expected": "All columns that existed before the change are still present with identical names and positions. Only two new columns have been added: 'Enable Data Access Expiry' and 'Data Access Expiry Days'. No existing column has been renamed, removed, or reordered."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file using only the pre-existing columns (leaving the two new columns blank or absent) with valid values for all existing fields. Upload the file.",
+        "expected": "Import completes successfully with no errors. The existing fields are processed correctly, confirming backward compatibility."
+      },
+      {
+        "persona": "Admin",
+        "action": "Verify the settings applied by the import match the values provided for the pre-existing fields.",
+        "expected": "All pre-existing field values are applied correctly. No unintended side effects on existing settings are observed."
+      }
+    ],
+    "expected_result": "The addition of the two new fields to the Advanced Settings import template does not affect the structure, naming, or processing of any pre-existing columns, and imports using only pre-existing columns continue to work correctly.",
+    "assertions_summary": [
+      "All pre-existing columns are present and unchanged in the updated template",
+      "No existing column is renamed, removed, or reordered",
+      "Import using only pre-existing columns succeeds without errors",
+      "Pre-existing field values are applied correctly after import"
+    ],
+    "requires_human_review": true,
+    "review_reason": "A baseline list of pre-existing Advanced Settings import template columns is required for comparison. Import surface URL needs live verification."
+  },
+  {
+    "id": "TC-031",
+    "title": "Numeric input remains non-interactive when checkbox is unchecked even after a prior enabled state",
+    "change_ids": [
+      "CH-001"
+    ],
+    "test_type": "regression",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a saved value of 45"
+    ],
+    "test_data": [
+      {
+        "field": "Days value (prior saved)",
+        "value": "45"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads. The 'Remove candidate data access after verification completion' checkbox is checked and the numeric input shows 45 and is editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Uncheck the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes unchecked. The numeric input immediately becomes greyed out and non-interactive. The value displayed may remain 45 or revert to 90 (verify it is non-editable regardless of displayed value)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Attempt to click into or type in the numeric input field while the checkbox is unchecked.",
+        "expected": "The numeric input does not accept focus or input. It remains non-interactive."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. No error messages appear."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate away and return to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "The checkbox is unchecked and the numeric input is greyed out, confirming the unchecked state was persisted."
+      }
+    ],
+    "expected_result": "Unchecking the checkbox immediately disables the numeric input, prevents any interaction with it, and the unchecked state persists after save.",
+    "assertions_summary": [
+      "Unchecking checkbox immediately greys out numeric input",
+      "Numeric input is non-interactive when checkbox is unchecked",
+      "Unchecked state persists after save and page reload"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  }
+]

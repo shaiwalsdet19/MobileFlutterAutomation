@@ -1,0 +1,561 @@
+[
+  {
+    "id": "TC-037",
+    "title": "Import enabling data access expiry with a valid day value immediately enforces real-time access revocation for already-completed BGV candidates without a separate UI save step.",
+    "change_ids": [
+      "CH-006",
+      "CH-003"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "At least one candidate exists with BGV status = Completed, with a BGV completion date that is more than 30 days ago but fewer than 90 days ago",
+      "BGV Verification Partner portal credentials are valid and the partner can access the Completed Reviews tab"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "35 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import template and download the current template file.",
+        "expected": "Template file downloads and contains the two new columns: 'Enable Data Access Expiry' and 'Data Access Expiry Days'."
+      },
+      {
+        "persona": "Admin",
+        "action": "Populate the import row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '30', then upload the file via the import mechanism.",
+        "expected": "Import processes successfully with no row-level errors; a success confirmation is shown with no additional save step required."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the 'Remove candidate data access after verification completion' field group.",
+        "expected": "The checkbox is now checked and the numeric input displays '30', reflecting the imported configuration immediately."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal and open the Completed Reviews tab.",
+        "expected": "The candidate whose BGV completion date is 35 days ago (which exceeds the configured 30-day window) is absent from the Completed Reviews tab listing — access has been revoked immediately upon import processing."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Attempt to access the absent candidate's record via a previously saved direct URL.",
+        "expected": "The partner is directed to a page-not-found state, confirming real-time enforcement triggered by the import with no manual save step."
+      }
+    ],
+    "expected_result": "Importing 'Enable Data Access Expiry = Yes' with 'Data Access Expiry Days = 30' takes effect immediately on processing, causing the real-time evaluation engine to revoke BGV portal access for all candidates whose completion date exceeds 30 days — without any additional UI save action.",
+    "assertions_summary": [
+      "Import processing alone (no UI save) is sufficient to trigger the CH-003 real-time evaluation engine",
+      "Candidates already beyond the imported day threshold lose portal access immediately upon import completion, not on next manual save",
+      "The UI in Advanced Settings reflects the imported values, confirming the import and UI share the same underlying configuration state"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-038",
+    "title": "Import with Enable Data Access Expiry = Yes but blank Data Access Expiry Days is rejected with the correct inline error and does not alter the live access restriction state.",
+    "change_ids": [
+      "CH-006",
+      "CH-003"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a day value of 60 in the UI",
+      "At least one candidate exists with BGV status = Completed and completion date more than 60 days ago (currently access-revoked)"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": ""
+      },
+      {
+        "field": "Existing configured day value",
+        "value": "60"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days left blank, then upload the file via the Onboarding Advanced Settings import mechanism.",
+        "expected": "The import row is rejected; an inline import error is shown: 'Data Access Expiry Days is required and must be a whole number between 1 and 365.' The import does not complete for this row."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the 'Remove candidate data access after verification completion' field group.",
+        "expected": "The checkbox remains checked and the day value remains 60 — the failed import has not altered the live configuration."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal and attempt to access the Completed Reviews tab for the candidate whose completion date is more than 60 days ago.",
+        "expected": "The candidate remains absent from the Completed Reviews tab, confirming the real-time access restriction is still enforced at the pre-existing 60-day threshold and was not disrupted by the failed import attempt."
+      }
+    ],
+    "expected_result": "A failed import row (Enable Data Access Expiry = Yes with blank days) is rejected with the correct error message and leaves the existing live access restriction configuration and enforcement state completely unchanged.",
+    "assertions_summary": [
+      "Import validation for the blank days field mirrors the UI validation rule from CH-002 and blocks processing",
+      "A rejected import row does not partially apply or reset the existing CH-003 evaluation engine configuration",
+      "BGV portal access enforcement continues uninterrupted at the previously configured threshold after a failed import attempt"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-039",
+    "title": "Import setting Enable Data Access Expiry = No when the checkbox is currently checked immediately lifts access restrictions for all completed BGV candidates.",
+    "change_ids": [
+      "CH-006",
+      "CH-003",
+      "CH-004"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a day value of 30",
+      "At least one candidate exists with BGV status = Completed and completion date more than 30 days ago (currently access-revoked and absent from Completed Reviews tab)",
+      "BGV Verification Partner portal credentials are valid"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "No"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": ""
+      },
+      {
+        "field": "Previously configured day value",
+        "value": "30"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file row with Enable Data Access Expiry = 'No' and Data Access Expiry Days left blank, then upload the file via the Onboarding Advanced Settings import mechanism.",
+        "expected": "Import processes successfully with no row-level errors; no additional save step is required."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and inspect the 'Remove candidate data access after verification completion' field group.",
+        "expected": "The checkbox is now unchecked and the numeric input is visually disabled/greyed out, reflecting the imported configuration."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal and open the Completed Reviews tab.",
+        "expected": "The candidate who was previously absent (completion date > 30 days ago) is now visible in the Completed Reviews tab — access restriction has been lifted immediately upon import processing."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Click on the previously inaccessible candidate's record from the Completed Reviews tab.",
+        "expected": "The candidate's full record loads successfully; no page-not-found state is shown, confirming unrestricted access has been restored."
+      }
+    ],
+    "expected_result": "Importing Enable Data Access Expiry = No immediately unchecks the setting and causes the CH-003 evaluation engine to lift all access restrictions, restoring previously revoked candidates to the BGV portal's Completed Reviews tab without any manual UI save.",
+    "assertions_summary": [
+      "Import of 'No' value is sufficient to trigger CH-003 re-evaluation that lifts all access restrictions — no UI save required",
+      "CH-004 portal behavior reverts to default (all completed candidates visible) immediately upon import processing",
+      "Data Access Expiry Days being blank is not an error when Enable Data Access Expiry = No, confirming the import validation mirrors the UI conditional logic"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-040",
+    "title": "Increasing the day value via import restores BGV API access for candidates who were previously outside the window but now fall within the extended window.",
+    "change_ids": [
+      "CH-006",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a day value of 30",
+      "At least one candidate exists with BGV status = Completed and completion date exactly 35 days ago (currently outside the 30-day window — API returns HTTP 403 for this candidate)",
+      "BGV Verification Partner has API access credentials"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": "90"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "35 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Before import: call the BGV Candidate Data Fetch API for the candidate whose completion date is 35 days ago.",
+        "expected": "API returns HTTP 403 Forbidden with body {\"error\": \"Verification has been completed; data access has been revoked.\"}, confirming the candidate is currently outside the 30-day window."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '90', then upload the file via the Onboarding Advanced Settings import mechanism.",
+        "expected": "Import processes successfully with no row-level errors and takes effect immediately."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Immediately after import completion, call the BGV Candidate Data Fetch API again for the same candidate (completion date 35 days ago).",
+        "expected": "API now returns HTTP 200 with the candidate's normal data response — the candidate is within the new 90-day window and access has been restored in real time without any additional save step."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and verify the day value.",
+        "expected": "The numeric input displays '90', confirming the import updated the configuration correctly."
+      }
+    ],
+    "expected_result": "Increasing the day value from 30 to 90 via import immediately causes the CH-005 API enforcement layer to restore access for candidates who were previously blocked but now fall within the extended window, with the API returning normal data instead of HTTP 403.",
+    "assertions_summary": [
+      "Import-triggered day value increase causes immediate re-evaluation that restores API access for candidates now within the new window",
+      "The CH-005 API enforcement responds to the import-driven configuration change in real time — no separate UI save or background job is needed",
+      "The transition from HTTP 403 to HTTP 200 for the same candidate confirms the non-additive interaction: the import change directly alters the API enforcement outcome"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-041",
+    "title": "When Enable BGV is turned OFF, the data access expiry field group is hidden in the UI and the import columns are ignored, leaving BGV API enforcement inactive regardless of import values.",
+    "change_ids": [
+      "CH-001",
+      "CH-006",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "At least one candidate exists with BGV status = Completed",
+      "BGV Verification Partner has API access credentials"
+    ],
+    "test_data": [
+      {
+        "field": "Enable BGV toggle",
+        "value": "OFF"
+      },
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": "30"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and set the Enable BGV toggle to OFF, then save.",
+        "expected": "The 'Remove candidate data access after verification completion' field group is no longer visible on the page — it is hidden entirely when Enable BGV is disabled."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '30', then upload the file via the Onboarding Advanced Settings import mechanism.",
+        "expected": "The import either ignores the data access expiry columns without error (since Enable BGV is OFF and the feature does not apply) or processes the row but the setting has no operative effect — no access restriction is enforced."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Call the BGV Candidate Data Fetch API for the candidate with a completed BGV status.",
+        "expected": "API returns the normal candidate data response (HTTP 200) — no HTTP 403 is returned, confirming that the import-supplied data access expiry setting has no enforcement effect when Enable BGV is OFF."
+      },
+      {
+        "persona": "Admin",
+        "action": "Re-enable the Enable BGV toggle and navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The 'Remove candidate data access after verification completion' field group reappears; its state reflects either the default (unchecked) or the last valid saved state — not the import values supplied while BGV was OFF."
+      }
+    ],
+    "expected_result": "When Enable BGV is OFF, the data access expiry field group is hidden in the UI and any import values for Enable Data Access Expiry and Data Access Expiry Days have no operative effect — the CH-005 API enforcement layer remains inactive regardless of what the import supplies.",
+    "assertions_summary": [
+      "CH-001's visibility gate (field group hidden when Enable BGV = OFF) takes precedence over CH-006's import mechanism — import cannot activate a feature that is gated by a disabled parent toggle",
+      "CH-005 API enforcement is not triggered by import values when the Enable BGV parent gate is OFF",
+      "Re-enabling BGV does not retroactively apply import values that were supplied while BGV was disabled"
+    ],
+    "requires_human_review": true,
+    "review_reason": "The exact behavior of the import when Enable BGV is OFF (silent ignore vs. error vs. deferred application) is not explicitly specified in the BRD. A product owner should confirm whether the import rejects the row, silently ignores the columns, or stores the value for later activation."
+  },
+  {
+    "id": "TC-042",
+    "title": "Saving a decreased day value via the UI immediately revokes BGV API access for candidates now outside the shorter window, and the API returns HTTP 403 in real time.",
+    "change_ids": [
+      "CH-001",
+      "CH-002",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "At least one candidate exists with BGV status = Completed and completion date exactly 45 days ago",
+      "BGV Verification Partner has API access credentials and the API currently returns HTTP 200 for this candidate"
+    ],
+    "test_data": [
+      {
+        "field": "Checkbox state",
+        "value": "Checked"
+      },
+      {
+        "field": "Current day value",
+        "value": "90"
+      },
+      {
+        "field": "New day value to save",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "45 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Call the BGV Candidate Data Fetch API for the candidate whose completion date is 45 days ago (currently within the 90-day window).",
+        "expected": "API returns HTTP 200 with normal candidate data, confirming access is currently active."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings. Confirm the checkbox is checked and the day value shows 90.",
+        "expected": "Checkbox is checked; numeric input shows 90 and is editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input and type '30', then attempt to save.",
+        "expected": "No inline validation error is shown (30 is a valid integer between 1 and 365); save proceeds successfully."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Immediately after the Admin saves, call the BGV Candidate Data Fetch API again for the same candidate (completion date 45 days ago).",
+        "expected": "API now returns HTTP 403 Forbidden with body {\"error\": \"Verification has been completed; data access has been revoked.\"} — the candidate is now outside the new 30-day window and access has been revoked in real time."
+      }
+    ],
+    "expected_result": "Saving a valid decreased day value (90 → 30) via the UI immediately causes the CH-005 API enforcement layer to return HTTP 403 for candidates whose completion date now exceeds the shorter threshold, with no delay or background job.",
+    "assertions_summary": [
+      "CH-002 validation passes for the new value (30 is valid), allowing the save that triggers CH-003 re-evaluation",
+      "CH-005 API enforcement reflects the new threshold immediately after the UI save — the same API call that returned 200 before the save returns 403 after it",
+      "The interaction between a valid UI save (CH-001/CH-002) and real-time API enforcement (CH-005) produces an immediate access state change that neither change's individual TC alone would fully verify"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-043",
+    "title": "Unchecking the data access expiry checkbox and saving restores the candidate to the BGV portal Completed Reviews tab and removes the HTTP 403 from the API simultaneously.",
+    "change_ids": [
+      "CH-001",
+      "CH-004",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a day value of 30",
+      "At least one candidate exists with BGV status = Completed and completion date more than 30 days ago",
+      "BGV Verification Partner portal credentials are valid; the candidate is currently absent from the Completed Reviews tab and the API returns HTTP 403 for this candidate"
+    ],
+    "test_data": [
+      {
+        "field": "Checkbox state before test",
+        "value": "Checked"
+      },
+      {
+        "field": "Day value before test",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "35 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Confirm baseline: open the BGV Vendor Portal Completed Reviews tab and call the BGV Candidate Data Fetch API for the candidate whose completion date is 35 days ago.",
+        "expected": "Candidate is absent from the Completed Reviews tab; API returns HTTP 403 Forbidden with the revocation error body."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and uncheck the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "The numeric input becomes visually disabled/greyed out and non-interactive; the checkbox is now unchecked."
+      },
+      {
+        "persona": "Admin",
+        "action": "Save the settings.",
+        "expected": "Save completes successfully with no validation errors (numeric input validation does not apply when checkbox is unchecked)."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Immediately after the Admin saves, open the BGV Vendor Portal Completed Reviews tab.",
+        "expected": "The previously absent candidate now appears in the Completed Reviews tab — CH-004 portal behavior has reverted to unrestricted."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Call the BGV Candidate Data Fetch API for the same candidate.",
+        "expected": "API now returns HTTP 200 with normal candidate data — CH-005 HTTP 403 enforcement has been lifted simultaneously with the portal restoration."
+      }
+    ],
+    "expected_result": "Unchecking the data access expiry checkbox and saving simultaneously restores the candidate to the BGV portal Completed Reviews tab (CH-004) and removes the HTTP 403 enforcement from the API (CH-005) in real time, with both surfaces reverting to unrestricted behavior together.",
+    "assertions_summary": [
+      "CH-001 checkbox uncheck + save triggers simultaneous re-evaluation that affects both CH-004 portal visibility and CH-005 API enforcement",
+      "Both the portal listing and the API response change state in the same real-time evaluation — neither surface lags behind the other",
+      "No validation error is raised on save when the checkbox is unchecked and the numeric input is greyed out, confirming CH-002 validation is correctly suppressed"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-044",
+    "title": "Audit trail captures the checkbox enable and day value configuration change, while the BGV portal and API enforcement reflect the new state immediately — confirming audit and enforcement are in sync.",
+    "change_ids": [
+      "CH-001",
+      "CH-004",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "medium",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings and access to the platform audit trail",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently unchecked (default state)",
+      "At least one candidate exists with BGV status = Completed and completion date more than 30 days ago",
+      "BGV Verification Partner portal credentials are valid; the candidate is currently visible in the Completed Reviews tab and the API returns HTTP 200"
+    ],
+    "test_data": [
+      {
+        "field": "Checkbox state before test",
+        "value": "Unchecked (default)"
+      },
+      {
+        "field": "Day value to configure",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "35 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings, check the 'Remove candidate data access after verification completion' checkbox, enter '30' in the numeric input, and save.",
+        "expected": "Save completes successfully; the checkbox is checked and the day value shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the platform audit trail and filter for changes to Onboarding Settings / Advanced Settings made by the current admin user.",
+        "expected": "An audit trail entry is present recording the change to the 'Remove candidate data access after verification completion' setting, capturing the old state (unchecked/disabled) and the new state (checked, 30 days), with the correct timestamp and actor."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Open the BGV Vendor Portal Completed Reviews tab at the same time the audit entry is confirmed.",
+        "expected": "The candidate whose completion date is 35 days ago is absent from the Completed Reviews tab — CH-004 enforcement is active at the same moment the audit trail records the change."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Call the BGV Candidate Data Fetch API for the same candidate.",
+        "expected": "API returns HTTP 403 Forbidden with body {\"error\": \"Verification has been completed; data access has been revoked.\"} — CH-005 enforcement is also active, confirming audit and enforcement are simultaneous."
+      }
+    ],
+    "expected_result": "The audit trail records the data access expiry configuration change (CH-001 audit requirement) at the same moment that CH-004 portal enforcement and CH-005 API enforcement take effect, confirming that the audit entry and the live enforcement state are in sync with no lag between them.",
+    "assertions_summary": [
+      "CH-001's audit requirement is fulfilled: the audit trail entry captures the before/after state of both the checkbox and the day value",
+      "The audit trail timestamp aligns with the real-time enforcement activation in CH-004 and CH-005 — there is no window where enforcement is active but the audit trail has not yet recorded the change",
+      "The combination confirms that audit logging does not delay or defer the enforcement trigger"
+    ],
+    "requires_human_review": true,
+    "review_reason": "The exact fields captured in the audit trail entry (field names, old/new value format, whether both checkbox state and day value are logged as separate entries or a single entry) are not fully specified in the BRD. A product owner should confirm the expected audit trail schema for this field group."
+  },
+  {
+    "id": "TC-045",
+    "title": "Import decreasing the day value causes candidates previously within the window to lose BGV portal visibility and receive HTTP 403 from the API simultaneously, with no UI save required.",
+    "change_ids": [
+      "CH-006",
+      "CH-004",
+      "CH-005"
+    ],
+    "test_type": "combination",
+    "priority": "high",
+    "preconditions": [
+      "Admin or Onboarding Admin role with access to Settings > Flows > Onboarding > Advanced Settings > BGV Settings",
+      "Enable BGV toggle is ON in Advanced Settings",
+      "'Remove candidate data access after verification completion' checkbox is currently checked with a day value of 90",
+      "At least one candidate exists with BGV status = Completed and completion date exactly 60 days ago (currently within the 90-day window — visible in Completed Reviews tab and API returns HTTP 200)",
+      "BGV Verification Partner portal credentials are valid"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry (import column)",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days (import column)",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "60 days before today"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Confirm baseline: open the BGV Vendor Portal Completed Reviews tab and call the BGV Candidate Data Fetch API for the candidate whose completion date is 60 days ago.",
+        "expected": "Candidate is visible in the Completed Reviews tab; API returns HTTP 200 with normal candidate data."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file row with Enable Data Access Expiry = 'Yes' and Data Access Expiry Days = '30', then upload the file via the Onboarding Advanced Settings import mechanism.",
+        "expected": "Import processes successfully with no row-level errors and takes effect immediately — no additional save step is required."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Immediately after import completion, open the BGV Vendor Portal Completed Reviews tab.",
+        "expected": "The candidate whose completion date is 60 days ago is now absent from the Completed Reviews tab — CH-004 enforcement has activated immediately upon import processing."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Call the BGV Candidate Data Fetch API for the same candidate.",
+        "expected": "API returns HTTP 403 Forbidden with body {\"error\": \"Verification has been completed; data access has been revoked.\"} — CH-005 enforcement has also activated simultaneously, with no UI save step having occurred."
+      }
+    ],
+    "expected_result": "Importing a decreased day value (90 → 30) immediately triggers both CH-004 portal removal and CH-005 API HTTP 403 enforcement for candidates now outside the shorter window, with both enforcement surfaces activating simultaneously upon import processing and without any manual UI save.",
+    "assertions_summary": [
+      "CH-006 import processing alone (no UI save) is sufficient to activate both CH-004 and CH-005 enforcement simultaneously",
+      "Both the portal listing and the API response change state in the same import-triggered evaluation — neither surface requires a separate trigger",
+      "The interaction between import-driven configuration (CH-006) and dual-surface enforcement (CH-004 + CH-005) produces a compounded outcome not predictable from any single change's individual TCs"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  }
+]

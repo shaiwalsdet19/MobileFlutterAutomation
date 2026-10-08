@@ -1,0 +1,42 @@
+{
+  "instanceId": "pms2-automation",
+  "baseUrl": "https://pms2-automation.qa.darwinbox.io",
+  "matchHostnames": [
+    "pms2-automation.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "Main53",
+      "password": "Darwin@12345"
+    },
+    "Employee": {
+      "username": "Main55",
+      "password": "Darwin@12345"
+    },
+    "Manager": {
+      "username": "Main54",
+      "password": "Darwin@12345"
+    }
+  },
+  "testData": {
+    "addSkill": {
+      "skillName": "automation"
+    },
+    "jobDescription": {
+      "title": "Automation JD",
+      "designation": "dharam-designation",
+      "nextClicks": 4
+    },
+    "employeeSkillProfile": {
+      "skillName": "automation"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "instanceId": "wild1",
+  "baseUrl": "https://wild1.darwinbox.in",
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Emp_8027": "Emp_8027",
+    "Emp_8011": "Emp_8011",
+    "Emp_8014": "Emp_8014",
+    "Emp_8016": "Emp_8016",
+    "Emp_8028": "Emp_8028"
+  },
+  "roles": {
+    "Admin": { "username": "Emp_8001", "password": "Darwin@123" },
+    "Emp_8027": { "username": "Emp_8027", "password": "Darwin@123" },
+    "Emp_8011": { "username": "Emp_8011", "password": "Darwin@123" },
+    "Emp_8014": { "username": "Emp_8014", "password": "Darwin@123" },
+    "Emp_8016": { "username": "Emp_8016", "password": "Darwin@123" },
+    "Emp_8028": { "username": "Emp_8028", "password": "Darwin@123" }
+  }
+}

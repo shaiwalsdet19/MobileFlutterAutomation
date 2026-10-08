@@ -1,0 +1,23 @@
+{
+  "instanceId": "pms13",
+  "baseUrl": "https://pms13.qa.darwinbox.io/",
+  "matchHostnames": [
+    "pms13.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager",
+    "L2Manager": "L2Manager",
+    "l2manager": "L2Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "IC00",
+      "password": "12345678"
+    }
+  }
+}

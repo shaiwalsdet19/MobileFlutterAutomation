@@ -1,0 +1,541 @@
+[
+  {
+    "id": "TC-017",
+    "title": "BGV Verification Partner is directed to a page-not-found state when accessing a lapsed candidate's record via a saved URL or deep link",
+    "change_ids": [
+      "CH-004"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "BGV Verification Partner account exists with valid portal credentials",
+      "At least one candidate exists with BGV status = Completed, whose BGV completion date is known",
+      "A saved URL or deep link to the lapsed candidate's record in the BGV Vendor Portal is available (captured before the access window lapsed)",
+      "BGV Vendor Portal is accessible at <instance>/onboarding/onboarding/bgv"
+    ],
+    "test_data": [
+      {
+        "field": "Configured days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "A date 31 or more days before today"
+      },
+      {
+        "field": "Saved deep link URL",
+        "value": "{PLACEHOLDER — direct URL to the lapsed candidate's BGV record, captured prior to window lapse}"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings > BGV Settings.",
+        "expected": "The BGV Settings section is visible with the 'Remove candidate data access after verification completion' checkbox and adjacent numeric input."
+      },
+      {
+        "persona": "Admin",
+        "action": "Check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox becomes checked. The adjacent numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field and enter '30'.",
+        "expected": "The numeric input displays '30' with no inline validation error."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings are saved successfully. A success notification appears."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Log in to the BGV Vendor Portal at <instance>/onboarding/onboarding/bgv using the verification partner credentials (completing 2FA as required).",
+        "expected": "Login is successful. The BGV Vendor Portal dashboard is displayed."
+      },
+      {
+        "persona": "BGV Verification Partner",
+        "action": "Paste or navigate directly to the saved URL / deep link pointing to the lapsed candidate's BGV record.",
+        "expected": "The browser is directed to a page-not-found state (404 or equivalent platform page-not-found screen). The candidate's data is NOT displayed. No partial data or error message revealing candidate information is shown."
+      }
+    ],
+    "expected_result": "Accessing a lapsed candidate's record via a saved URL or deep link results in a page-not-found state, with no candidate data exposed.",
+    "assertions_summary": [
+      "Direct URL / deep link access to lapsed candidate record returns page-not-found state",
+      "No candidate data is rendered on the page-not-found screen",
+      "The partner is not redirected to the candidate's record or any partial view of it"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-018",
+    "title": "Verify that importing a row with an invalid Enable Data Access Expiry value is rejected with the error 'Enable Data Access Expiry must be Yes or No.'",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry row 1",
+        "value": "True"
+      },
+      {
+        "field": "Enable Data Access Expiry row 2",
+        "value": "1"
+      },
+      {
+        "field": "Enable Data Access Expiry row 3",
+        "value": "Enabled"
+      },
+      {
+        "field": "Enable Data Access Expiry row 4",
+        "value": "yess"
+      },
+      {
+        "field": "Data Access Expiry Days (all rows)",
+        "value": "30"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with a row where 'Enable Data Access Expiry' = 'True' and 'Data Access Expiry Days' = '30'. Save the file.",
+        "expected": "File is saved."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the file with 'True' as the Enable Data Access Expiry value.",
+        "expected": "Import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with 'True'.",
+        "expected": "The row is rejected with the inline error message: 'Enable Data Access Expiry must be Yes or No.' The import does not apply any changes for this row."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare and upload a second import file with 'Enable Data Access Expiry' = '1' and 'Data Access Expiry Days' = '30'. Observe the import result.",
+        "expected": "The row is rejected with the inline error message: 'Enable Data Access Expiry must be Yes or No.'"
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare and upload a third import file with 'Enable Data Access Expiry' = 'Enabled' and 'Data Access Expiry Days' = '30'. Observe the import result.",
+        "expected": "The row is rejected with the inline error message: 'Enable Data Access Expiry must be Yes or No.'"
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare and upload a fourth import file with 'Enable Data Access Expiry' = 'yess' (typo) and 'Data Access Expiry Days' = '30'. Observe the import result.",
+        "expected": "The row is rejected with the inline error message: 'Enable Data Access Expiry must be Yes or No.'"
+      }
+    ],
+    "expected_result": "All rows with invalid Enable Data Access Expiry values ('True', '1', 'Enabled', 'yess') are rejected with the exact inline error 'Enable Data Access Expiry must be Yes or No.' and no settings changes are applied.",
+    "assertions_summary": [
+      "Value 'True' is rejected with error 'Enable Data Access Expiry must be Yes or No.'",
+      "Value '1' is rejected with error 'Enable Data Access Expiry must be Yes or No.'",
+      "Value 'Enabled' is rejected with error 'Enable Data Access Expiry must be Yes or No.'",
+      "Value 'yess' is rejected with error 'Enable Data Access Expiry must be Yes or No.'",
+      "No settings changes are applied for rejected rows"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL needs live verification. Exact inline error display mechanism (row-level error report vs. modal) needs confirmation."
+  },
+  {
+    "id": "TC-019",
+    "title": "Verify that importing a row with Enable Data Access Expiry = 'Yes' and a blank Data Access Expiry Days is rejected with the required field error",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days",
+        "value": ""
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the import row, set 'Enable Data Access Expiry' = 'Yes' and leave 'Data Access Expiry Days' blank. Save the file.",
+        "expected": "File is saved with 'Yes' in Enable Data Access Expiry and an empty cell for Data Access Expiry Days."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the Onboarding Advanced Settings import surface and upload the prepared file.",
+        "expected": "File upload is accepted and the import begins processing."
+      },
+      {
+        "persona": "Admin",
+        "action": "Wait for the import to complete and observe the import result/status for the row.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days is required and must be a whole number between 1 and 365.' No settings changes are applied."
+      }
+    ],
+    "expected_result": "A row with Enable Data Access Expiry = 'Yes' and a blank Data Access Expiry Days is rejected with the exact error 'Data Access Expiry Days is required and must be a whole number between 1 and 365.'",
+    "assertions_summary": [
+      "Row is rejected when Enable Data Access Expiry = Yes and Data Access Expiry Days is blank",
+      "Exact error message 'Data Access Expiry Days is required and must be a whole number between 1 and 365.' is shown inline",
+      "No settings changes are applied for the rejected row"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and exact inline error display mechanism need live verification."
+  },
+  {
+    "id": "TC-020",
+    "title": "Verify that importing a row with Enable Data Access Expiry = 'Yes' and invalid Data Access Expiry Days values (decimal, zero, non-numeric) are each rejected with the correct error",
+    "change_ids": [
+      "CH-006"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Onboarding module is enabled on the tenant",
+      "A valid Onboarding Advanced Settings import template file has been downloaded"
+    ],
+    "test_data": [
+      {
+        "field": "Enable Data Access Expiry",
+        "value": "Yes"
+      },
+      {
+        "field": "Data Access Expiry Days - decimal",
+        "value": "30.5"
+      },
+      {
+        "field": "Data Access Expiry Days - zero",
+        "value": "0"
+      },
+      {
+        "field": "Data Access Expiry Days - non-numeric",
+        "value": "thirty"
+      },
+      {
+        "field": "Data Access Expiry Days - negative",
+        "value": "-5"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Open the downloaded Onboarding Advanced Settings import template file.",
+        "expected": "Template file opens with all columns visible."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '30.5' (decimal). Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '30.5'.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days must be a whole number between 1 and 365.' No settings changes are applied."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '0' (zero). Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '0'.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days must be a whole number between 1 and 365.' No settings changes are applied."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = 'thirty' (non-numeric text). Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = 'thirty'.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days must be a whole number between 1 and 365.' No settings changes are applied."
+      },
+      {
+        "persona": "Admin",
+        "action": "Prepare an import file with 'Enable Data Access Expiry' = 'Yes' and 'Data Access Expiry Days' = '-5' (negative integer). Save and upload the file.",
+        "expected": "File upload is accepted and import processing begins."
+      },
+      {
+        "persona": "Admin",
+        "action": "Observe the import result for the row with Data Access Expiry Days = '-5'.",
+        "expected": "The row is rejected with the inline error message: 'Data Access Expiry Days must be a whole number between 1 and 365.' No settings changes are applied."
+      }
+    ],
+    "expected_result": "All rows with invalid Data Access Expiry Days values (decimal 30.5, zero 0, non-numeric 'thirty', negative -5) when Enable Data Access Expiry = 'Yes' are rejected with the exact error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+    "assertions_summary": [
+      "Decimal value '30.5' is rejected with error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "Zero value '0' is rejected with error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "Non-numeric value 'thirty' is rejected with error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "Negative value '-5' is rejected with error 'Data Access Expiry Days must be a whole number between 1 and 365.'",
+      "No settings changes are applied for any rejected row"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Import surface URL and exact inline error display mechanism need live verification. Negative integer handling should be confirmed as out-of-range vs. non-integer error."
+  },
+  {
+    "id": "TC-021",
+    "title": "Field group is hidden entirely when Enable BGV is OFF",
+    "change_ids": [
+      "CH-001"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings"
+    ],
+    "test_data": [],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, locate the 'Enable BGV' toggle. If it is currently ON, turn it OFF and save the change.",
+        "expected": "The 'Enable BGV' toggle is now OFF and the save is successful."
+      },
+      {
+        "persona": "Admin",
+        "action": "Inspect the BGV Settings section for the 'Remove candidate data access after verification completion' field group (checkbox and numeric input).",
+        "expected": "The 'Remove candidate data access after verification completion' field group — including the checkbox, numeric input, and info icon — is completely hidden and not rendered on the page."
+      }
+    ],
+    "expected_result": "When Enable BGV is OFF, the 'Remove candidate data access after verification completion' field group is entirely absent from the BGV Settings section.",
+    "assertions_summary": [
+      "Field group (checkbox, numeric input, info icon) is not visible when Enable BGV is OFF"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-022",
+    "title": "Non-integer and text inputs are rejected with the correct inline error message",
+    "change_ids": [
+      "CH-002"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [
+      {
+        "field": "Days value (decimal)",
+        "value": "1.5"
+      },
+      {
+        "field": "Days value (text)",
+        "value": "abc"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox is checked and numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input and type 1.5.",
+        "expected": "The value 1.5 is entered in the field (or the field may restrict decimal entry at the input level)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Save is blocked. An inline error message appears reading exactly: 'Please enter a whole number between 1 and 365.' No success notification is shown."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input and type abc.",
+        "expected": "The text 'abc' is entered in the field (or the field may restrict non-numeric entry at the input level)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Save is blocked. An inline error message appears reading exactly: 'Please enter a whole number between 1 and 365.' No success notification is shown."
+      }
+    ],
+    "expected_result": "Decimal and text inputs in the days field block the save and display the inline error 'Please enter a whole number between 1 and 365.'",
+    "assertions_summary": [
+      "Save blocked for decimal value 1.5",
+      "Inline error reads exactly 'Please enter a whole number between 1 and 365.' for decimal",
+      "Save blocked for text value 'abc'",
+      "Inline error reads exactly 'Please enter a whole number between 1 and 365.' for text",
+      "No success notification shown in either case"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-023",
+    "title": "Blank numeric input when checkbox is checked is rejected with the correct inline error message",
+    "change_ids": [
+      "CH-002"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "(blank/empty)"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox.",
+        "expected": "Checkbox is checked and numeric input becomes editable."
+      },
+      {
+        "persona": "Admin",
+        "action": "Clear the numeric input field completely so it is blank/empty.",
+        "expected": "The numeric input field is empty."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Save is blocked. An inline error message appears on or adjacent to the numeric input field reading exactly: 'Please enter the number of days before saving.' No success notification is shown."
+      }
+    ],
+    "expected_result": "A blank numeric input when the checkbox is checked blocks the save and displays the inline error 'Please enter the number of days before saving.'",
+    "assertions_summary": [
+      "Save is blocked when numeric input is blank and checkbox is checked",
+      "Inline error reads exactly 'Please enter the number of days before saving.'",
+      "No success notification shown"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-024",
+    "title": "No validation error occurs when checkbox is unchecked regardless of the displayed numeric value",
+    "change_ids": [
+      "CH-002"
+    ],
+    "test_type": "negative",
+    "priority": "medium",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings"
+    ],
+    "test_data": [],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, verify the 'Remove candidate data access after verification completion' checkbox is unchecked. If it is checked, uncheck it.",
+        "expected": "Checkbox is unchecked. Numeric input is greyed out and non-interactive, showing its current value (default 90 or a previously saved value)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save without modifying any other settings.",
+        "expected": "Settings are saved successfully. No inline validation error appears for the numeric input field. Success notification is shown."
+      }
+    ],
+    "expected_result": "When the checkbox is unchecked, the numeric input is not validated on save and no error is triggered regardless of the displayed value.",
+    "assertions_summary": [
+      "No inline error on the numeric input when checkbox is unchecked",
+      "Save succeeds when checkbox is unchecked"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  },
+  {
+    "id": "TC-025",
+    "title": "Access restriction does not apply when Enable BGV is disabled even if the checkbox was previously saved as checked",
+    "change_ids": [
+      "CH-003"
+    ],
+    "test_type": "negative",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "At least one candidate exists with BGV status = Completed and BGV completion date more than 30 days ago"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      },
+      {
+        "field": "Candidate BGV completion date",
+        "value": "40 days before today's date"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Ensure the 'Enable BGV' toggle is ON. Check the 'Remove candidate data access after verification completion' checkbox and set the numeric input to 30. Click Save.",
+        "expected": "Settings saved. Candidate B (40 days ago) has access revoked."
+      },
+      {
+        "persona": "Admin",
+        "action": "Turn the 'Enable BGV' toggle OFF and click Save.",
+        "expected": "Settings saved. The 'Remove candidate data access after verification completion' field group is now hidden."
+      },
+      {
+        "persona": "Admin",
+        "action": "Verify the test candidate's BGV partner access state.",
+        "expected": "With Enable BGV disabled, the access restriction engine does not apply. The candidate's BGV partner access is unrestricted. The access restriction setting has no effect when Enable BGV is OFF."
+      }
+    ],
+    "expected_result": "Disabling Enable BGV disables the access restriction engine entirely, and candidates are not subject to access window evaluation regardless of the previously saved checkbox state.",
+    "assertions_summary": [
+      "Access restriction does not apply when Enable BGV is OFF",
+      "Candidate access is unrestricted when Enable BGV is disabled"
+    ],
+    "requires_human_review": true,
+    "review_reason": "Verification of access state when Enable BGV is turned off requires BGV vendor portal login or API-level confirmation."
+  }
+]

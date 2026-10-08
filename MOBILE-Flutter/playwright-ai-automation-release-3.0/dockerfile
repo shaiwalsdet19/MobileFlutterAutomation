@@ -1,0 +1,27 @@
+# syntax=docker/dockerfile:1.6
+
+# ---------- Builder stage ----------
+# Install full toolchain + native build deps, install all npm deps.
+FROM node:20 AS builder
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      python3 make g++ xdg-utils \
+ && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --legacy-peer-deps
+COPY . .
+
+# ---------- Runtime stage ----------
+# Slim Node runtime — only needs to serve the ortoni-report HTML.
+FROM node:20-slim
+WORKDIR /app
+COPY --from=builder /app /app
+RUN npm prune --omit=dev --legacy-peer-deps
+
+# `ortoni-report show-report` tries to open a browser via xdg-open; stub it out.
+RUN printf '#!/bin/sh\nexit 0\n' > /usr/local/bin/xdg-open && chmod +x /usr/local/bin/xdg-open
+
+EXPOSE 2004
+
+# Serves ortoni-report/ortoni-report.html on :2004
+ENTRYPOINT ["npx", "ortoni-report", "show-report"]

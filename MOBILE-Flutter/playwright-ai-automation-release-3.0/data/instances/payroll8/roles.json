@@ -1,0 +1,8 @@
+{
+  "instanceId": "payroll8",
+  "baseUrl": "https://payroll8.qa.darwinbox.io",
+  "roleAliases": { "Admin": "Admin", "admin": "Admin" },
+  "roles": {
+    "Admin": { "username": "payroll8.admin@darwindummy.com", "password": "Dbox@1234" }
+  }
+}

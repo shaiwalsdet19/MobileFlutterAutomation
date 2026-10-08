@@ -1,0 +1,18 @@
+{
+  "bgvDataAccessExpiry": {
+    "roles": {
+      "admin": "Admin",
+      "onboardingAdmin": "OnboardingAdmin"
+    },
+    "values": {
+      "defaultDays": "90",
+      "minimumDays": "1",
+      "invalidDecimalDays": "1.5"
+    },
+    "messages": {
+      "tooltip": "When enabled, the Verification partner's access to candidate data is restricted automatically once the number of days since verification completion exceeds the configured value. Access is evaluated in real time.",
+      "wholeNumberError": "Please fix the following input errors: Please enter a value between 1 and 365.",
+      "blankValueError": "Please fix the following input errors: Please enter a value between 1 and 365."
+    }
+  }
+}

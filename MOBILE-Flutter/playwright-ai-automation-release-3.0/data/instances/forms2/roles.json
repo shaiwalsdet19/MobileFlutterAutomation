@@ -1,0 +1,35 @@
+{
+  "instanceId": "forms2",
+  "baseUrl": "https://forms2.qa.darwinbox.io",
+  "matchHostnames": [
+    "forms2.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager",
+    "L2Manager": "L2Manager",
+    "l2manager": "L2Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "Forms2.admin@darwindummy.com",
+      "password": "Dbox@1234"
+    },
+    "Employee": {
+      "username": "Emp_14",
+      "password": "Test.1234"
+    },
+    "Manager": {
+      "username": "EM16",
+      "password": "Test.1234"
+    },
+    "L2Manager": {
+      "username": "E2",
+      "password": "Test.12345"
+    }
+  }
+}

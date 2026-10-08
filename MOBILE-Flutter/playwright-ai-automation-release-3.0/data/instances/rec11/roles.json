@@ -1,0 +1,11 @@
+{
+  "instanceId": "rec11",
+  "baseUrl": "https://rec11.qa.darwinbox.io",
+  "matchHostnames": ["rec11.qa.darwinbox.io"],
+  "defaults": {
+    "adminRole": "Admin",
+    "collaboratorRole": "tacollaborator"
+  },
+  "roleAliases": {},
+  "roles": {}
+}

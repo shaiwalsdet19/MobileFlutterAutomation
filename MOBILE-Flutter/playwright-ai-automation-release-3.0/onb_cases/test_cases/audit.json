@@ -1,0 +1,68 @@
+[
+  {
+    "id": "TC-046",
+    "title": "Audit trail entry is created when the 'Remove candidate data access after verification completion' setting is changed",
+    "change_ids": [
+      "CH-001"
+    ],
+    "test_type": "audit",
+    "priority": "high",
+    "preconditions": [
+      "Logged-in user has Admin or Onboarding Admin role with access to Onboarding Settings",
+      "Enable BGV toggle is ON in Advanced Settings > BGV Settings",
+      "Audit trail is accessible to the test Admin user"
+    ],
+    "test_data": [
+      {
+        "field": "Days value",
+        "value": "30"
+      }
+    ],
+    "steps": [
+      {
+        "persona": "Admin",
+        "action": "Navigate to Settings > Flows > Onboarding > Advanced Settings.",
+        "expected": "Advanced Settings page loads successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "In the BGV Settings section, check the 'Remove candidate data access after verification completion' checkbox (if not already checked). Set the numeric input value to 30.",
+        "expected": "Checkbox is checked and numeric input shows 30."
+      },
+      {
+        "persona": "Admin",
+        "action": "Click Save.",
+        "expected": "Settings saved successfully with a success notification."
+      },
+      {
+        "persona": "Admin",
+        "action": "Navigate to the platform audit trail for Onboarding Settings (accessible via the audit trail link on the Advanced Settings page or via the platform audit log).",
+        "expected": "The audit trail page loads and shows recent activity."
+      },
+      {
+        "persona": "Admin",
+        "action": "Locate the most recent audit entry for the Onboarding Settings / Advanced Settings change just performed. Inspect the entry details.",
+        "expected": "An audit trail entry exists recording the change to 'Remove candidate data access after verification completion'. The entry includes: the actor (Admin user who made the change), the timestamp of the change, the old value (checkbox unchecked / prior day value), and the new value (checkbox checked, days = 30)."
+      },
+      {
+        "persona": "Admin",
+        "action": "Return to Settings > Flows > Onboarding > Advanced Settings. Uncheck the 'Remove candidate data access after verification completion' checkbox and click Save.",
+        "expected": "Settings saved successfully."
+      },
+      {
+        "persona": "Admin",
+        "action": "Return to the audit trail and locate the new entry for this second change.",
+        "expected": "A new audit trail entry exists recording the checkbox being unchecked, with the correct actor, timestamp, old value (checked, 30 days), and new value (unchecked)."
+      }
+    ],
+    "expected_result": "Every save of the 'Remove candidate data access after verification completion' field group generates a corresponding audit trail entry capturing the actor, timestamp, and before/after values.",
+    "assertions_summary": [
+      "Audit entry created on checkbox enable with day value",
+      "Audit entry captures actor identity and timestamp",
+      "Audit entry captures old and new values",
+      "Audit entry created on checkbox disable"
+    ],
+    "requires_human_review": false,
+    "review_reason": ""
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "instanceId": "rec6",
+  "baseUrl": "https://rec6.qa.darwinbox.io",
+  "matchHostnames": ["rec6.qa.darwinbox.io"],
+  "defaultPassword": "Darwin@1234",
+  "defaults": {
+    "adminRole": "Admin",
+    "collaboratorRole": "tacollaborator"
+  },
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Recruiter": "recruiter",
+    "recruiter": "recruiter",
+    "Designation Hiring Lead": "Designation hiring lead",
+    "designation hiring lead": "Designation hiring lead",
+    "Recruitment Hiring Lead": "recruitment hiring lead",
+    "recruitment hiring lead": "recruitment hiring lead",
+    "Collaborator": "tacollaborator",
+    "collaborator": "tacollaborator",
+    "tacollaborator": "tacollaborator",
+    "Scheduling team": "Scheduling team",
+    "scheduling team": "Scheduling team",
+    "Hiring Group": "hiring group",
+    "hiring group": "hiring group",
+    "HOD": "hod",
+    "HRBP": "hrbp",
+    "Manager": "manager",
+    "Screening": "screening",
+    "Shortlisting": "shortlisting",
+    "Positionbasedrecruiter": "positionbasedrecruiter",
+    "positionbasedrecruiter": "positionbasedrecruiter",
+    "AllpermissionOfferletter": "allpermissionOfferletter",
+    "allpermissionOfferletter": "allpermissionOfferletter",
+    "career portal": "candidates",
+    "careers portal": "candidates",
+    "careers": "candidates",
+    "candidate page": "candidates"
+  },
+  "roles": {
+    "Admin": { "username": "employee11@darwindummy.com", "password": "Darwin@12341" },
+    "Employee": [
+      { "username": "employee22@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee33@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee44@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee55@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee66@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee77@darwindummy.com", "password": "Darwin@1234" },
+      { "username": "employee88@darwindummy.com", "password": "Darwin@1234" }
+    ],
+    "Scheduling team": { "username": "tascheduling", "password": "Darwin@1234" },
+    "Designation hiring lead": { "username": "tadesignationhiringlead", "password": "Darwin@1234" },
+    "hiring group": { "username": "tahiringgroup", "password": "Darwin@1234" },
+    "recruitment hiring lead": { "username": "tarecruitmenthiringlead", "password": "Darwin@1234" },
+    "hod": { "username": "tahod", "password": "Darwin@1234" },
+    "hrbp": { "username": "tahrbp", "password": "Darwin@1234" },
+    "manager": { "username": "tamanager", "password": "Darwin@1234" },
+    "recruiter": { "username": "tarecruiter", "password": "Darwin@1234" },
+    "screening": { "username": "tascreening", "password": "Darwin@1234" },
+    "shortlisting": { "username": "tashortlisting", "password": "Darwin@1234" },
+    "External Recruiter": { "username": "taexternalRecruiter@yopmail.com", "password": "Darwin@1234" },
+    "positionbasedrecruiter": {
+      "username": "tapositionbasedrecruiter@darwindummy.com",
+      "password": "Darwin@1234"
+    },
+    "tacollaborator": { "username": "tacollaborator", "password": "Darwin@1234" },
+    "allpermissionOfferletter": { "username": "allpermissionOfferletter", "password": "Darwin@1234" },
+    "TAManualHOD": { "username": "TAManualHOD", "password": "Darwin@1234" },
+    "candidates": [
+      { "username": "testtwo@yopmail.com", "password": "Darwin@1234" },
+      { "username": "testone@yopmail.com", "password": "Darwin@1234" }
+    ]
+  }
+}

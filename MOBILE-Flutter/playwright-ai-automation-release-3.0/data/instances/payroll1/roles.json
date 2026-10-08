@@ -1,0 +1,18 @@
+{
+  "instanceId": "payroll1",
+  "baseUrl": "https://payroll1.qa.darwinbox.io",
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "superAdmin": "Admin",
+    "SuperAdmin": "Admin",
+    "employee": "employee"
+  },
+  "roles": {
+    "Admin": [
+      { "username": "DB9515", "password": "Darwin@123" },
+      { "username": "LTG_100007", "password": "Dbox@1234" }
+    ],
+    "employee": { "username": "PYRL10317", "password": "Test@1234" }
+  }
+}

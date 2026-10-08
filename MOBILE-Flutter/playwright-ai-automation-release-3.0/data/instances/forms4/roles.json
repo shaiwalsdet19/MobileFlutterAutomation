@@ -1,0 +1,35 @@
+{
+  "instanceId": "forms4",
+  "baseUrl": "https://forms4.qa.darwinbox.io",
+  "matchHostnames": [
+    "forms4.qa.darwinbox.io"
+  ],
+  "roleAliases": {
+    "Admin": "Admin",
+    "admin": "Admin",
+    "Employee": "Employee",
+    "employee": "Employee",
+    "Manager": "Manager",
+    "manager": "Manager",
+    "L2Manager": "L2Manager",
+    "l2manager": "L2Manager"
+  },
+  "roles": {
+    "Admin": {
+      "username": "EM16",
+      "password": "Yash.123"
+    },
+    "Employee": {
+      "username": "EM15",
+      "password": "Dbox.1234"
+    },
+    "Manager": {
+      "username": "EM8",
+      "password": "Dbox.1234"
+    },
+    "L2Manager": {
+      "username": "EM21",
+      "password": "Dbox.1234"
+    }
+  }
+}
